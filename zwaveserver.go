@@ -63,7 +63,7 @@ func NewClient(connection net.Conn) *Client {
 	return client
 }
 
-type ChatRoom struct {
+type ZHome struct {
 	clients  []*Client
 	joins    chan net.Conn
 	incoming chan M
@@ -71,40 +71,40 @@ type ChatRoom struct {
 	dead     chan *Client
 }
 
-func (chatRoom *ChatRoom) Broadcast(data M) {
-	for _, client := range chatRoom.clients {
+func (zHome *ZHome) Broadcast(data M) {
+	for _, client := range zHome.clients {
 		client.outgoing <- fmt.Sprintf("%s > %s", data.Name, data.Message)
 	}
 }
 
-func (chatRoom *ChatRoom) Join(connection net.Conn) {
+func (zHome *ZHome) Join(connection net.Conn) {
 	client := NewClient(connection)
-	chatRoom.clients = append(chatRoom.clients, client)
+	zHome.clients = append(zHome.clients, client)
 	go func() {
 		for {
-			chatRoom.incoming <- <-client.incoming
-			chatRoom.dead <- <-client.dead
+			zHome.incoming <- <-client.incoming
+			zHome.dead <- <-client.dead
 		}
 	}()
 }
 
-func (chatRoom *ChatRoom) Listen() {
+func (zHome *ZHome) Listen() {
 	go func() {
 		for {
 			select {
-			case data := <-chatRoom.incoming:
-				chatRoom.Broadcast(data)
-			case conn := <-chatRoom.joins:
-				chatRoom.Join(conn)
-			case <-chatRoom.dead:
+			case data := <-zHome.incoming:
+				zHome.Broadcast(data)
+			case conn := <-zHome.joins:
+				zHome.Join(conn)
+			case <-zHome.dead:
 
 			}
 		}
 	}()
 }
 
-func NewChatRoom() *ChatRoom {
-	chatRoom := &ChatRoom{
+func NewZHome() *ZHome {
+	zHome := &ZHome{
 		clients:  make([]*Client, 0),
 		joins:    make(chan net.Conn),
 		incoming: make(chan M),
@@ -112,18 +112,18 @@ func NewChatRoom() *ChatRoom {
 		dead:     make(chan *Client),
 	}
 
-	chatRoom.Listen()
+	zHome.Listen()
 
-	return chatRoom
+	return zHome
 }
 
 func main() {
-	chatRoom := NewChatRoom()
+	zHome := NewZHome()
 
 	listener, _ := net.Listen("tcp", ":8000")
 
 	for {
 		conn, _ := listener.Accept()
-		chatRoom.joins <- conn
+		zHome.joins <- conn
 	}
 }
