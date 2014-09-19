@@ -3,7 +3,7 @@ package main
 import (
 	"net"
 
-	"zHome/connect"
+	"capstone/connect"
 )
 
 func main() {
