@@ -2,7 +2,6 @@ package connect
 
 import (
 	"bufio"
-	"encoding/json"
 	"net"
 )
 
@@ -15,14 +14,14 @@ type Client struct {
 }
 
 func (client *Client) Read() {
+	command := &Command{}
 	for {
 		line, err := client.reader.ReadString('\n')
 		if err != nil {
 			break
 		}
-		var m M
-		json.Unmarshal([]byte(line), &m)
-		client.incoming <- m
+
+		command.ReadCommand(line)
 	}
 	client.dead <- client
 }
