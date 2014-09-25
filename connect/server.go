@@ -73,9 +73,8 @@ func (zHome *ZHome) Ticker() {
 			go func() {
 				for key, val := range zHome.devices {
 					for _, v := range val.commandClasses {
-						x := strconv.Itoa(key + 1)
-						y, _ := strconv.Atoi(v)
-						if x > "1" && (y == 37 || y == 38) {
+						if _, ok := val.level[v]; ok {
+							x := strconv.Itoa(key + 1)
 							url := fmt.Sprintf("http://192.168.0.17:8083/ZWaveAPI/Run/devices[%s].instances[0].commandClasses[%s].Get()", x, v)
 							http.Get(url)
 						}
@@ -93,8 +92,7 @@ func (zHome *ZHome) Ticker() {
 				for key, val := range zHome.devices {
 					for _, v := range val.commandClasses {
 						x := strconv.Itoa(key + 1)
-						y, _ := strconv.Atoi(v)
-						if x > "1" && (y == 37 || y == 38) {
+						if _, ok := val.level[v]; ok {
 							path := fmt.Sprintf("devices.%s.instances.0.commandClasses.%s.data.level.value", x, v)
 							value := jsonParsed.Path(path).String()
 							if val.level[v] != value {
