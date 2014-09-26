@@ -6,7 +6,7 @@ import (
 )
 
 type Client struct {
-	incoming chan M
+	incoming chan string
 	outgoing chan string
 	reader   *bufio.Reader
 	conn     net.Conn
@@ -44,7 +44,7 @@ func NewClient(connection net.Conn) *Client {
 	reader := bufio.NewReader(connection)
 
 	client := &Client{
-		incoming: make(chan M),
+		incoming: make(chan string),
 		outgoing: make(chan string),
 		reader:   reader,
 		conn:     connection,
