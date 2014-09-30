@@ -36,7 +36,7 @@ func (zHome *ZHome) Broadcast(data string) {
 func (zHome *ZHome) Join(connection net.Conn) {
 	client := NewClient(connection)
 	zHome.clients = append(zHome.clients, client)
-	client.outgoing <- "hello"
+	client.outgoing <- "hello\n"
 	go func() {
 		for {
 			zHome.dead <- <-client.dead
@@ -64,7 +64,7 @@ func (zHome *ZHome) NewConn(con net.Conn) {
 }
 
 func (zHome *ZHome) Ticker() {
-	ticker := time.NewTicker(2 * time.Second)
+	ticker := time.NewTicker(5 * time.Second)
 	quit := make(chan struct{})
 
 	for {
@@ -96,8 +96,8 @@ func (zHome *ZHome) Ticker() {
 							path := fmt.Sprintf("devices.%s.instances.0.commandClasses.%s.data.level.value", x, v)
 							value := jsonParsed.Path(path).String()
 							if val.level[v] != value {
-								fmt.Printf("Device %s set to %s\n", x, value)
-								zHome.incoming <- fmt.Sprintf("Device %s set to %s\n", x, value)
+								fmt.Printf("Device %s command class %s set to %s\n", x, v, value)
+								zHome.incoming <- fmt.Sprintf("Device %s command class %s set to %s\n", x, v, value)
 
 								val.level[v] = value
 							}
