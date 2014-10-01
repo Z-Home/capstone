@@ -75,12 +75,13 @@ public class MainActivity extends Activity {
             JSONObject json = null;
 
             try {
+                //Create socket connection
                 socket = new Socket(dstAddress, dstPort);
 
-                System.out.println("sending json");
-                sendMessage("{\"Device\":\"3\",\"CommandClass\":\"37\",\"Command\":\"0\"}");
-                System.out.println("sent json");
+                //Send json command
+                sendMessage();
 
+                //setup stream to receive responses from server
                 ByteArrayOutputStream byteArrayOutputStream =
                         new ByteArrayOutputStream(1024);
                 byte[] buffer = new byte[1024];
@@ -92,6 +93,7 @@ public class MainActivity extends Activity {
      * notice:
      * inputStream.read() will block if no data return
      */
+                //Read responses from server and set the text to the response when received
                 while ((bytesRead = inputStream.read(buffer)) != -1){
                     byteArrayOutputStream.write(buffer, 0, bytesRead);
                     response = byteArrayOutputStream.toString("UTF-8");
@@ -125,10 +127,21 @@ public class MainActivity extends Activity {
             return null;
         }
 
-        private void sendMessage(String s) {
+        private void sendMessage() {
+           JSONObject json = new JSONObject();
+            try {
+                json.put("Device", "3");
+                json.put("CommandClass", "37");
+                json.put("Command", "1");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             try	{
-                ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-                oos.writeObject(s);
+                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(
+                        socket.getOutputStream()));
+                out.write(json.toString());
+                out.newLine();
+                out.flush();
             } catch (Exception e) {
                 e.printStackTrace();
             }
