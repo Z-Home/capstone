@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
                 hasCommandButtonBeenPressed = true;
                 if(editTextCommand.getText() != null && editTextCommandClass.getText() != null && editTextCommand.getText() != null){
                     try {
-                        json.put("Device", editTextCommand.getText());
+                        json.put("Device", editTextDevice.getText());
                         json.put("CommandClass", editTextCommandClass.getText());
                         json.put("Command", editTextCommand.getText());
                         System.out.println("Send Command Button clicked. JSON is: " + json.toString());
@@ -93,6 +93,9 @@ public class MainActivity extends Activity {
         Socket socket = null;
         final Handler clientThreadHandler = new Handler();
 
+
+
+
         MyClientTask(String addr, int port){
             dstAddress = addr;
             dstPort = port;
@@ -101,10 +104,18 @@ public class MainActivity extends Activity {
         @Override
         protected Void doInBackground(Void... arg0) {
 
+
             try {
                 //Create socket connection
                 socket = new Socket(dstAddress, dstPort);
 
+                while(socket.isConnected()){
+                    if(hasCommandButtonBeenPressed){
+                        System.out.println("CommandButtonPressed");
+                        sendMessage(json);
+                        hasCommandButtonBeenPressed = false;
+                    }
+                }
                 //setup stream to receive responses from server
                 ByteArrayOutputStream byteArrayOutputStream =
                         new ByteArrayOutputStream(1024);
@@ -112,6 +123,8 @@ public class MainActivity extends Activity {
 
                 int bytesRead;
                 InputStream inputStream = socket.getInputStream();
+
+
     
     /*
      * notice:
@@ -122,16 +135,9 @@ public class MainActivity extends Activity {
                     byteArrayOutputStream.write(buffer, 0, bytesRead);
                     response = byteArrayOutputStream.toString("UTF-8");
                     handler.post(new Runnable(){
-
                         public void run(){
                             //Update your view here
                             textResponse.setText(response);
-                            System.out.println("In client thread. In handler.");
-                            if(hasCommandButtonBeenPressed){
-                                System.out.println("In client thread. Button Pressed. Sending message.");
-                                sendMessage(getJson());
-                                hasCommandButtonBeenPressed = false;
-                            }
                         }
                     });
                 }
