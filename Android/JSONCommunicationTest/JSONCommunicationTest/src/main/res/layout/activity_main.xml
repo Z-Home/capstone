@@ -26,19 +26,48 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="dstPort" />
+
     <Button
         android:id="@+id/connect"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Connect..."/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextDevice"
+        android:hint="Device" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextCommandClass"
+        android:hint="Command Class" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextCommand"
+        android:layout_gravity="center_horizontal"
+        android:hint="Command" />
+
+    <Button
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:text="Send Command"
+        android:id="@+id/buttonSendCommand"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/response"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <Button
         android:id="@+id/clear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Clear"/>
-    <TextView
-        android:id="@+id/response"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
 </LinearLayout>

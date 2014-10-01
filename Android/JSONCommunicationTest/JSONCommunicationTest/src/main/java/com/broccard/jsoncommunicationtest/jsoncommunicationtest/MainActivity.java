@@ -19,10 +19,13 @@ import  	android.os.Handler;
 public class MainActivity extends Activity {
 
     TextView textResponse;
-    EditText editTextAddress, editTextPort;
-    Button buttonConnect, buttonClear;
+    EditText editTextAddress, editTextPort, editTextDevice, editTextCommandClass, editTextCommand;
+    Button buttonConnect, buttonClear, buttonSendCommand;
+    boolean hasCommandButtonBeenPressed = false;
 
     final Handler handler = new Handler();
+
+    JSONObject json;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +34,12 @@ public class MainActivity extends Activity {
 
         editTextAddress = (EditText)findViewById(R.id.address);
         editTextPort = (EditText)findViewById(R.id.port);
+        editTextDevice = (EditText)findViewById(R.id.editTextDevice);
+        editTextCommandClass = (EditText)findViewById(R.id.editTextCommandClass);
+        editTextCommand = (EditText)findViewById(R.id.editTextCommand);
         buttonConnect = (Button)findViewById(R.id.connect);
         buttonClear = (Button)findViewById(R.id.clear);
+        buttonSendCommand = (Button)findViewById(R.id.buttonSendCommand);
         textResponse = (TextView)findViewById(R.id.response);
 
         buttonConnect.setOnClickListener(buttonConnectOnClickListener);
@@ -43,6 +50,28 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 textResponse.setText("");
             }});
+
+        buttonSendCommand.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                json = new JSONObject();
+                hasCommandButtonBeenPressed = true;
+                if(editTextCommand.getText() != null && editTextCommandClass.getText() != null && editTextCommand.getText() != null){
+                    try {
+                        json.put("Device", editTextCommand.getText());
+                        json.put("CommandClass", editTextCommandClass.getText());
+                        json.put("Command", editTextCommand.getText());
+                        System.out.println("Send Command Button clicked. JSON is: " + json.toString());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+    }
+
+    public JSONObject getJson(){
+        return json;
     }
 
     OnClickListener buttonConnectOnClickListener =
@@ -62,6 +91,7 @@ public class MainActivity extends Activity {
         int dstPort;
         String response = "";
         Socket socket = null;
+        final Handler clientThreadHandler = new Handler();
 
         MyClientTask(String addr, int port){
             dstAddress = addr;
@@ -71,15 +101,9 @@ public class MainActivity extends Activity {
         @Override
         protected Void doInBackground(Void... arg0) {
 
-
-            JSONObject json = null;
-
             try {
                 //Create socket connection
                 socket = new Socket(dstAddress, dstPort);
-
-                //Send json command
-                sendMessage();
 
                 //setup stream to receive responses from server
                 ByteArrayOutputStream byteArrayOutputStream =
@@ -102,12 +126,15 @@ public class MainActivity extends Activity {
                         public void run(){
                             //Update your view here
                             textResponse.setText(response);
+                            System.out.println("In client thread. In handler.");
+                            if(hasCommandButtonBeenPressed){
+                                System.out.println("In client thread. Button Pressed. Sending message.");
+                                sendMessage(getJson());
+                                hasCommandButtonBeenPressed = false;
+                            }
                         }
                     });
                 }
-
-
-
             } catch (UnknownHostException e) {
                 e.printStackTrace();
                 response = "UnknownHostException: " + e.toString();
@@ -127,15 +154,8 @@ public class MainActivity extends Activity {
             return null;
         }
 
-        private void sendMessage() {
-           JSONObject json = new JSONObject();
-            try {
-                json.put("Device", "3");
-                json.put("CommandClass", "37");
-                json.put("Command", "1");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+        private void sendMessage(JSONObject json) {
+            System.out.println("Sending Message. JSON is: " + json.toString());
             try	{
                 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(
                         socket.getOutputStream()));
