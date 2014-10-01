@@ -32,7 +32,6 @@ func run() {
 		case conn := <-newConnections:
 
 			log.Printf("Accepted new client, #%d", clientCount)
-
 			// Add this connection to the `allClients` map
 			//
 			allClients[conn] = clientCount
@@ -103,7 +102,7 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-
+	fmt.Printf("started\n");
 	go run()
 
 	// Tell the server to accept connections forever
