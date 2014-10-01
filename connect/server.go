@@ -12,7 +12,7 @@ import (
 )
 
 type ZHome struct {
-	clients  []*Client
+	clients  map[net.Conn]*Client
 	joins    chan net.Conn
 	incoming chan string
 	outgoing chan string
@@ -35,7 +35,7 @@ func (zHome *ZHome) Broadcast(data string) {
 
 func (zHome *ZHome) Join(connection net.Conn) {
 	client := NewClient(connection)
-	zHome.clients = append(zHome.clients, client)
+	zHome.clients[connection] = client
 	client.outgoing <- "hello\n"
 	go func() {
 		for {
@@ -52,8 +52,8 @@ func (zHome *ZHome) Listen() {
 				zHome.Broadcast(data)
 			case conn := <-zHome.joins:
 				zHome.Join(conn)
-			case <-zHome.dead:
-
+			case client := <-zHome.dead:
+				delete(zHome.clients, client.conn)
 			}
 		}
 	}()
@@ -63,9 +63,26 @@ func (zHome *ZHome) NewConn(con net.Conn) {
 	zHome.joins <- con
 }
 
+func (zHome *ZHome) NewIncoming(data string) {
+	zHome.incoming <- data
+}
+
+func dialTimeout(network, addr string) (net.Conn, error) {
+	var timeout = time.Duration(2 * time.Second)
+	return net.DialTimeout(network, addr, timeout)
+}
+
 func (zHome *ZHome) Ticker() {
 	ticker := time.NewTicker(5 * time.Second)
 	quit := make(chan struct{})
+
+	transport := http.Transport{
+		Dial: dialTimeout,
+	}
+
+	httpClient := http.Client{
+		Transport: &transport,
+	}
 
 	for {
 		select {
@@ -76,13 +93,20 @@ func (zHome *ZHome) Ticker() {
 						if _, ok := val.level[v]; ok {
 							x := strconv.Itoa(key + 1)
 							url := fmt.Sprintf("http://192.168.0.17:8083/ZWaveAPI/Run/devices[%s].instances[0].commandClasses[%s].Get()", x, v)
-							http.Get(url)
+							res, err := httpClient.Get(url)
+							if err != nil {
+								break
+							}
+							res.Body.Close()
 						}
 					}
 				}
 			}()
 
-			response, _ := http.Get("http://192.168.0.17:8083/ZWaveAPI/Data/0")
+			response, err := httpClient.Get("http://192.168.0.17:8083/ZWaveAPI/Data/0")
+			if err != nil {
+				break
+			}
 			contents, _ := ioutil.ReadAll(response.Body)
 			response.Body.Close()
 
@@ -97,7 +121,7 @@ func (zHome *ZHome) Ticker() {
 							value := jsonParsed.Path(path).String()
 							if val.level[v] != value {
 								fmt.Printf("Device %s command class %s set to %s\n", x, v, value)
-								zHome.incoming <- fmt.Sprintf("Device %s command class %s set to %s\n", x, v, value)
+								zHome.NewIncoming(fmt.Sprintf("Device %s command class %s set to %s\n", x, v, value))
 
 								val.level[v] = value
 							}
@@ -149,13 +173,14 @@ func (zHome *ZHome) GetDevices() {
 
 		zHome.devices = append(zHome.devices, devices)
 	}
-
+	fmt.Println("Got Devices")
 	go zHome.Ticker()
+
 }
 
 func NewZHome() *ZHome {
 	zHome := &ZHome{
-		clients:  make([]*Client, 0),
+		clients:  make(map[net.Conn]*Client),
 		joins:    make(chan net.Conn),
 		incoming: make(chan string),
 		outgoing: make(chan string),
@@ -163,8 +188,8 @@ func NewZHome() *ZHome {
 		devices:  make([]*Devices, 0),
 	}
 
-	go zHome.GetDevices()
+	zHome.GetDevices()
 	zHome.Listen()
-
+	fmt.Println("Running")
 	return zHome
 }
