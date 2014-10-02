@@ -8,16 +8,18 @@ import (
 	"net"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 )
 
 type ZHome struct {
-	clients  map[net.Conn]*Client
-	joins    chan net.Conn
-	incoming chan string
-	outgoing chan string
-	dead     chan *Client
-	devices  []*Devices
+	clients    map[net.Conn]*Client
+	joins      chan net.Conn
+	incoming   chan string
+	outgoing   chan string
+	dead       chan *Client
+	devices    []*Devices
+	deviceList string
 }
 
 type Devices struct {
@@ -36,7 +38,8 @@ func (zHome *ZHome) Broadcast(data string) {
 func (zHome *ZHome) Join(connection net.Conn) {
 	client := NewClient(connection)
 	zHome.clients[connection] = client
-	client.outgoing <- "hello\n"
+	//client.outgoing <- "hello\n"
+	client.outgoing <- fmt.Sprintf("%s\n", zHome.deviceList)
 	go func() {
 		for {
 			zHome.dead <- <-client.dead
@@ -121,9 +124,17 @@ func (zHome *ZHome) Ticker() {
 							value := jsonParsed.Path(path).String()
 							if val.level[v] != value {
 								fmt.Printf("Device %s command class %s set to %s\n", x, v, value)
-								zHome.NewIncoming(fmt.Sprintf("Device %s command class %s set to %s\n", x, v, value))
+								//zHome.NewIncoming(fmt.Sprintf("Device %s command class %s set to %s\n", x, v, value))
+
+								jsonObj, _ := gabs.Consume(map[string]interface{}{})
+								jsonObj.Set(value, "update", x, v)
+								zHome.NewIncoming(fmt.Sprintf("%s\n", jsonObj.String()))
 
 								val.level[v] = value
+
+								devList, _ := gabs.ParseJSON([]byte(zHome.deviceList))
+								devList.Set(value, "devices", x, "commandClasses", v)
+								zHome.deviceList = devList.String()
 							}
 						}
 					}
@@ -149,7 +160,9 @@ func (zHome *ZHome) GetDevices() {
 	for key, value := range children {
 		devices := &Devices{}
 
-		devices.deviceType = value.Path("data.deviceTypeString.value").String()
+		temp := value.Path("data.deviceTypeString.value").String()
+		temp = strings.Replace(temp, "\"", "", -1)
+		devices.deviceType = temp
 		devices.deviceNum = strconv.Itoa(key + 1)
 
 		j := value.Path("instances.0.commandClasses").String()
@@ -173,6 +186,17 @@ func (zHome *ZHome) GetDevices() {
 
 		zHome.devices = append(zHome.devices, devices)
 	}
+
+	jsonObj, _ := gabs.Consume(map[string]interface{}{})
+	for _, value := range zHome.devices {
+		for key, val := range value.level {
+			jsonObj.Set(value.deviceType, "devices", value.deviceNum, "type")
+			jsonObj.Set(val, "devices", value.deviceNum, "commandClasses", key)
+		}
+	}
+
+	zHome.deviceList = jsonObj.String()
+
 	fmt.Println("Got Devices")
 	go zHome.Ticker()
 
