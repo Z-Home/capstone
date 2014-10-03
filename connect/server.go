@@ -20,6 +20,7 @@ type ZHome struct {
 	dead       chan *Client
 	devices    []*Devices
 	deviceList string
+	db         *DB
 }
 
 type Devices struct {
@@ -37,12 +38,36 @@ func (zHome *ZHome) Broadcast(data string) {
 
 func (zHome *ZHome) Join(connection net.Conn) {
 	client := NewClient(connection)
-	zHome.clients[connection] = client
-	//client.outgoing <- "hello\n"
-	client.outgoing <- fmt.Sprintf("%s\n", zHome.deviceList)
+	joined := make(chan bool)
+	go zHome.Auth(client, joined)
+
+	go func() {
+		select {
+		case <-joined:
+			client.outgoing <- fmt.Sprintf("%s\n", zHome.deviceList)
+			client.auth = true
+			zHome.clients[connection] = client
+			go func() {
+				for {
+					zHome.dead <- <-client.dead
+				}
+			}()
+		}
+	}()
+}
+
+func (zHome *ZHome) Auth(client *Client, joined chan bool) {
+	client.outgoing <- "User must authenticate\n"
 	go func() {
 		for {
-			zHome.dead <- <-client.dead
+			select {
+			case line := <-client.authChan:
+				if check := zHome.db.CheckPass(line); check {
+					joined <- true
+				} else {
+					client.outgoing <- "incorect login\n"
+				}
+			}
 		}
 	}()
 }
@@ -203,6 +228,8 @@ func (zHome *ZHome) GetDevices() {
 }
 
 func NewZHome() *ZHome {
+	collection := StartDB()
+
 	zHome := &ZHome{
 		clients:  make(map[net.Conn]*Client),
 		joins:    make(chan net.Conn),
@@ -210,10 +237,12 @@ func NewZHome() *ZHome {
 		outgoing: make(chan string),
 		dead:     make(chan *Client),
 		devices:  make([]*Devices, 0),
+		db:       collection,
 	}
 
 	zHome.GetDevices()
 	zHome.Listen()
+
 	fmt.Println("Running")
 	return zHome
 }

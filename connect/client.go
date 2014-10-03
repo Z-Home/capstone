@@ -11,6 +11,8 @@ type Client struct {
 	reader   *bufio.Reader
 	conn     net.Conn
 	dead     chan *Client
+	auth     bool
+	authChan chan string
 }
 
 func (client *Client) Read() {
@@ -21,7 +23,12 @@ func (client *Client) Read() {
 			break
 		}
 
-		command.ReadCommand(line)
+		if client.auth == false {
+			client.authChan <- line
+		} else {
+			command.ReadCommand(line)
+
+		}
 	}
 	client.dead <- client
 }
@@ -49,6 +56,8 @@ func NewClient(connection net.Conn) *Client {
 		reader:   reader,
 		conn:     connection,
 		dead:     make(chan *Client),
+		auth:     false,
+		authChan: make(chan string),
 	}
 
 	client.Listen()
