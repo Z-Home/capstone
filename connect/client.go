@@ -13,10 +13,10 @@ type Client struct {
 	dead     chan *Client
 	auth     bool
 	authChan chan string
+	admin    bool
 }
 
 func (client *Client) Read() {
-	command := &Command{}
 	for {
 		line, err := client.reader.ReadString('\n')
 		if err != nil {
@@ -26,8 +26,7 @@ func (client *Client) Read() {
 		if client.auth == false {
 			client.authChan <- line
 		} else {
-			command.ReadCommand(line)
-
+			ReadCommand(line, client.admin)
 		}
 	}
 	client.dead <- client
@@ -58,6 +57,7 @@ func NewClient(connection net.Conn) *Client {
 		dead:     make(chan *Client),
 		auth:     false,
 		authChan: make(chan string),
+		admin:    false,
 	}
 
 	client.Listen()

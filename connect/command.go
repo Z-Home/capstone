@@ -6,20 +6,26 @@ import (
 	"net/http"
 )
 
-type Command struct {
-	Device       string
-	CommandClass string
-	Command      string
+func ReadCommand(line string, admin bool) {
+	t := make(map[string]interface{})
+	json.Unmarshal([]byte(line), &t)
+
+	c := make(map[string]interface{})
+	json.Unmarshal([]byte(t["Json"].(string)), &c)
+
+	switch t["Type"].(string) {
+	case "Command":
+		url := fmt.Sprintf("http://192.168.0.17:8083/ZWaveAPI/Run/devices[%s].instances[0].commandClasses[%s].Set(%s)", c["Device"].(string), c["CommandClass"].(string), c["Command"].(string))
+		SendCommand(url)
+	case "NewUser":
+		if admin {
+			fmt.Println("NEWUSER")
+
+			NewUser(c["User"].(string), c["Password"].(string))
+		}
+	}
 }
 
-func (command *Command) ReadCommand(line string) {
-	var c Command
-	json.Unmarshal([]byte(line), &c)
-
-	url := fmt.Sprintf("http://192.168.0.17:8083/ZWaveAPI/Run/devices[%s].instances[0].commandClasses[%s].Set(%s)", c.Device, c.CommandClass, c.Command)
-	command.SendCommand(url)
-}
-
-func (command *Command) SendCommand(url string) {
+func SendCommand(url string) {
 	http.Get(url)
 }

@@ -20,7 +20,6 @@ type ZHome struct {
 	dead       chan *Client
 	devices    []*Devices
 	deviceList string
-	db         *DB
 }
 
 type Devices struct {
@@ -45,6 +44,9 @@ func (zHome *ZHome) Join(connection net.Conn) {
 		select {
 		case <-joined:
 			client.outgoing <- fmt.Sprintf("%s\n", zHome.deviceList)
+			if client.admin {
+				client.outgoing <- "ADMIN\n"
+			}
 			client.auth = true
 			zHome.clients[connection] = client
 			go func() {
@@ -62,9 +64,12 @@ func (zHome *ZHome) Auth(client *Client, joined chan bool) {
 		for {
 			select {
 			case line := <-client.authChan:
-				if check := zHome.db.CheckPass(line); check {
+				if check := CheckPass(line); check == 1 {
+					client.admin = true
 					joined <- true
-				} else {
+				} else if check == 2 {
+					joined <- true
+				} else if check == 3 {
 					client.outgoing <- "incorect login\n"
 				}
 			}
@@ -228,7 +233,7 @@ func (zHome *ZHome) GetDevices() {
 }
 
 func NewZHome() *ZHome {
-	collection := StartDB()
+	StartDB()
 
 	zHome := &ZHome{
 		clients:  make(map[net.Conn]*Client),
@@ -237,7 +242,6 @@ func NewZHome() *ZHome {
 		outgoing: make(chan string),
 		dead:     make(chan *Client),
 		devices:  make([]*Devices, 0),
-		db:       collection,
 	}
 
 	zHome.GetDevices()

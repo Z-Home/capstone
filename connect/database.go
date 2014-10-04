@@ -2,10 +2,13 @@ package connect
 
 import (
 	"code.google.com/p/go.crypto/scrypt"
+	"crypto/rand"
 	"encoding/json"
 	"fmt"
+	"io"
 	"labix.org/v2/mgo"
 	"labix.org/v2/mgo/bson"
+	"log"
 )
 
 const (
@@ -15,14 +18,11 @@ const (
 	DB_COLLECTION = "foo"
 )
 
-type DB struct {
-	collection *mgo.Collection
-}
-
 type User struct {
-	User string
-	Hash string
-	Salt string
+	User  string
+	Hash  string
+	Salt  string
+	Admin bool
 }
 
 type Cred struct {
@@ -30,7 +30,9 @@ type Cred struct {
 	Pass string
 }
 
-func StartDB() *DB {
+var collection *mgo.Collection
+
+func StartDB() {
 
 	url := fmt.Sprintf("mongodb://%s:%s@192.168.0.17:27017/%s", DB_USER, DB_PASS, DB_DB)
 
@@ -41,23 +43,17 @@ func StartDB() *DB {
 	//defer sess.Close()
 
 	sess.SetSafe(&mgo.Safe{})
-	collection := sess.DB(DB_DB).C(DB_COLLECTION)
-
-	db := &DB{
-		collection: collection,
-	}
-
-	return db
+	collection = sess.DB(DB_DB).C(DB_COLLECTION)
 }
 
-func (db *DB) CheckPass(cred string) bool {
+func CheckPass(cred string) int {
 
 	result := User{}
 
 	var c Cred
 	json.Unmarshal([]byte(cred), &c)
 
-	err := db.collection.Find(bson.M{"user": c.User}).One(&result)
+	err := collection.Find(bson.M{"user": c.User}).One(&result)
 	if err != nil {
 		fmt.Printf("got an error finding a doc %v\n")
 	}
@@ -70,8 +66,33 @@ func (db *DB) CheckPass(cred string) bool {
 	hash := fmt.Sprintf("%x", temp)
 
 	if hash == result.Hash {
-		return true
+		if result.Admin {
+			return 1
+		}
+		return 2
 	}
 
-	return false
+	return 3
+}
+
+func NewUser(user string, password string) {
+	salt := make([]byte, 32)
+	_, err := io.ReadFull(rand.Reader, salt)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	s := fmt.Sprintf("%x", salt)
+
+	hash, err := scrypt.Key([]byte(password), []byte(s), 16384, 8, 1, 32)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	h := fmt.Sprintf("%x", hash)
+
+	err = collection.Insert(&User{user, h, s, false})
+	if err != nil {
+		fmt.Printf("Can't insert document: %v\n", err)
+	}
 }
