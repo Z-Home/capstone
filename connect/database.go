@@ -34,7 +34,7 @@ var collection *mgo.Collection
 
 func StartDB() {
 
-	url := fmt.Sprintf("mongodb://%s:%s@192.168.0.17:27017/%s", DB_USER, DB_PASS, DB_DB)
+	url := fmt.Sprintf("mongodb://%s:%s@%s:27017/%s", DB_USER, DB_PASS, IP_ADDRESS, DB_DB)
 
 	sess, err := mgo.Dial(url)
 	if err != nil {

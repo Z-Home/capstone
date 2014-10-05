@@ -15,7 +15,7 @@ func ReadCommand(line string, admin bool) {
 
 	switch t["Type"].(string) {
 	case "Command":
-		url := fmt.Sprintf("http://192.168.0.17:8083/ZWaveAPI/Run/devices[%s].instances[0].commandClasses[%s].Set(%s)", c["Device"].(string), c["CommandClass"].(string), c["Command"].(string))
+		url := fmt.Sprintf("http://%s:8083/ZWaveAPI/Run/devices[%s].instances[0].commandClasses[%s].Set(%s)", IP_ADDRESS, c["device"].(string), c["commandClass"].(string), c["command"].(string))
 		SendCommand(url)
 	case "NewUser":
 		if admin {
@@ -23,6 +23,9 @@ func ReadCommand(line string, admin bool) {
 
 			NewUser(c["User"].(string), c["Password"].(string))
 		}
+	case "Test":
+		x := c["heat"].(string)
+		fmt.Print(x)
 	}
 }
 

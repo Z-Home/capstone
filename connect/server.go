@@ -12,6 +12,10 @@ import (
 	"time"
 )
 
+const (
+	IP_ADDRESS = "192.168.0.10"
+)
+
 type ZHome struct {
 	clients    map[net.Conn]*Client
 	joins      chan net.Conn
@@ -125,7 +129,7 @@ func (zHome *ZHome) Ticker() {
 					for _, v := range val.commandClasses {
 						if _, ok := val.level[v]; ok {
 							x := strconv.Itoa(key + 1)
-							url := fmt.Sprintf("http://192.168.0.17:8083/ZWaveAPI/Run/devices[%s].instances[0].commandClasses[%s].Get()", x, v)
+							url := fmt.Sprintf("http://%s:8083/ZWaveAPI/Run/devices[%s].instances[0].commandClasses[%s].Get()", IP_ADDRESS, x, v)
 							res, err := httpClient.Get(url)
 							if err != nil {
 								break
@@ -136,7 +140,7 @@ func (zHome *ZHome) Ticker() {
 				}
 			}()
 
-			response, err := httpClient.Get("http://192.168.0.17:8083/ZWaveAPI/Data/0")
+			response, err := httpClient.Get(fmt.Sprintf("http://%s:8083/ZWaveAPI/Data/0", IP_ADDRESS))
 			if err != nil {
 				break
 			}
@@ -146,26 +150,32 @@ func (zHome *ZHome) Ticker() {
 			jsonParsed, _ := gabs.ParseJSON(contents)
 
 			go func() {
+				var check bool
 				for key, val := range zHome.devices {
 					for _, v := range val.commandClasses {
+						check = false
 						x := strconv.Itoa(key + 1)
 						if _, ok := val.level[v]; ok {
-							path := fmt.Sprintf("devices.%s.instances.0.commandClasses.%s.data.level.value", x, v)
-							value := jsonParsed.Path(path).String()
-							if val.level[v] != value {
-								fmt.Printf("Device %s command class %s set to %s\n", x, v, value)
-								//zHome.NewIncoming(fmt.Sprintf("Device %s command class %s set to %s\n", x, v, value))
+							switch v {
+							case "37", "38":
+								path := fmt.Sprintf("devices.%s.instances.0.commandClasses.%s.data.level.value", x, v)
+								value := jsonParsed.Path(path).String()
 
-								jsonObj, _ := gabs.Consume(map[string]interface{}{})
-								jsonObj.Set(value, "update", x, v)
-								zHome.NewIncoming(fmt.Sprintf("%s\n", jsonObj.String()))
-
-								val.level[v] = value
-
-								devList, _ := gabs.ParseJSON([]byte(zHome.deviceList))
-								devList.Set(value, "devices", x, "commandClasses", v)
-								zHome.deviceList = devList.String()
+								if val.level[v] != value {
+									val.level[v] = value
+									check = true
+								}
 							}
+						}
+
+						if check {
+							jsonObj, _ := gabs.Consume(map[string]interface{}{})
+							jsonObj.Set(val.level[v], "update", x, v)
+							zHome.NewIncoming(fmt.Sprintf("%s\n", jsonObj.String()))
+
+							devList, _ := gabs.ParseJSON([]byte(zHome.deviceList))
+							devList.Set(val.level[v], "devices", x, "commandClasses", v)
+							zHome.deviceList = devList.String()
 						}
 					}
 				}
@@ -179,7 +189,7 @@ func (zHome *ZHome) Ticker() {
 }
 
 func (zHome *ZHome) GetDevices() {
-	response, _ := http.Get("http://192.168.0.17:8083/ZWaveAPI/Data/0")
+	response, _ := http.Get(fmt.Sprintf("http://%s:8083/ZWaveAPI/Data/0", IP_ADDRESS))
 	contents, _ := ioutil.ReadAll(response.Body)
 	response.Body.Close()
 
@@ -205,11 +215,62 @@ func (zHome *ZHome) GetDevices() {
 		devices.level = make(map[string]string)
 
 		i := 0
+		var path string
+		var check bool
+
 		for s, _ := range c {
+			check = false
 			devices.commandClasses[i] = s
-			path := fmt.Sprintf("instances.0.commandClasses.%s.data.level.value", s)
-			if ok := value.Path(path).String(); ok != "{}" {
-				devices.level[s] = ok
+			switch s {
+			case "37", "38":
+				path = fmt.Sprintf("instances.0.commandClasses.%s.data.level.value", s)
+				check = true
+			case "48":
+				path = fmt.Sprintf("instances.0.commandClasses.%s.data.1.level.value", s)
+				check = true
+			case "49":
+				path = fmt.Sprintf("instances.0.commandClasses.%s", s)
+				temp := value.Path(path)
+				child, _ := temp.S("data").Children()
+				sensors := make([]string, 0)
+				for _, v := range child {
+					if yes := v.Path("sensorTypeString.value").String(); yes != "{}" {
+						sensorType := yes
+						sensorType = strings.Replace(sensorType, "\"", "", -1)
+
+						sensorValue := v.Path("val.value").String()
+
+						x := fmt.Sprintf(`%s":"%s"`, sensorType, sensorValue)
+
+						sensors = append(sensors, x)
+					}
+				}
+				x := `{"sensors":"{`
+				for _, sens := range sensors {
+					x = fmt.Sprintf("%s%s,", x, sens)
+				}
+				x = strings.TrimSuffix(x, ",")
+				x = fmt.Sprintf(`%s}"}`, x)
+
+				devices.level[s] = x
+			case "66":
+				path = fmt.Sprintf("instances.0.commandClasses.%s.data.state.value", s)
+				check = true
+			case "67":
+				path = fmt.Sprintf("instances.0.commandClasses.%s.data.1.val.value", s)
+				one := value.Path(path).String()
+
+				path = fmt.Sprintf("instances.0.commandClasses.%s.data.2.val.value", s)
+				two := value.Path(path).String()
+
+				devices.level[s] = fmt.Sprintf(`{"heat":"%s","cool":"%s"}`, one, two)
+			}
+
+			if check {
+				if ok := value.Path(path).String(); ok != "{}" {
+					devices.level[s] = ok
+				}
+				check = false
 			}
 			i++
 		}
