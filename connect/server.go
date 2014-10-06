@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	IP_ADDRESS = "192.168.0.10"
+	IP_ADDRESS = "192.168.0.11"
 )
 
 type ZHome struct {
@@ -126,16 +126,14 @@ func (zHome *ZHome) Ticker() {
 		case <-ticker.C:
 			go func() {
 				for key, val := range zHome.devices {
-					for _, v := range val.commandClasses {
-						if _, ok := val.level[v]; ok {
-							x := strconv.Itoa(key + 1)
-							url := fmt.Sprintf("http://%s:8083/ZWaveAPI/Run/devices[%s].instances[0].commandClasses[%s].Get()", IP_ADDRESS, x, v)
-							res, err := httpClient.Get(url)
-							if err != nil {
-								break
-							}
-							res.Body.Close()
+					for v, _ := range val.level {
+						x := strconv.Itoa(key + 1)
+						url := fmt.Sprintf("http://%s:8083/ZWaveAPI/Run/devices[%s].instances[0].commandClasses[%s].Get()", IP_ADDRESS, x, v)
+						res, err := httpClient.Get(url)
+						if err != nil {
+							break
 						}
+						res.Body.Close()
 					}
 				}
 			}()
@@ -152,23 +150,96 @@ func (zHome *ZHome) Ticker() {
 			go func() {
 				var check bool
 				for key, val := range zHome.devices {
-					for _, v := range val.commandClasses {
-						check = false
+					for v, lev := range val.level {
 						x := strconv.Itoa(key + 1)
-						if _, ok := val.level[v]; ok {
-							switch v {
-							case "37", "38":
-								path := fmt.Sprintf("devices.%s.instances.0.commandClasses.%s.data.level.value", x, v)
-								value := jsonParsed.Path(path).String()
+						var value string
+						check = false
+						switch v {
+						case "37", "38":
+							path := fmt.Sprintf("devices.%s.instances.0.commandClasses.%s.data.level.value", x, v)
+							value = jsonParsed.Path(path).String()
+							check = true
+						case "48":
+							path := fmt.Sprintf("devices.%s.instances.0.commandClasses.%s.data.1.level.value", x, v)
+							value = jsonParsed.Path(path).String()
+							check = true
+						case "49":
+							j, _ := gabs.ParseJSON([]byte(lev))
+							t := j.Path("sensors").String()
 
-								if val.level[v] != value {
-									val.level[v] = value
-									check = true
+							c := make(map[string]interface{})
+							json.Unmarshal([]byte(t), &c)
+
+							path := fmt.Sprintf("devices.%s.instances.0.commandClasses.%s", x, v)
+							temp := jsonParsed.Path(path)
+							child, _ := temp.S("data").Children()
+
+							q := make(map[string]string)
+							for _, v := range child {
+								if yes := v.Path("sensorTypeString.value").String(); yes != "{}" {
+									sensorType := yes
+									sensorType = strings.Replace(sensorType, "\"", "", -1)
+
+									sensorValue := v.Path("val.value").String()
+
+									q[sensorType] = sensorValue
 								}
 							}
+
+							change := false
+							for o, p := range q {
+								for a, b := range c {
+									if o == a {
+										if p != b {
+											change = true
+										}
+									}
+								}
+							}
+
+							if change {
+								str := `{"sensors":{`
+								for o, p := range q {
+									for a, _ := range c {
+										if o == a {
+											str = fmt.Sprintf(`%s"%s":"%s",`, str, a, p)
+										}
+									}
+								}
+								str = strings.TrimSuffix(str, ",")
+								str = fmt.Sprintf(`%s}}`, str)
+
+								value = str
+							} else {
+								value = lev
+							}
+							check = true
+						case "66":
+							path := fmt.Sprintf("devices.%s.instances.0.commandClasses.%s.data.state.value", x, v)
+							value = jsonParsed.Path(path).String()
+							check = true
+						case "67":
+							c := make(map[string]interface{})
+							json.Unmarshal([]byte(lev), &c)
+
+							path := fmt.Sprintf("devices.%s.instances.0.commandClasses.%s.data.1.val.value", x, v)
+							one := jsonParsed.Path(path).String()
+
+							path = fmt.Sprintf("devices.%s.instances.0.commandClasses.%s.data.2.val.value", x, v)
+							two := jsonParsed.Path(path).String()
+
+							if c["heat"] != one || c["cool"] != two {
+								value = fmt.Sprintf(`{"heat":"%s","cool":"%s"}`, one, two)
+							} else {
+								value = lev
+							}
+
+							check = true
 						}
 
-						if check {
+						if value != lev && check == true {
+							val.level[v] = value
+
 							jsonObj, _ := gabs.Consume(map[string]interface{}{})
 							jsonObj.Set(val.level[v], "update", x, v)
 							zHome.NewIncoming(fmt.Sprintf("%s\n", jsonObj.String()))
@@ -240,17 +311,17 @@ func (zHome *ZHome) GetDevices() {
 
 						sensorValue := v.Path("val.value").String()
 
-						x := fmt.Sprintf(`%s":"%s"`, sensorType, sensorValue)
+						x := fmt.Sprintf(`"%s":"%s"`, sensorType, sensorValue)
 
 						sensors = append(sensors, x)
 					}
 				}
-				x := `{"sensors":"{`
+				x := `{"sensors":{`
 				for _, sens := range sensors {
 					x = fmt.Sprintf("%s%s,", x, sens)
 				}
 				x = strings.TrimSuffix(x, ",")
-				x = fmt.Sprintf(`%s}"}`, x)
+				x = fmt.Sprintf(`%s}}`, x)
 
 				devices.level[s] = x
 			case "66":
