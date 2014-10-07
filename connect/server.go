@@ -125,10 +125,9 @@ func (zHome *ZHome) Ticker() {
 		select {
 		case <-ticker.C:
 			go func() {
-				for key, val := range zHome.devices {
+				for _, val := range zHome.devices {
 					for v, _ := range val.level {
-						x := strconv.Itoa(key + 1)
-						url := fmt.Sprintf("http://%s:8083/ZWaveAPI/Run/devices[%s].instances[0].commandClasses[%s].Get()", IP_ADDRESS, x, v)
+						url := fmt.Sprintf("http://%s:8083/ZWaveAPI/Run/devices[%s].instances[0].commandClasses[%s].Get()", IP_ADDRESS, val.deviceNum, v)
 						res, err := httpClient.Get(url)
 						if err != nil {
 							break
