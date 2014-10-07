@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	IP_ADDRESS = "192.168.0.11"
+	IP_ADDRESS = "192.168.0.17"
 )
 
 type ZHome struct {
