@@ -149,9 +149,9 @@ func (zHome *ZHome) Ticker() {
 
 			go func() {
 				var check bool
-				for key, val := range zHome.devices {
+				for _, val := range zHome.devices {
 					for v, lev := range val.level {
-						x := strconv.Itoa(key + 1)
+						x := val.deviceNum
 						var value string
 						check = false
 						switch v {
@@ -268,13 +268,8 @@ func (zHome *ZHome) GetDevices() {
 
 	children, _ := jsonParsed.S("devices").Children()
 
-	for key, value := range children {
+	for _, value := range children {
 		devices := &Devices{}
-
-		temp := value.Path("data.deviceTypeString.value").String()
-		temp = strings.Replace(temp, "\"", "", -1)
-		devices.deviceType = temp
-		devices.deviceNum = strconv.Itoa(key + 1)
 
 		j := value.Path("instances.0.commandClasses").String()
 
@@ -288,6 +283,7 @@ func (zHome *ZHome) GetDevices() {
 		i := 0
 		var path string
 		var check bool
+		add := false
 
 		for s, _ := range c {
 			check = false
@@ -324,6 +320,7 @@ func (zHome *ZHome) GetDevices() {
 				x = fmt.Sprintf(`%s}}`, x)
 
 				devices.level[s] = x
+				add = true
 			case "66":
 				path = fmt.Sprintf("instances.0.commandClasses.%s.data.state.value", s)
 				check = true
@@ -335,18 +332,28 @@ func (zHome *ZHome) GetDevices() {
 				two := value.Path(path).String()
 
 				devices.level[s] = fmt.Sprintf(`{"heat":"%s","cool":"%s"}`, one, two)
+				add = true
 			}
 
 			if check {
 				if ok := value.Path(path).String(); ok != "{}" {
 					devices.level[s] = ok
+					add = true
 				}
 				check = false
 			}
 			i++
 		}
 
-		zHome.devices = append(zHome.devices, devices)
+		if add {
+			temp := value.Path("data.deviceTypeString.value").String()
+			temp = strings.Replace(temp, "\"", "", -1)
+			devices.deviceType = temp
+			temp = value.Path("data.name").String()
+			num := strings.Split(temp, ".")
+			devices.deviceNum = num[1]
+			zHome.devices = append(zHome.devices, devices)
+		}
 	}
 
 	jsonObj, _ := gabs.Consume(map[string]interface{}{})
@@ -358,7 +365,7 @@ func (zHome *ZHome) GetDevices() {
 	}
 
 	zHome.deviceList = jsonObj.String()
-
+	fmt.Println(zHome.deviceList)
 	fmt.Println("Got Devices")
 	go zHome.Ticker()
 
