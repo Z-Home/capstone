@@ -7,7 +7,6 @@ import (
 	"io/ioutil"
 	"net"
 	"net/http"
-	"strconv"
 	"strings"
 	"time"
 )
@@ -364,7 +363,7 @@ func (zHome *ZHome) GetDevices() {
 	}
 
 	zHome.deviceList = jsonObj.String()
-	fmt.Println(zHome.deviceList)
+
 	fmt.Println("Got Devices")
 	go zHome.Ticker()
 
