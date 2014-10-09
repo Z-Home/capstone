@@ -26,7 +26,7 @@ func (client *Client) Read() {
 		if client.auth == false {
 			client.authChan <- line
 		} else {
-			ReadCommand(line, client.admin)
+			go ReadCommand(line, client.admin)
 		}
 	}
 	client.dead <- client

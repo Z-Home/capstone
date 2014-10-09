@@ -46,7 +46,7 @@ func (zHome *ZHome) Join(connection net.Conn) {
 	go func() {
 		select {
 		case <-joined:
-			client.outgoing <- fmt.Sprintf("%s\n", zHome.deviceList)
+			client.outgoing <- fmt.Sprintf("{\"Type\":1,\"Message\":%s}\n", zHome.deviceList)
 			if client.admin {
 				client.outgoing <- "ADMIN\n"
 			}
@@ -62,7 +62,8 @@ func (zHome *ZHome) Join(connection net.Conn) {
 }
 
 func (zHome *ZHome) Auth(client *Client, joined chan bool) {
-	client.outgoing <- "User must authenticate\n"
+	x := `{"Type":0,"Message":""}`
+	client.outgoing <- fmt.Sprintf("%s\n", x)
 	go func() {
 		for {
 			select {
@@ -239,8 +240,10 @@ func (zHome *ZHome) Ticker() {
 							val.level[v] = value
 
 							jsonObj, _ := gabs.Consume(map[string]interface{}{})
-							jsonObj.Set(val.level[v], "update", x, v)
-							zHome.NewIncoming(fmt.Sprintf("%s\n", jsonObj.String()))
+							jsonObj.Set(x, "update", "device")
+							jsonObj.Set(v, "update", "commandClass")
+							jsonObj.Set(val.level[v], "update", "value")
+							zHome.NewIncoming(fmt.Sprintf("{\"Type\":2,\"Message\":%s}\n", jsonObj.String()))
 
 							devList, _ := gabs.ParseJSON([]byte(zHome.deviceList))
 							devList.Set(val.level[v], "devices", x, "commandClasses", v)
