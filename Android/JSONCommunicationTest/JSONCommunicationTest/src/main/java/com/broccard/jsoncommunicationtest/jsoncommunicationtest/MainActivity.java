@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
     EditText editTextAddress, editTextPort, editTextDevice, editTextCommandClass, editTextCommand;
     Button buttonConnect, buttonClear, buttonSendCommand;
     boolean hasCommandButtonBeenPressed = false;
+    enum ServerRespTypes { AUTHENTICATE, DEVICE_ACCESS, UPDATE }
 
     final Handler handler = new Handler();
 
@@ -57,10 +58,10 @@ public class MainActivity extends Activity {
                 hasCommandButtonBeenPressed = true;
                 if(editTextCommand.getText() != null && editTextCommandClass.getText() != null && editTextCommand.getText() != null){
                     try {
-                        json.put("Device", editTextDevice.getText());
-                        json.put("CommandClass", editTextCommandClass.getText());
-                        json.put("Command", editTextCommand.getText());
-                        System.out.println("Send Command Button clicked. JSON is: " + json.toString());
+                        json.put("device", editTextDevice.getText());
+                        json.put("commandClass", editTextCommandClass.getText());
+                        json.put("command", editTextCommand.getText());
+                        //System.out.println("Send Command Button clicked. JSON is: " + json.toString());
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -92,9 +93,7 @@ public class MainActivity extends Activity {
         String response = "";
         Socket socket = null;
         final Handler clientThreadHandler = new Handler();
-
-
-
+        String fromServerString = "";
 
         MyClientTask(String addr, int port){
             dstAddress = addr;
@@ -108,39 +107,131 @@ public class MainActivity extends Activity {
             try {
                 //Create socket connection
                 socket = new Socket(dstAddress, dstPort);
+                BufferedReader in = new BufferedReader(
+                        new InputStreamReader(socket.getInputStream()));
+
+                String fromUser = "";
+                JSONObject fromServerJson = new JSONObject();
+                boolean isLoggedIn = false;
 
                 while(socket.isConnected()){
-                    if(hasCommandButtonBeenPressed){
+                    System.out.println("LOOP");
+                    if(((fromServerString = in.readLine()) != null)){
+                        System.out.println("GOT SERVER COMMUNICATION");
+                        handler.post(new Runnable(){
+                            public void run(){
+                                //Update your view here
+                                textResponse.setText(fromServerString);
+                            }
+                        });
+                        System.out.println("Server: " + fromServerString);
+
+                        try {
+                            fromServerJson = new JSONObject(fromServerString);
+                            int resp = fromServerJson.getInt("Type");
+                            switch(resp){
+                                //AUTHENTICATE
+                                case 0:
+                                    System.out.println("0: LOGGING IN");
+                                    login();
+                                    break;
+                                //DEVICE ACCESS
+                                case 1:
+                                    System.out.println("1: LOGGED IN");
+                                    isLoggedIn = true;
+                                    break;
+                                //UPDATE
+                                case 2:
+                                    System.out.println("2: UPDATE");
+                                    break;
+                                default:
+                                    System.out.println("DEFAULT");
+                                    break;
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    //System.out.println("ACCEPTING USER INPUT. hasCommandButtonBeenPressed: " + hasCommandButtonBeenPressed + ", isLoggedIn: " + isLoggedIn);
+
+                    if(hasCommandButtonBeenPressed && isLoggedIn) {
                         System.out.println("CommandButtonPressed");
                         sendMessage(json);
                         hasCommandButtonBeenPressed = false;
                     }
                 }
+//                if(socket.isConnected()){
+//                    login();
+//                }
+//
+////                ByteArrayOutputStream byteArrayOutputStream =
+////                        new ByteArrayOutputStream(1024);
+////                byte[] buffer = new byte[1024];
+////
+////                int bytesRead;
+////                InputStream inputStream = socket.getInputStream();
+////                inputStream.read();
+////
+////                //Read responses from server and set the text to the response when received
+////                while ((bytesRead = inputStream.read(buffer)) != -1){
+////                    byteArrayOutputStream.write(buffer, 0, bytesRead);
+////                    response = byteArrayOutputStream.toString("UTF-8");
+////                    handler.post(new Runnable(){
+////                        public void run(){
+////                            //Update your view here
+////                            textResponse.setText(response);
+////                        }
+////                    });
+////                }
+//
+//                while(socket.isConnected()){
+//                    if(hasCommandButtonBeenPressed) {
+//                        System.out.println("CommandButtonPressed");
+//                        sendMessage(json);
+//                        hasCommandButtonBeenPressed = false;
+//
+////                    }else{
+////                        //Read responses from server and set the text to the response when received
+////                        while ((bytesRead = inputStream.read(buffer)) != -1){
+////                            byteArrayOutputStream.write(buffer, 0, bytesRead);
+////                            response = byteArrayOutputStream.toString("UTF-8");
+////                            handler.post(new Runnable(){
+////                                public void run(){
+////                                    //Update your view here
+////                                    textResponse.setText(response);
+////                                }
+////                            });
+////                        }
+//
+//                    }
+//                }
                 //setup stream to receive responses from server
-                ByteArrayOutputStream byteArrayOutputStream =
-                        new ByteArrayOutputStream(1024);
-                byte[] buffer = new byte[1024];
-
-                int bytesRead;
-                InputStream inputStream = socket.getInputStream();
-
-
-    
-    /*
-     * notice:
-     * inputStream.read() will block if no data return
-     */
-                //Read responses from server and set the text to the response when received
-                while ((bytesRead = inputStream.read(buffer)) != -1){
-                    byteArrayOutputStream.write(buffer, 0, bytesRead);
-                    response = byteArrayOutputStream.toString("UTF-8");
-                    handler.post(new Runnable(){
-                        public void run(){
-                            //Update your view here
-                            textResponse.setText(response);
-                        }
-                    });
-                }
+//                ByteArrayOutputStream byteArrayOutputStream =
+//                        new ByteArrayOutputStream(1024);
+//                byte[] buffer = new byte[1024];
+//
+//                int bytesRead;
+//                InputStream inputStream = socket.getInputStream();
+//
+//
+//
+//    /*
+//     * notice:
+//     * inputStream.read() will block if no data return
+//     */
+//                //Read responses from server and set the text to the response when received
+//                while ((bytesRead = inputStream.read(buffer)) != -1){
+//                    byteArrayOutputStream.write(buffer, 0, bytesRead);
+//                    response = byteArrayOutputStream.toString("UTF-8");
+//                    handler.post(new Runnable(){
+//                        public void run(){
+//                            //Update your view here
+//                            textResponse.setText(response);
+//                        }
+//                    });
+//                }
             } catch (UnknownHostException e) {
                 e.printStackTrace();
                 response = "UnknownHostException: " + e.toString();
@@ -160,12 +251,42 @@ public class MainActivity extends Activity {
             return null;
         }
 
+        private void login() {
+            JSONObject jsonLogin = new JSONObject();
+            JSONObject jsonLoginInfo = new JSONObject();
+            try{
+               jsonLoginInfo.put("User", "Bryan");
+               jsonLoginInfo.put("Pass", "password");
+            }catch(JSONException e){
+                e.printStackTrace();
+            }
+
+            try{
+                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(
+                        socket.getOutputStream()));
+                out.write(jsonLoginInfo.toString());
+                out.newLine();
+                out.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
         private void sendMessage(JSONObject json) {
             System.out.println("Sending Message. JSON is: " + json.toString());
+            JSONObject jsonToSend = new JSONObject();
+
+            try {
+                jsonToSend.put("Type", "Command");
+                jsonToSend.put("Json", json.toString());
+                System.out.println("Sending JSON: " + jsonToSend.toString());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             try	{
                 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(
                         socket.getOutputStream()));
-                out.write(json.toString());
+                out.write(jsonToSend.toString());
                 out.newLine();
                 out.flush();
             } catch (Exception e) {
