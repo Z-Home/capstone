@@ -31,4 +31,9 @@ public class Sensor implements Device {
     public JSONObject command(String cc, String value) {
         return null;
     }
+
+    @Override
+    public String[] formatUIinfo(String cc, String value) {
+        return null;
+    }
 }

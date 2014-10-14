@@ -12,4 +12,5 @@ public interface Device {
     HashMap<String,String> getValues();
     void updateValues(String cc, String value);
     JSONObject command(String cc, String value);
+    String[] formatUIinfo(String cc, String value);
 }

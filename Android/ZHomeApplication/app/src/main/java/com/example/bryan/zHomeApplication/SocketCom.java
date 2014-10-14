@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.HashMap;
 
 /**
  * Created by Bryan on 10/8/2014.
@@ -23,6 +24,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
     private BufferedReader in;
     private PrintWriter out;
     private MyActivity activity;
+    private HashMap<String,Device> deviceHashMap;
 
     public SocketCom(String address, int port, MyActivity activity){
         setAddress(address);
@@ -32,6 +34,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
 
     private void setActivity(MyActivity activity){
         this.activity = activity;
+        deviceHashMap = this.activity.deviceHashMap;
     }
 
     private void setAddress(String address) {
@@ -70,7 +73,8 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                             break;
                         case 2://UPDATE
                             System.out.println("2: UPDATE");
-                            publishProgress(fromServerJson.getJSONObject("Message").getJSONObject("update").getString("value"));
+                            String[] info = updateHashMap(fromServerJson.getJSONObject("Message").getJSONObject("update"));
+                            publishProgress(info);
                             break;
                         default:
                             System.out.println("DEFAULT");
@@ -98,7 +102,24 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
 
     @Override
     protected void onProgressUpdate(String... values) {
-        activity.update(values[0]);
+        activity.update(values);
+    }
+
+    private String[] updateHashMap(JSONObject update){
+        String[] values = new String[3];
+        String dev, cc, c;
+
+        try {
+            dev = update.getString("device");
+            cc = update.getString("commandClass");
+            c = update.getString("command");
+
+            values = deviceHashMap.get(dev).formatUIinfo(cc, c);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return values;
     }
 
     private void login() {

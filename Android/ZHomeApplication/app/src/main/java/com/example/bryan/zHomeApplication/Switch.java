@@ -38,6 +38,15 @@ public class Switch implements Device {
     }
 
     @Override
+    public String[] formatUIinfo(String cc, String value){
+        updateValues(cc, value);
+
+        String values[] = {this.devNum, cc, value};
+
+        return values;
+    }
+
+    @Override
     public JSONObject command(String cc, String value) {
         JSONObject jsonToSend, json;
         jsonToSend = new JSONObject();

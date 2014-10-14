@@ -89,8 +89,8 @@ public class MyActivity extends Activity {
         socketCom.sendMessage(command);
     }
 
-    public void update(String con){
-        connect.setText(con);
+    public void update(String[] values){
+
     }
 
     public void createDevices(JSONObject devices){
@@ -115,16 +115,10 @@ public class MyActivity extends Activity {
 
                 Device device = null;
                 if (cc.contains("66")){
-                    System.out.println("Thermostat");
-                    System.out.println(map);
                     device = new Thermostat(map, innerKeys);
                 }else if (cc.contains("37") || cc.contains("38")){
-                    System.out.println("Switch");
-                    System.out.println(map);
                     device = new Switch(map, innerKeys);
                 }else if (cc.contains("48") || cc.contains("49")){
-                    System.out.println("Sensor");
-                    System.out.println(map);
                     device = new Sensor(map, innerKeys);
                 }
 
