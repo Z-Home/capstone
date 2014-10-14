@@ -24,7 +24,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
     private PrintWriter out;
     private MyActivity activity;
 
-    SocketCom(String address, int port, MyActivity activity){
+    public SocketCom(String address, int port, MyActivity activity){
         setAddress(address);
         setPort(port);
         setActivity(activity);

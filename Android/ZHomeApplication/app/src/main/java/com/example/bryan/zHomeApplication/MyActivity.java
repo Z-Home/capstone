@@ -15,7 +15,10 @@ import android.net.wifi.WifiManager;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 
 public class MyActivity extends Activity {
@@ -23,6 +26,7 @@ public class MyActivity extends Activity {
     TextView connect;
 
     private SocketCom socketCom;
+    public HashMap<String, Device> deviceHashMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,41 +80,13 @@ public class MyActivity extends Activity {
     }
 
     public void send_command(View view) {
-        JSONObject jsonToSend, json;
-        jsonToSend = new JSONObject();
-        json = new JSONObject();
-
-        try {
-            json.put("device", "3");
-            json.put("commandClass", "37");
-            json.put("command", "0");
-            jsonToSend.put("Type", "Command");
-            jsonToSend.put("Json", json.toString());
-            System.out.println("Sending JSON: " + jsonToSend.toString());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        socketCom.sendMessage(jsonToSend);
+        JSONObject command = deviceHashMap.get("3").command("37","0");
+        socketCom.sendMessage(command);
     }
 
     public void light_on(View view) {
-        JSONObject jsonToSend, json;
-        jsonToSend = new JSONObject();
-        json = new JSONObject();
-
-        try {
-            json.put("device", "3");
-            json.put("commandClass", "37");
-            json.put("command", "1");
-            jsonToSend.put("Type", "Command");
-            jsonToSend.put("Json", json.toString());
-            System.out.println("Sending JSON: " + jsonToSend.toString());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        socketCom.sendMessage(jsonToSend);
+        JSONObject command = deviceHashMap.get("3").command("37","1");
+        socketCom.sendMessage(command);
     }
 
     public void update(String con){
@@ -120,19 +96,39 @@ public class MyActivity extends Activity {
     public void createDevices(JSONObject devices){
         try {
             Iterator<String> keys = devices.keys();
+            deviceHashMap = new HashMap<String, Device>();
             while(keys.hasNext()) {
                 String innerKeys = keys.next();
 
-                String x = devices.getJSONObject(innerKeys).getString("type");
-                System.out.println(x);
-
                 JSONObject commandClasses = devices.getJSONObject(innerKeys).getJSONObject("commandClasses");
                 Iterator<String> classes = commandClasses.keys();
+
+                List<String> cc = new ArrayList<String>();
+                HashMap<String, String> map = new HashMap<String, String>();
+
                 while(classes.hasNext()){
                     String cla = classes.next();
                     String val = commandClasses.getString(cla);
-                    System.out.println(cla + " - " + val);
+                    cc.add(cla);
+                    map.put(cla, val);
                 }
+
+                Device device = null;
+                if (cc.contains("66")){
+                    System.out.println("Thermostat");
+                    System.out.println(map);
+                    device = new Thermostat(map, innerKeys);
+                }else if (cc.contains("37") || cc.contains("38")){
+                    System.out.println("Switch");
+                    System.out.println(map);
+                    device = new Switch(map, innerKeys);
+                }else if (cc.contains("48") || cc.contains("49")){
+                    System.out.println("Sensor");
+                    System.out.println(map);
+                    device = new Sensor(map, innerKeys);
+                }
+
+                deviceHashMap.put(innerKeys, device);
             }
         } catch (JSONException e) {
             e.printStackTrace();
