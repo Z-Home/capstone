@@ -15,4 +15,12 @@
         android:orderInCategory="101"
         android:icon="@drawable/ic_launcher"
         />
+
+    <item android:id="@+id/go_to_test"
+        android:title="@string/options_test_text"
+        android:showAsAction="never"
+        android:orderInCategory="102"
+        android:icon="@drawable/ic_launcher"
+        />
+
 </menu>

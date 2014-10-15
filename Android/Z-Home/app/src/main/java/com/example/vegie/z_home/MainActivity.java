@@ -7,12 +7,13 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Intent;
 
 
 public class MainActivity extends Activity {
 
     // Declare Tab Variables
-    ActionBar.Tab Tab1, Tab2, Tab3, Tab4;
+    ActionBar.Tab Tab1, Tab2, Tab3, Tab4, Tab5;
     Fragment fragmentTab1 = new FavoritesTab();
     Fragment fragmentTab2 = new RoomsTab();
     Fragment fragmentTab3 = new ScenariosTab();
@@ -75,7 +76,11 @@ public class MainActivity extends Activity {
         } else if (id == R.id.exit_the_app) {
             finish();
             return true;
+        } else if (id == R.id.go_to_test){
+            Intent intent = new Intent(this, TestActivity.class);
+            startActivity(intent);
         }
+
 
         return super.onOptionsItemSelected(item);
     }
