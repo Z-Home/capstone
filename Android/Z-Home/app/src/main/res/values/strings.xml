@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Z-Home</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="buttonString">Go to other page</string>
+    <string name="title_activity_my_activity3">MyActivity3</string>
+    <string name="title_activity_favorites">Favorites</string>
+    <string name="options_exit_text">Exit</string>
+
+</resources>
