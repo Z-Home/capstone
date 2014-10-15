@@ -22,17 +22,17 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
     private int dstPort;
     private Socket socket;
     private BufferedReader in;
-    private PrintWriter out;
-    private TestActivity activity;
+    private static PrintWriter out;
+    private MainActivity activity;
     private HashMap<String,Device> deviceHashMap;
 
-    public SocketCom(String address, int port, TestActivity activity){
+    public SocketCom(String address, int port, MainActivity activity){
         setAddress(address);
         setPort(port);
         setActivity(activity);
     }
 
-    private void setActivity(TestActivity activity){
+    private void setActivity(MainActivity activity){
         this.activity = activity;
         deviceHashMap = this.activity.deviceHashMap;
     }
@@ -134,7 +134,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
         out.println(jsonLoginInfo.toString());
     }
 
-    public void sendMessage(JSONObject json) {
+    public static void sendMessage(JSONObject json) {
         out.println(json.toString());
     }
 }

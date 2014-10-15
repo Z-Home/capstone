@@ -80,7 +80,7 @@ public class MyActivity extends Activity {
     }
 
     public void send_command(View view) {
-        JSONObject command = deviceHashMap.get("3").command("37","0");
+        JSONObject command = deviceHashMap.get("6").command("64","2");
         socketCom.sendMessage(command);
     }
 
@@ -103,25 +103,15 @@ public class MyActivity extends Activity {
                 JSONObject commandClasses = devices.getJSONObject(innerKeys).getJSONObject("commandClasses");
                 Iterator<String> classes = commandClasses.keys();
 
-                List<String> cc = new ArrayList<String>();
                 HashMap<String, String> map = new HashMap<String, String>();
 
                 while(classes.hasNext()){
                     String cla = classes.next();
                     String val = commandClasses.getString(cla);
-                    cc.add(cla);
                     map.put(cla, val);
                 }
 
-                Device device = null;
-                if (cc.contains("66")){
-                    device = new Thermostat(map, innerKeys);
-                }else if (cc.contains("37") || cc.contains("38")){
-                    device = new Switch(map, innerKeys);
-                }else if (cc.contains("48") || cc.contains("49")){
-                    device = new Sensor(map, innerKeys);
-                }
-
+                Device device = new Device(map, innerKeys);
                 deviceHashMap.put(innerKeys, device);
             }
         } catch (JSONException e) {
