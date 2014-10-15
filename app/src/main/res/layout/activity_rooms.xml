@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     android:background="#ff7cff76">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Fragment2" />
+        android:src="@drawable/logo" />
 
 </RelativeLayout>
