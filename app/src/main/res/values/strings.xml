@@ -7,6 +7,6 @@
     <string name="buttonString">Go to other page</string>
     <string name="title_activity_my_activity3">MyActivity3</string>
     <string name="title_activity_favorites">Favorites</string>
-    <string name="title_activity_my">MyActivity</string>
+    <string name="options_exit_text">Exit</string>
 
 </resources>
