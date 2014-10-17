@@ -49,10 +49,10 @@ public class MainActivity extends Activity {
 
         // Set Tab Icon and Titles
         //Tab1 = actionBar.newTab().setIcon(R.drawable.tab1);//ICON
-        Tab1 = actionBar.newTab().setText("Favorites");
-        Tab2 = actionBar.newTab().setText("Rooms");
-        Tab3 = actionBar.newTab().setText("Scenarios");
-        Tab4 = actionBar.newTab().setText("Summary");
+        Tab1 = actionBar.newTab().setIcon(R.drawable.favorites);
+        Tab2 = actionBar.newTab().setIcon(R.drawable.rooms);
+        Tab3 = actionBar.newTab().setIcon(R.drawable.scenarios);
+        Tab4 = actionBar.newTab().setIcon(R.drawable.summary);
         Tab5 = actionBar.newTab().setText("Test");
 
         // Set Tab Listeners
@@ -87,7 +87,7 @@ public class MainActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_add) {
 
             DialogFragment myFragment = new MyDialogFragment();
 

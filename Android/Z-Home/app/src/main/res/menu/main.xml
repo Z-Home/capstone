@@ -2,11 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.vegie.z_home.MainActivity" >
 
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+    <item android:id="@+id/action_add"
+        android:title="@string/action_add"
         android:orderInCategory="100"
-        android:showAsAction="ifRoom|withText"
-        android:icon="@drawable/logo"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/add"
         />
 
     <item android:id="@+id/exit_the_app"

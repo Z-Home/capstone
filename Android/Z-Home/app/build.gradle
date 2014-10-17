@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.vegie.z_home"
-        minSdkVersion 11
+        minSdkVersion 14
         targetSdkVersion 20
         versionCode 1
         versionName "1.0"
