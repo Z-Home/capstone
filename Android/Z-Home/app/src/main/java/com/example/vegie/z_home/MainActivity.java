@@ -166,6 +166,9 @@ public class MainActivity extends Activity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        TestTab fragment = (TestTab) getFragmentManager().findFragmentById(R.id.activityTest);
+        fragment.fillUI();
     }
 
     public static SocketCom getSocketCom(){
