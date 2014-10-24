@@ -69,22 +69,21 @@ public final class R {
         public static final int thermostat=0x7f020030;
     }
     public static final class id {
-        public static final int action_settings=0x7f090010;
-        public static final int button2=0x7f09000d;
-        public static final int button3=0x7f09000c;
+        public static final int action_settings=0x7f09000f;
         public static final int content_frame=0x7f090001;
         public static final int drawer_layout=0x7f090000;
         public static final int favoritesImageView=0x7f090003;
         public static final int favoritesListView=0x7f090005;
         public static final int favoritesTextView=0x7f090004;
-        public static final int imageViewIcon=0x7f09000e;
+        public static final int fragment_test=0x7f09000b;
+        public static final int imageViewIcon=0x7f09000d;
+        public static final int layout=0x7f09000c;
         public static final int left_drawer=0x7f090002;
         public static final int lightsBtn=0x7f090008;
         public static final int securityBtn=0x7f090009;
         public static final int sensorBtn=0x7f09000a;
         public static final int summaryLayout=0x7f090007;
-        public static final int textView=0x7f09000b;
-        public static final int textViewName=0x7f09000f;
+        public static final int textViewName=0x7f09000e;
         public static final int txtLabel=0x7f090006;
     }
     public static final class layout {

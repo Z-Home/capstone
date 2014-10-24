@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.Menu;
@@ -15,7 +16,9 @@ import android.widget.ListView;
 
 import com.miz.pdb.R;
 
-public class MainActivity extends Activity {
+import java.util.HashMap;;
+
+public class MainActivity extends FragmentActivity {
 
 	// declare properties
     private String[] mNavigationDrawerItemTitles;
@@ -29,12 +32,14 @@ public class MainActivity extends Activity {
  
     // used to store app title
     private CharSequence mTitle;
+
+    public static HashMap<String, Device> deviceHashMap = new HashMap<String, Device>();
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 		// for proper titles
 		mTitle = mDrawerTitle = getTitle();
 		
@@ -101,6 +106,10 @@ public class MainActivity extends Activity {
             // on first time display view for first nav item
         	selectItem(0);
         }
+
+        SocketCom.context = this;
+        SocketCom socketCom = SocketCom.getInstance();
+        socketCom.conn();
 	}
 
 	@Override
@@ -189,5 +198,16 @@ public class MainActivity extends Activity {
     public void setTitle(CharSequence title) {
         mTitle = title;
         getActionBar().setTitle(mTitle);
+    }
+
+    public void update(String[] values){
+//        if(values[0].equals("Started")){
+////            TestFragment fragment = (TestFragment)getFragmentManager().findFragmentById(R.id.fragment_test);
+////            fragment.fillUI();
+//        }
+    }
+
+    public static HashMap<String,Device> getHashMap(){
+        return deviceHashMap;
     }
 }
