@@ -19,8 +19,6 @@ func ReadCommand(line string, admin bool) {
 		SendCommand(url)
 	case "NewUser":
 		if admin {
-			fmt.Println("NEWUSER")
-
 			NewUser(c["User"].(string), c["Password"].(string))
 		}
 	case "Test":
