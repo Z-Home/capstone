@@ -16,7 +16,7 @@ import android.widget.ListView;
 
 import com.miz.pdb.R;
 
-import java.util.HashMap;;
+import java.util.HashMap;
 
 public class MainActivity extends FragmentActivity {
 
@@ -26,6 +26,13 @@ public class MainActivity extends FragmentActivity {
     private ListView mDrawerList;
 
     private ActionBarDrawerToggle mDrawerToggle;
+
+    private Fragment summaryFragment;
+    private Fragment favoritesFragment;
+    private Fragment scenariosFragment;
+    private Fragment testFragment;
+    private Fragment roomsFragment;
+    private Fragment currentFragment;
 
     // nav drawer title
     private CharSequence mDrawerTitle;
@@ -154,33 +161,46 @@ public class MainActivity extends FragmentActivity {
     private void selectItem(int position) {
     	
         // update the main content by replacing fragments
-    	
-        Fragment fragment = null;
-        
+
         switch (position) {
         case 0:
-            fragment = new com.pdb.zhome.FavoritesFragment();
+            if (favoritesFragment==null)
+                favoritesFragment = new com.pdb.zhome.FavoritesFragment();
+
+            currentFragment = favoritesFragment;
             break;
         case 1:
-            fragment = new RoomsFragment();
+            if (roomsFragment==null)
+                roomsFragment = new RoomsFragment();
+
+            currentFragment = roomsFragment;
             break;
         case 2:
-            fragment = new ScenariosFragment();
+            if (scenariosFragment==null)
+                scenariosFragment = new ScenariosFragment();
+
+            currentFragment = scenariosFragment;
             break;
         case 3:
-            fragment = new SummaryFragment();
+            if (summaryFragment==null)
+                summaryFragment = new SummaryFragment();
+
+            currentFragment = summaryFragment;
             break;
         case 4:
-            fragment = new TestFragment();
+            if (testFragment==null)
+                testFragment = new TestFragment();
+
+            currentFragment = testFragment;
             break;
 
             default:
             break;
         }
         
-        if (fragment != null) {
+        if (currentFragment != null) {
             FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, currentFragment).commit();
  
             // update selected item and title, then close the drawer
             mDrawerList.setItemChecked(position, true);
@@ -192,6 +212,7 @@ public class MainActivity extends FragmentActivity {
             // error in creating fragment
             Log.e("MainActivity", "Error in creating fragment");
         }
+
     }
     
     @Override
@@ -201,10 +222,12 @@ public class MainActivity extends FragmentActivity {
     }
 
     public void update(String[] values){
-//        if(values[0].equals("Started")){
-////            TestFragment fragment = (TestFragment)getFragmentManager().findFragmentById(R.id.fragment_test);
-////            fragment.fillUI();
-//        }
+        if(values[0].equals("Started")){
+            if (testFragment!= null) {
+                TestFragment fragment = (TestFragment) testFragment;
+                fragment.fillUI();
+            }
+        }
     }
 
     public static HashMap<String,Device> getHashMap(){
