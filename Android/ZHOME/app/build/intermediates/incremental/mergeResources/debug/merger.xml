@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res" >
+            <file
+                name="ab_background_textured_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable\ab_background_textured_miztheme.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="btn_cab_done_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable\btn_cab_done_miztheme.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable\ic_launcher.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="lights"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable\lights.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="outlets"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable\outlets.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="progress_horizontal_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable\progress_horizontal_miztheme.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="security"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable\security.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="selectable_background_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable\selectable_background_miztheme.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="sensors"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable\sensors.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="spinner_background_ab_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable\spinner_background_ab_miztheme.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="tab_indicator_ab_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable\tab_indicator_ab_miztheme.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="thermostat"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable\thermostat.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="ab_background_textured_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\ab_background_textured_miztheme.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_bottom_solid_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\ab_bottom_solid_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_solid_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\ab_solid_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_stacked_solid_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\ab_stacked_solid_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_texture_tile_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\ab_texture_tile_miztheme.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_transparent_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\ab_transparent_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="add"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\add.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cab_done_default_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\btn_cab_done_default_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cab_done_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\btn_cab_done_focused_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cab_done_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\btn_cab_done_miztheme.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cab_done_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\btn_cab_done_pressed_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="cab_background_bottom_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\cab_background_bottom_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="cab_background_top_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\cab_background_top_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="favorites"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\favorites.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_copy"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\ic_action_copy.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_important"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\ic_action_important.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_refresh"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\ic_action_refresh.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_share"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\ic_action_share.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_drawer"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\ic_drawer.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="lights"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\lights.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="list_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\list_focused_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="list_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\list_pressed_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="logo"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\logo.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="menu_dropdown_panel_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\menu_dropdown_panel_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="outlets"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\outlets.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="progress_bg_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\progress_bg_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="progress_horizontal_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\progress_horizontal_miztheme.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="progress_primary_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\progress_primary_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="progress_secondary_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\progress_secondary_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="rooms"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\rooms.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="scenarios"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\scenarios.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="security"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\security.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="selectable_background_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\selectable_background_miztheme.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="sensors"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\sensors.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_default_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\spinner_ab_default_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_disabled_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\spinner_ab_disabled_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\spinner_ab_focused_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\spinner_ab_pressed_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_background_ab_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\spinner_background_ab_miztheme.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="summary"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\summary.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_indicator_ab_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\tab_indicator_ab_miztheme.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_selected_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\tab_selected_focused_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_selected_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\tab_selected_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_selected_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\tab_selected_pressed_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_unselected_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\tab_unselected_focused_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_unselected_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\tab_unselected_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_unselected_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\tab_unselected_pressed_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="thermostat"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-hdpi\thermostat.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_bottom_solid_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\ab_bottom_solid_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_solid_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\ab_solid_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_stacked_solid_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\ab_stacked_solid_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_texture_tile_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\ab_texture_tile_miztheme.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_transparent_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\ab_transparent_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="add"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\add.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cab_done_default_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\btn_cab_done_default_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cab_done_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\btn_cab_done_focused_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cab_done_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\btn_cab_done_pressed_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="cab_background_bottom_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\cab_background_bottom_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="cab_background_top_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\cab_background_top_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="favorites"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\favorites.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_important"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\ic_action_important.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="list_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\list_focused_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="list_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\list_pressed_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="menu_dropdown_panel_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\menu_dropdown_panel_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="progress_bg_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\progress_bg_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="progress_primary_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\progress_primary_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="progress_secondary_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\progress_secondary_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="rooms"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\rooms.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="scenarios"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\scenarios.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_default_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\spinner_ab_default_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_disabled_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\spinner_ab_disabled_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\spinner_ab_focused_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\spinner_ab_pressed_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="summary"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\summary.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_selected_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\tab_selected_focused_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_selected_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\tab_selected_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_selected_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\tab_selected_pressed_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_unselected_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\tab_unselected_focused_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_unselected_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\tab_unselected_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_unselected_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-mdpi\tab_unselected_pressed_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_bottom_solid_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\ab_bottom_solid_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_solid_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\ab_solid_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_stacked_solid_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\ab_stacked_solid_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_texture_tile_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\ab_texture_tile_miztheme.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_transparent_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\ab_transparent_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="add"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\add.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cab_done_default_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\btn_cab_done_default_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cab_done_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\btn_cab_done_focused_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cab_done_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\btn_cab_done_pressed_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="cab_background_bottom_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\cab_background_bottom_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="cab_background_top_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\cab_background_top_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="favorites"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\favorites.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_important"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\ic_action_important.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="list_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\list_focused_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="list_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\list_pressed_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="menu_dropdown_panel_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\menu_dropdown_panel_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="progress_bg_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\progress_bg_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="progress_primary_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\progress_primary_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="progress_secondary_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\progress_secondary_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="rooms"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\rooms.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="scenarios"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\scenarios.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_default_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\spinner_ab_default_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_disabled_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\spinner_ab_disabled_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\spinner_ab_focused_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\spinner_ab_pressed_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="summary"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\summary.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_selected_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\tab_selected_focused_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_selected_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\tab_selected_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_selected_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\tab_selected_pressed_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_unselected_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\tab_unselected_focused_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_unselected_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\tab_unselected_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_unselected_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xhdpi\tab_unselected_pressed_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_bottom_solid_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\ab_bottom_solid_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_solid_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\ab_solid_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_stacked_solid_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\ab_stacked_solid_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_texture_tile_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\ab_texture_tile_miztheme.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ab_transparent_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\ab_transparent_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="add"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\add.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cab_done_default_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\btn_cab_done_default_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cab_done_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\btn_cab_done_focused_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cab_done_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\btn_cab_done_pressed_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="cab_background_bottom_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\cab_background_bottom_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="cab_background_top_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\cab_background_top_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="favorites"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\favorites.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_important"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\ic_action_important.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\ic_launcher.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="list_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\list_focused_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="list_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\list_pressed_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="menu_dropdown_panel_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\menu_dropdown_panel_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="progress_bg_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\progress_bg_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="progress_primary_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\progress_primary_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="progress_secondary_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\progress_secondary_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="rooms"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\rooms.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="scenarios"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\scenarios.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_default_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\spinner_ab_default_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_disabled_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\spinner_ab_disabled_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\spinner_ab_focused_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="spinner_ab_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\spinner_ab_pressed_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="summary"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\summary.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_selected_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\tab_selected_focused_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_selected_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\tab_selected_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_selected_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\tab_selected_pressed_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_unselected_focused_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\tab_unselected_focused_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_unselected_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\tab_unselected_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="tab_unselected_pressed_miztheme"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\drawable-xxhdpi\tab_unselected_pressed_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="activity_main"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\layout\activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="favorites_row_layout"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\layout\favorites_row_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_favorites"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\layout\fragment_favorites.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_rooms"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\layout\fragment_rooms.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_scenarios"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\layout\fragment_scenarios.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_summary"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\layout\fragment_summary.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_test"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\layout\fragment_test.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="listview_item_row"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\layout\listview_item_row.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="main"
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\menu\main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\values\dimens.xml"
+                qualifiers="" >
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+            </file>
+            <file
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\values\strings.xml"
+                qualifiers="" >
+                <string name="hello_world" >Hello world!
+                </string>
+                <string name="action_settings" >Settings
+                </string>
+
+                <string-array name="navigation_drawer_items_array" >
+                    <item>
+Favorites
+                    </item>
+                    <item>
+Rooms
+                    </item>
+                    <item>
+Scenarios
+                    </item>
+                    <item>
+Summary
+                    </item>
+                    <item>
+Test
+                    </item>
+                </string-array>
+
+                <string name="drawer_close" >Close navigation drawer
+                </string>
+                <string name="app_name" >Z-Home
+                </string>
+                <string name="drawer_open" >Open navigation drawer
+                </string>
+            </file>
+            <file
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\values\styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+            </file>
+            <file
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\values\styles_miztheme.xml"
+                qualifiers="" >
+
+                <style
+                    name="ActionBar.Transparent.Miztheme"
+                    parent="@android:style/Widget.Holo.Light.ActionBar" >
+                    <item name="android:background">
+@drawable/ab_transparent_miztheme
+                    </item>
+                    <item name="android:progressBarStyle">
+@style/ProgressBar.Miztheme
+                    </item>
+                </style>
+
+                <style
+                    name="DropDownListView.Miztheme"
+                    parent="@android:style/Widget.Holo.Light.ListView.DropDown" >
+                    <item name="android:listSelector">
+@drawable/selectable_background_miztheme
+                    </item>
+                </style>
+
+                <style
+                    name="ProgressBar.Miztheme"
+                    parent="@android:style/Widget.Holo.Light.ProgressBar.Horizontal" >
+                    <item name="android:progressDrawable">
+@drawable/progress_horizontal_miztheme
+                    </item>
+                </style>
+
+                <style
+                    name="ActionBarTabStyle.Miztheme"
+                    parent="@android:style/Widget.Holo.Light.ActionBar.TabView" >
+                    <item name="android:background">
+@drawable/tab_indicator_ab_miztheme
+                    </item>
+                    <item name="android:paddingLeft">
+2dp
+                    </item>
+                    <item name="android:paddingRight">
+2dp
+                    </item>
+                    <item name="android:height">
+160dp
+                    </item>
+                </style>
+
+                <style
+                    name="DropDownNav.Miztheme"
+                    parent="@android:style/Widget.Holo.Light.Spinner" >
+                    <item name="android:background">
+@drawable/spinner_background_ab_miztheme
+                    </item>
+                    <item name="android:popupBackground">
+@drawable/menu_dropdown_panel_miztheme
+                    </item>
+                    <item name="android:dropDownSelector">
+@drawable/selectable_background_miztheme
+                    </item>
+                </style>
+
+                <style
+                    name="ActionBar.Solid.Miztheme"
+                    parent="@android:style/Widget.Holo.Light.ActionBar.Solid" >
+                    <item name="android:background">
+@drawable/ab_solid_miztheme
+                    </item>
+                    <item name="android:backgroundStacked">
+@drawable/ab_stacked_solid_miztheme
+                    </item>
+                    <item name="android:backgroundSplit">
+@drawable/ab_bottom_solid_miztheme
+                    </item>
+                    <item name="android:progressBarStyle">
+@style/ProgressBar.Miztheme
+                    </item>
+                </style>
+
+                <style
+                    name="PopupMenu.Miztheme"
+                    parent="@android:style/Widget.Holo.Light.ListPopupWindow" >
+                    <item name="android:popupBackground">
+@drawable/menu_dropdown_panel_miztheme
+                    </item>
+                </style>
+
+                <style
+                    name="Theme.Miztheme.Widget"
+                    parent="@android:style/Theme.Holo" >
+                    <item name="android:popupMenuStyle">
+@style/PopupMenu.Miztheme
+                    </item>
+                    <item name="android:dropDownListViewStyle">
+@style/DropDownListView.Miztheme
+                    </item>
+                </style>
+
+                <style
+                    name="Theme.Miztheme"
+                    parent="@android:style/Theme.Holo.Light" >
+                    <item name="android:actionBarItemBackground">
+@drawable/selectable_background_miztheme
+                    </item>
+                    <item name="android:popupMenuStyle">
+@style/PopupMenu.Miztheme
+                    </item>
+                    <item name="android:dropDownListViewStyle">
+@style/DropDownListView.Miztheme
+                    </item>
+                    <item name="android:actionBarTabStyle">
+@style/ActionBarTabStyle.Miztheme
+                    </item>
+                    <item name="android:actionDropDownStyle">
+@style/DropDownNav.Miztheme
+                    </item>
+                    <item name="android:actionBarStyle">
+@style/ActionBar.Solid.Miztheme
+                    </item>
+                    <item name="android:actionModeBackground">
+@drawable/cab_background_top_miztheme
+                    </item>
+                    <item name="android:actionModeSplitBackground">
+@drawable/cab_background_bottom_miztheme
+                    </item>
+                    <item name="android:actionModeCloseButtonStyle">
+@style/ActionButton.CloseMode.Miztheme
+                    </item>
+                </style>
+
+                <style
+                    name="ActionButton.CloseMode.Miztheme"
+                    parent="@android:style/Widget.Holo.Light.ActionButton.CloseMode" >
+                    <item name="android:background">
+@drawable/btn_cab_done_miztheme
+                    </item>
+                </style>
+            </file>
+            <file
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\values-sw720dp-land\dimens.xml"
+                qualifiers="sw720dp-land-v13" >
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+            </file>
+            <file
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\values-v11\styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\main\res\values-v14\styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+        </source>
+        <source path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\build\generated\res\rs\debug" />
+        <source path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\build\generated\res\generated\debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\debug\res" />
+    </dataSet>
+
+</merger>
