@@ -12,10 +12,10 @@ import (
 )
 
 const (
-	DB_USER       = "test"
-	DB_PASS       = "test"
-	DB_DB         = "test"
-	DB_COLLECTION = "foo"
+	DB_USER       = "admin"
+	DB_PASS       = "admin"
+	DB_DB         = "users"
+	DB_COLLECTION = "info"
 )
 
 type User struct {
