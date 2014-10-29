@@ -6,6 +6,7 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
+import android.app.Activity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,7 +27,11 @@ import java.util.List;
  */
 public class SocketCom extends AsyncTask<Void, String, Void> {
 
-    public static MainActivity context = null;
+    public static enum context{LOGIN, MAIN};
+    private context currentContext = context.LOGIN;
+    private Activity currentActivity = null;
+    private LoginActivity loginActivity = null;
+    private MainActivity mainActivity = null;
     private static SocketCom socketCom = new SocketCom();
 
     private String dstAddress, fromServerString;
@@ -45,11 +50,11 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
     public void conn(){
         this.deviceHashMap = MainActivity.getHashMap();
 
-        ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connManager = (ConnectivityManager) currentActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
         if (mWifi.isConnected()) {
-            WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+            WifiManager wifiManager = (WifiManager) currentActivity.getSystemService(Context.WIFI_SERVICE);
             WifiInfo wifiInfo = wifiManager.getConnectionInfo();
             String wifiMac = wifiInfo.getBSSID();
 
@@ -92,12 +97,16 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                     int resp = fromServerJson.getInt("Type");
                     switch(resp){
                         case 0://AUTHENTICATE
+                            publishProgress("Started");
                             System.out.println("0: LOGGING IN");
-                            login();
+                            if(fromServerJson.getString("Message") == "Incorrect Login"){
+                                loginActivity.initLoginScreen();
+                            }
                             break;
                         case 1://DEVICE ACCESS
                             System.out.println("1: LOGGED IN");
                             publishProgress("Connected");
+                            loginActivity.login();
                             createDevices(fromServerJson.getJSONObject("Message").getJSONObject("devices"));
                             break;
                         case 2://UPDATE
@@ -131,7 +140,11 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
 
     @Override
     protected void onProgressUpdate(String... values) {
-        context.update(values);
+        if(currentContext == context.MAIN) {
+            mainActivity.update(values);
+        }else{
+            loginActivity.update(values);
+        }
     }
 
     public void createDevices(JSONObject devices){
@@ -189,16 +202,42 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
         return values;
     }
 
-    private void login() {
+    public void attemptLogin(String username, String password) {
+        System.out.println("Attempting login. Username: " + username + ". Password: " + password);
         JSONObject jsonLoginInfo = new JSONObject();
         try{
-            jsonLoginInfo.put("User", "Bryan");
-            jsonLoginInfo.put("Pass", "password");
+            System.out.println("in try");
+            if(currentContext == context.LOGIN) {
+                System.out.println("in context block");
+                jsonLoginInfo.put("User", username);
+                jsonLoginInfo.put("Pass", password);
+            }
         }catch(JSONException e){
             e.printStackTrace();
         }
+        if(out == null){
+            System.out.println("out is null");
 
+        }else if(jsonLoginInfo == null){
+            System.out.println("jsonLoginInfo is null");
+        }else{
+
+        }
         out.println(jsonLoginInfo.toString());
+    }
+
+    public void switchContext(Activity activeActivity, context con){
+        if(con == context.LOGIN){
+            loginActivity = (LoginActivity)activeActivity;
+            currentActivity = loginActivity;
+            mainActivity = null;
+        }else{
+            mainActivity = (MainActivity) activeActivity;
+            currentActivity = mainActivity;
+            loginActivity = null;
+        }
+
+        currentContext = con;
     }
 
     public static void sendMessage(JSONObject json) {

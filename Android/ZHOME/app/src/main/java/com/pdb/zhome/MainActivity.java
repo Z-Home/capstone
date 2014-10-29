@@ -114,9 +114,7 @@ public class MainActivity extends FragmentActivity {
         	selectItem(0);
         }
 
-        SocketCom.context = this;
-        SocketCom socketCom = SocketCom.getInstance();
-        socketCom.conn();
+        SocketCom.getInstance().switchContext(this, SocketCom.context.MAIN);
 	}
 
 	@Override
