@@ -31,7 +31,7 @@ public class SummaryFragment extends Fragment {
 
                 lightsScreen = new LightsScreen();
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Lights");
             }
         });
@@ -44,7 +44,7 @@ public class SummaryFragment extends Fragment {
 
                 lightsScreen = new LightsScreen();
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Sensors");
             }
         });
@@ -57,7 +57,7 @@ public class SummaryFragment extends Fragment {
 
                 lightsScreen = new LightsScreen();
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Security");
             }
         });
@@ -70,7 +70,7 @@ public class SummaryFragment extends Fragment {
 
                 lightsScreen = new LightsScreen();
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Outlets");
             }
         });
@@ -83,7 +83,7 @@ public class SummaryFragment extends Fragment {
 
                 lightsScreen = new LightsScreen();
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Thermostat");
             }
         });
