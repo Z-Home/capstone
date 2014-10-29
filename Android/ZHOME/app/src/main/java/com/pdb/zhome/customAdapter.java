@@ -12,14 +12,14 @@ import com.miz.pdb.R;
 
 class customAdapter extends ArrayAdapter<String> {
     public customAdapter(Context context, String[] values) {
-        super(context, R.layout.favorites_row_layout, values);
+        super(context, R.layout.row_layout_favorites, values);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater theInflater = LayoutInflater.from(getContext());
 
-        View theView = theInflater.inflate(R.layout.favorites_row_layout, parent, false);
+        View theView = theInflater.inflate(R.layout.row_layout_favorites, parent, false);
 
         String favoriteItem = getItem(position);
 
