@@ -29,7 +29,7 @@ class customAdapter extends ArrayAdapter<String> {
 
         ImageView theImageView = (ImageView) theView.findViewById(R.id.favoritesImageView);
 
-        theImageView.setImageResource(R.drawable.ic_launcher);
+        theImageView.setImageResource(R.drawable.sensors);
 
         return theView;
     }

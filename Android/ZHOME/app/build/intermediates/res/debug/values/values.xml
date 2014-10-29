@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/C:/Users/Bryan/Desktop/capstone/Android/ZHOME/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
     <string-array name="navigation_drawer_items_array">
@@ -11,12 +11,12 @@
         <item>Summary</item>
         <item>Test</item>
     </string-array>
-    <!-- From: file:/C:/Users/Bryan/Desktop/capstone/Android/ZHOME/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values/dimens.xml -->
     <eat-comment />
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/C:/Users/Bryan/Desktop/capstone/Android/ZHOME/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
     <string name="action_settings">Settings</string>
@@ -24,7 +24,12 @@
     <string name="drawer_close">Close navigation drawer</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="hello_world">Hello world!</string>
-    <!-- From: file:/C:/Users/Bryan/Desktop/capstone/Android/ZHOME/app/src/main/res/values/styles_miztheme.xml -->
+    <string name="lights_btn">Lights</string>
+    <string name="outlets_btn">Outlets</string>
+    <string name="security_btn">Security</string>
+    <string name="sensors_btn">Sensors</string>
+    <string name="thermostat_btn">Thermostat</string>
+    <!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values/styles_miztheme.xml -->
     <eat-comment />
 
     <style name="ActionBar.Solid.Miztheme" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
@@ -49,7 +54,7 @@
     <style name="ActionButton.CloseMode.Miztheme" parent="@android:style/Widget.Holo.Light.ActionButton.CloseMode">
         <item name="android:background">@drawable/btn_cab_done_miztheme</item>
     </style>
-    <!-- From: file:/C:/Users/Bryan/Desktop/capstone/Android/ZHOME/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values/styles.xml -->
     <eat-comment />
 
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
@@ -63,7 +68,7 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    <!-- From: file:/C:/Users/Bryan/Desktop/capstone/Android/ZHOME/app/src/main/res/values/styles_miztheme.xml -->
+    <!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values/styles_miztheme.xml -->
     <eat-comment />
 
     <style name="DropDownListView.Miztheme" parent="@android:style/Widget.Holo.Light.ListView.DropDown">

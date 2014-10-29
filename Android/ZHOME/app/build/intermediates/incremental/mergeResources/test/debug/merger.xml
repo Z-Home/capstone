@@ -2,9 +2,9 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\src\androidTest\res" />
-        <source path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\build\generated\res\rs\test\debug" />
-        <source path="C:\Users\Bryan\Desktop\capstone\Android\ZHOME\app\build\generated\res\generated\test\debug" />
+        <source path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/androidTest/res" />
+        <source path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/build/generated/res/rs/test/debug" />
+        <source path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/build/generated/res/generated/test/debug" />
     </dataSet>
 
 </merger>

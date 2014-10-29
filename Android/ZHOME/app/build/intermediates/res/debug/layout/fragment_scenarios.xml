@@ -1,23 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" 
-    android:background="#000000">
+<TableLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Theme.Miztheme"
+    android:id="@+id/summaryLayout">
 
-    <TextView
-        android:id="@+id/txtLabel"
+    <LinearLayout
+        android:layout_height="100dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="SCENARIOS"
-        android:textSize="16dp" />
+        android:orientation="horizontal">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtLabel"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_action_share" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageButton
+                android:src="@drawable/lights"
+                android:id="@+id/lightsBtn"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="5dp"
+                android:onClick="lightBtnClick" />
 
-</RelativeLayout><!-- From: file:/C:/Users/Bryan/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/fragment_scenarios.xml -->
+            </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Lights" />
+
+        <ImageButton
+            android:src="@drawable/lights"
+            android:id="@+id/lightsBtn"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:onClick="lightBtnClick" />
+
+        <ImageButton
+            android:src="@drawable/sensors"
+            android:id="@+id/sensorsBtn"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:onClick="sensorBtnClick" />
+
+        <ImageButton
+            android:src="@drawable/security"
+            android:id="@+id/securityBtn"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:onClick="securityBtnClick" />
+    </LinearLayout>
+
+</TableLayout><!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/fragment_scenarios.xml -->

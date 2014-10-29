@@ -1,60 +1,143 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff"
-    style="@style/Theme.Miztheme"
-    android:id="@+id/summaryLayout"
-    android:padding="20dp"
-    android:orientation="horizontal"
-    android:layout_gravity="center">
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/summaryLayout">
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_weight="1" >
-    </View>
-
-    <ImageButton
-        android:src="@drawable/lights"
-        android:id="@+id/lightsBtn"
-        android:background="@null"
-        android:scaleType="fitXY"
+    <LinearLayout
+        android:layout_height="100dp"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:adjustViewBounds="true"
-        android:gravity="center_horizontal|center_vertical" />
+        android:orientation="horizontal">
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_weight="1" >
-    </View>
+        <ImageButton
+            android:src="@drawable/lights"
+            android:id="@+id/lightsBtn"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:onClick="lightBtnClick" />
 
-    <ImageButton
-        android:src="@drawable/security"
-        android:id="@+id/securityBtn"
-        android:background="@null"
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
+        <ImageButton
+            android:src="@drawable/sensors"
+            android:id="@+id/sensorsBtn"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:onClick="sensorBtnClick" />
+
+        <ImageButton
+            android:src="@drawable/security"
+            android:id="@+id/securityBtn"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:onClick="securityBtnClick" />
+    </LinearLayout>
+    <LinearLayout
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:gravity="center_horizontal|center_vertical" />
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_weight="1" >
-    </View>
-
-    <ImageButton
-        android:src="@drawable/sensors"
-        android:id="@+id/sensorBtn"
-        android:background="@null"
-        android:scaleType="fitXY"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:gravity="center_horizontal|center_vertical" />
+        android:orientation="horizontal">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="  Lights  " />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Sensors" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Security" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:src="@drawable/outlets"
+            android:id="@+id/outletBtn"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:onClick="outletBtnClick" />
+
+        <ImageButton
+            android:src="@drawable/thermostat"
+            android:id="@+id/thermostatBtn"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:onClick="thermostatBtnClick" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="    Outlets    " />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Thermostat" />
+
+    </LinearLayout>
+</TableLayout>

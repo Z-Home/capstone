@@ -69,21 +69,26 @@ public final class R {
         public static final int thermostat=0x7f020030;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000f;
+        public static final int action_settings=0x7f090014;
         public static final int content_frame=0x7f090001;
         public static final int drawer_layout=0x7f090000;
         public static final int favoritesImageView=0x7f090003;
         public static final int favoritesListView=0x7f090005;
         public static final int favoritesTextView=0x7f090004;
-        public static final int fragment_test=0x7f09000b;
-        public static final int imageViewIcon=0x7f09000d;
-        public static final int layout=0x7f09000c;
+        public static final int fragment_test=0x7f09000d;
+        public static final int imageViewIcon=0x7f09000f;
+        public static final int layout=0x7f09000e;
         public static final int left_drawer=0x7f090002;
         public static final int lightsBtn=0x7f090008;
-        public static final int securityBtn=0x7f090009;
-        public static final int sensorBtn=0x7f09000a;
+        public static final int lightsListView=0x7f090013;
+        public static final int lightsScreen=0x7f090011;
+        public static final int lightsScreenImage=0x7f090012;
+        public static final int outletBtn=0x7f09000b;
+        public static final int securityBtn=0x7f09000a;
+        public static final int sensorsBtn=0x7f090009;
         public static final int summaryLayout=0x7f090007;
-        public static final int textViewName=0x7f09000e;
+        public static final int textViewName=0x7f090010;
+        public static final int thermostatBtn=0x7f09000c;
         public static final int txtLabel=0x7f090006;
     }
     public static final class layout {
@@ -95,6 +100,7 @@ public final class R {
         public static final int fragment_summary=0x7f030005;
         public static final int fragment_test=0x7f030006;
         public static final int listview_item_row=0x7f030007;
+        public static final int screen_lights=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -105,6 +111,11 @@ public final class R {
         public static final int drawer_close=0x7f060002;
         public static final int drawer_open=0x7f060003;
         public static final int hello_world=0x7f060004;
+        public static final int lights_btn=0x7f060005;
+        public static final int outlets_btn=0x7f060006;
+        public static final int security_btn=0x7f060007;
+        public static final int sensors_btn=0x7f060008;
+        public static final int thermostat_btn=0x7f060009;
     }
     public static final class style {
         public static final int ActionBar_Solid_Miztheme=0x7f070000;
