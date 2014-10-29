@@ -41,7 +41,7 @@ public class Switch implements Device {
     public String[] formatUIinfo(String cc, String value){
         updateValues(cc, value);
 
-        String values[] = {this.devNum, cc, value};
+        String[] values = {this.devNum, cc, value};
 
         return values;
     }

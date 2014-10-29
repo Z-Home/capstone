@@ -54,14 +54,11 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
             String wifiMac = wifiInfo.getBSSID();
 
             if (!wifiMac.isEmpty() && wifiMac.equals("0c:47:3d:e3:6a:68")){
-                //socketCom = new SocketCom("192.168.0.17", 8000);
                 setAddress("192.168.0.17");
             } else {
-                //socketCom = new SocketCom("bryanrich3.ddns.net", 8000);
                 setAddress("bryanrich3.ddns.net");
             }
         } else {
-            //socketCom = new SocketCom("bryanrich3.ddns.net", 8000);
             setAddress("bryanrich3.ddns.net");
         }
 
@@ -106,7 +103,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                         case 2://UPDATE
                             System.out.println("2: UPDATE");
                             String[] info = updateHashMap(fromServerJson.getJSONObject("Message").getJSONObject("update"));
-                            publishProgress(info);
+                            //publishProgress(info);
                             break;
                         default:
                             System.out.println("DEFAULT");
@@ -184,7 +181,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
             cc = update.getString("commandClass");
             c = update.getString("value");
 
-            //values = deviceHashMap.get(dev).formatUIinfo(cc, c);
+            values = deviceHashMap.get(dev).formatUIinfo(cc, c);
         } catch (JSONException e) {
             e.printStackTrace();
         }

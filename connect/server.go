@@ -74,7 +74,7 @@ func (zHome *ZHome) Auth(client *Client, joined chan bool) {
 				} else if check == 2 {
 					joined <- true
 				} else if check == 3 {
-					client.outgoing <- "incorect login\n"
+					client.outgoing <- "{\"Type\":0,\"Message\":\"Incorect Login\"\n"
 				}
 			}
 		}

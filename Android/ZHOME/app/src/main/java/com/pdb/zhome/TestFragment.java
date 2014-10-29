@@ -43,7 +43,6 @@ public class TestFragment extends Fragment {
 
         Button on = new Button(getActivity());
         on.setText("On");
-
         on.setWidth(90);
         on.setHeight(60);
         on.setOnClickListener(new Button.OnClickListener() {
@@ -54,9 +53,9 @@ public class TestFragment extends Fragment {
             }
         });
         l.addView(on);
+
         Button off = new Button(getActivity());
         off.setText("Off");
-
         off.setWidth(90);
         off.setHeight(60);
         off.setOnClickListener(new Button.OnClickListener() {
