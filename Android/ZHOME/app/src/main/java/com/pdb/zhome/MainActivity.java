@@ -146,7 +146,17 @@ public class MainActivity extends FragmentActivity {
         // Sync the toggle state after onRestoreInstanceState has occurred.
         mDrawerToggle.syncState();
     }
-	
+
+    @Override
+    public void onBackPressed() {
+
+        if (getFragmentManager().getBackStackEntryCount() > 1)
+            getFragmentManager().popBackStack();
+        else{
+            moveTaskToBack(true);
+        }
+
+    }
 	
 	// navigation drawer click listener
 	private class DrawerItemClickListener implements ListView.OnItemClickListener {
@@ -200,7 +210,7 @@ public class MainActivity extends FragmentActivity {
         
         if (currentFragment != null) {
             FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.content_frame, currentFragment).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, currentFragment).addToBackStack(null).commit();
  
             // update selected item and title, then close the drawer
             mDrawerList.setItemChecked(position, true);
