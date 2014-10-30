@@ -1097,6 +1097,71 @@ Test
                 path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/grid_single_rooms.xml"
                 qualifiers=""
                 type="layout" />
+            <file
+                name="activity_login"
+                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/activity_login.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="password"
+                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/password.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="password"
+                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/password.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="login"
+                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/login.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="username"
+                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/username.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="username"
+                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/username.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="login"
+                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/login.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="login"
+                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/login.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="login"
+                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/login.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="username"
+                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/username.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="password"
+                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/password.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="password"
+                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/password.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="username"
+                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/username.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
         </source>
         <source path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/build/generated/res/rs/debug" />
         <source path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/build/generated/res/generated/debug" />

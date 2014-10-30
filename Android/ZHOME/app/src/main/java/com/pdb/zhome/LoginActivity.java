@@ -23,10 +23,11 @@ public class LoginActivity extends Activity {
     private Editor editor;
     private boolean initializedView = false;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         socketCom = getInstance();
         socketCom.switchContext(this, context.LOGIN);
         System.out.println("About to connect (in login activity).");
@@ -34,11 +35,6 @@ public class LoginActivity extends Activity {
         System.out.println("Done with connect.");
         preferences = getApplicationContext().getSharedPreferences("ZhomePreferences", MODE_PRIVATE);
         editor = preferences.edit();
-
-
-
-
-        //TODO create splash screen
 
     }
 
