@@ -16,7 +16,7 @@ public class SummaryFragment extends Fragment {
 	public SummaryFragment() {
 	}
 
-    private Fragment lightsScreen;
+    private Fragment screen;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -29,9 +29,9 @@ public class SummaryFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                lightsScreen = new LightsScreen();
+                screen = new LightsScreen();
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).addToBackStack(null).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Lights");
             }
         });
@@ -42,9 +42,9 @@ public class SummaryFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                lightsScreen = new LightsScreen();
+                screen = new LightsScreen();
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).addToBackStack(null).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Sensors");
             }
         });
@@ -55,9 +55,9 @@ public class SummaryFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                lightsScreen = new LightsScreen();
+                screen = new LightsScreen();
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).addToBackStack(null).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Security");
             }
         });
@@ -68,9 +68,9 @@ public class SummaryFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                lightsScreen = new LightsScreen();
+                screen = new LightsScreen();
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).addToBackStack(null).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Outlets");
             }
         });
@@ -81,9 +81,9 @@ public class SummaryFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                lightsScreen = new LightsScreen();
+                screen = new LightsScreen();
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_frame, lightsScreen).addToBackStack(null).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Thermostat");
             }
         });

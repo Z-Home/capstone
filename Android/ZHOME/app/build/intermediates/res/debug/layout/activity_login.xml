@@ -79,8 +79,7 @@
         android:id="@+id/loginButton"
         android:background="@android:color/transparent"
         android:onClick="onLoginButtonClicked"
-        android:layout_marginTop="20dp"
-        android:scaleType="fitXY" />
+        android:layout_marginTop="15dp"/>
 
     </LinearLayout>
 

@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingRight="10dp"
+    android:paddingEnd="10dp"
+    android:paddingLeft="5dp"
+    android:paddingStart="5dp">
+
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/lightsScreenImageView"
+        android:src="@drawable/lights"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_toEndOf="@+id/lightsScreenImageView"
+        android:layout_toRightOf="@+id/lightsScreenImageView"
+        android:layout_toStartOf="@+id/powerBtn"
+        android:layout_toLeftOf="@+id/powerBtn"
+        android:id="@+id/lightsScreenText"
+        android:textSize="15sp"
+        android:text="This is sample text 1234567890"/>
+
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_toStartOf="@+id/renameBtn"
+        android:layout_toLeftOf="@+id/renameBtn"
+        android:id="@+id/powerBtn"
+        android:background="@android:color/transparent"
+        android:src="@drawable/power_green"
+        android:scaleType="fitXY"/>
+
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/renameBtn"
+        android:background="@android:color/transparent"
+        android:src="@drawable/rename"
+        android:scaleType="fitXY"
+        android:onClick="renameBtnClick"/>
+
+</RelativeLayout>
+
+<!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/row_layout_lights.xml -->

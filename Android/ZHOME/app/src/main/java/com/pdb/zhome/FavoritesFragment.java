@@ -34,7 +34,7 @@ public class FavoritesFragment extends Fragment {
         };
 
 
-        ListAdapter favoritesListAdapter = new customAdapter(getActivity(), favoritesListArray2);
+        ListAdapter favoritesListAdapter = new favoritesCustomAdapter(getActivity(), favoritesListArray2);
 
         ListView favoritesListView = (ListView) rootView.findViewById(R.id.favoritesListView);
 
