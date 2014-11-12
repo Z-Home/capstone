@@ -18,4 +18,4 @@
 
 <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
     android:src="@drawable/ab_texture_tile_miztheme"
-    android:tileMode="repeat" /><!-- From: file:/Users/broccard/Documents/School/Fall%202014/Capstone%20II/capstone/Android/ZHOME/app/src/main/res/drawable/ab_background_textured_miztheme.xml -->
+    android:tileMode="repeat" /><!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable/ab_background_textured_miztheme.xml -->

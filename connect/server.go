@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/jeffail/gabs"
 	"io/ioutil"
+	"labix.org/v2/mgo"
 	"net"
 	"net/http"
 	"strings"
@@ -23,6 +24,7 @@ type ZHome struct {
 	dead       chan *Client
 	devices    []*Devices
 	deviceList string
+	collection *mgo.Collection
 }
 
 type Devices struct {
@@ -31,6 +33,8 @@ type Devices struct {
 	commandClasses []string
 	level          map[string]string
 }
+
+var deviceList string
 
 func (zHome *ZHome) Broadcast(data string) {
 	for _, client := range zHome.clients {
@@ -46,7 +50,7 @@ func (zHome *ZHome) Join(connection net.Conn) {
 	go func() {
 		select {
 		case <-joined:
-			client.outgoing <- fmt.Sprintf("{\"Type\":1,\"Message\":%s}\n", zHome.deviceList)
+			client.outgoing <- fmt.Sprintf("{\"Type\":1,\"Message\":%s}\n", deviceList)
 			if client.admin {
 				client.outgoing <- "ADMIN\n"
 			}
@@ -74,7 +78,7 @@ func (zHome *ZHome) Auth(client *Client, joined chan bool) {
 				} else if check == 2 {
 					joined <- true
 				} else if check == 3 {
-					client.outgoing <- "{\"Type\":0,\"Message\":\"Incorrect Login\"}\n"
+					client.outgoing <- "{\"Type\":0,\"Message\":\"Incorect Login\"\n"
 				}
 			}
 		}
@@ -245,9 +249,10 @@ func (zHome *ZHome) Ticker() {
 							jsonObj.Set(val.level[v], "update", "value")
 							zHome.NewIncoming(fmt.Sprintf("{\"Type\":2,\"Message\":%s}\n", jsonObj.String()))
 
-							devList, _ := gabs.ParseJSON([]byte(zHome.deviceList))
+							devList, _ := gabs.ParseJSON([]byte(deviceList))
 							devList.Set(val.level[v], "devices", x, "commandClasses", v)
-							zHome.deviceList = devList.String()
+							deviceList = devList.String()
+							//deviceList = devList.String()
 						}
 					}
 				}
@@ -360,12 +365,17 @@ func (zHome *ZHome) GetDevices() {
 	jsonObj, _ := gabs.Consume(map[string]interface{}{})
 	for _, value := range zHome.devices {
 		for key, val := range value.level {
-			jsonObj.Set(value.deviceType, "devices", value.deviceNum, "type")
+			//jsonObj.Set(value.deviceType, "devices", value.deviceNum, "type")
 			jsonObj.Set(val, "devices", value.deviceNum, "commandClasses", key)
 		}
+		jsonObj.Set("", "devices", value.deviceNum, "devName")
+		jsonObj.Set(value.deviceNum, "devices", value.deviceNum, "devNumber")
 	}
 
-	zHome.deviceList = jsonObj.String()
+	list := jsonObj.String()
+
+	deviceList = DeviceName(list)
+	//deviceList = deviceList
 
 	fmt.Println("Got Devices")
 	go zHome.Ticker()
@@ -373,8 +383,6 @@ func (zHome *ZHome) GetDevices() {
 }
 
 func NewZHome() *ZHome {
-	StartDB()
-
 	zHome := &ZHome{
 		clients:  make(map[net.Conn]*Client),
 		joins:    make(chan net.Conn),
@@ -383,6 +391,8 @@ func NewZHome() *ZHome {
 		dead:     make(chan *Client),
 		devices:  make([]*Devices, 0),
 	}
+
+	StartDB(zHome)
 
 	zHome.GetDevices()
 	zHome.Listen()

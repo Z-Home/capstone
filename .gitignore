@@ -4,5 +4,16 @@
 /.idea/libraries
 .DS_Store
 /build
-
+.gradle
+Android/ZHOME/local.properties
+Android/ZHOME/.idea/workspace.xml
+Android/ZHOME/.idea/libraries
+Android/ZHOME.DS_Store
+Android/ZHOME/build
+Android/ZHOME/app/build
+Android/ZHOME/.idea
+Android/ZHOME/app/app.iml
+Android/ZHOME/.DS_Store
 Android/ZHOME/app/build/outputs/apk/app-debug.apk
+
+Android/ZHOME/app/app.iml
