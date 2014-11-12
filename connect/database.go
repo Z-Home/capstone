@@ -10,6 +10,7 @@ import (
 	"labix.org/v2/mgo"
 	"labix.org/v2/mgo/bson"
 	"log"
+	"runtime/debug"
 	"strings"
 )
 
@@ -72,6 +73,8 @@ func CheckPass(cred string) int {
 	}
 
 	hash := fmt.Sprintf("%x", temp)
+
+	debug.FreeOSMemory()
 
 	if hash == result.Hash {
 		if result.Admin {

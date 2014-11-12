@@ -24,7 +24,7 @@ func ReadCommand(line string, admin bool) {
 	ty = strings.Replace(ty, "\"", "", -1)
 
 	devJson, _ := gabs.ParseJSON([]byte(de))
-	fmt.Println(devJson.String())
+	//fmt.Println(devJson.String())
 
 	switch ty {
 	case "Command":
@@ -36,7 +36,7 @@ func ReadCommand(line string, admin bool) {
 
 		c := devJson.Path("command").String()
 		c = strings.Replace(c, "\"", "", -1)
-		fmt.Println(dev, cc, c)
+		//fmt.Println(dev, cc, c)
 		url := fmt.Sprintf("http://%s:8083/ZWaveAPI/Run/devices[%s].instances[0].commandClasses[%s].Set(%s)", IP_ADDRESS, dev, cc, c)
 		SendCommand(url)
 	case "NewUser":
