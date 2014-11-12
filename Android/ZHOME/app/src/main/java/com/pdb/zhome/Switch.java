@@ -12,11 +12,19 @@ public class Switch implements Device {
 
     private HashMap<String, String> valuesHashMap;
     private String devNum;
+    private String type;
 
     public Switch(HashMap<String, String> map, String devNum) {
+        this.type = type;
         setValues(map);
         setDevNum(devNum);
     }
+
+    @Override
+    public String getType(){return this.type;}
+
+    @Override
+    public String getDevNum() {return this.devNum;}
 
     public void setDevNum(String devNum) {
         this.devNum = devNum;

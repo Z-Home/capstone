@@ -13,4 +13,6 @@ public interface Device {
     void updateValues(String cc, String value);
     JSONObject command(String cc, String value);
     String[] formatUIinfo(String cc, String value);
+    String getDevNum();
+    String getType();
 }

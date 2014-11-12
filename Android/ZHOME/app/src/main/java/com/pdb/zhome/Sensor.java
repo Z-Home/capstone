@@ -9,8 +9,19 @@ import java.util.HashMap;
  */
 public class Sensor implements Device {
 
+    private String type;
+    private String devNum;
+
     public Sensor(HashMap<String, String> map, String devNum) {
+        this.devNum = devNum;
+        this.type = type;
     }
+
+    @Override
+    public String getType(){return this.type;}
+
+    @Override
+    public String getDevNum() {return this.devNum;}
 
     @Override
     public void setValues(HashMap<String, String> map) {

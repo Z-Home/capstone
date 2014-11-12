@@ -11,8 +11,10 @@ import java.util.HashMap;
 public class Thermostat implements Device {
 
     private String devNum;
+    private String type;
 
     public Thermostat(HashMap<String, String> map, String devNum) {
+        this.type = type;
         setDevNum(devNum);
     }
 
@@ -24,6 +26,12 @@ public class Thermostat implements Device {
     public void setValues(HashMap<String, String> map) {
 
     }
+
+    @Override
+    public String getType(){return this.type;}
+
+    @Override
+    public String getDevNum() {return this.devNum;}
 
     @Override
     public HashMap<String, String> getValues() {
