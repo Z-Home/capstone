@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values-sw720dp-land/dimens.xml -->
+    <!-- From: file:/Users/broccard/Documents/School/Fall%202014/Capstone%20II/capstone/Android/ZHOME/app/src/main/res/values-sw720dp-land/dimens.xml -->
     <eat-comment />
 
     <dimen name="activity_horizontal_margin">128dp</dimen>

@@ -8,4 +8,4 @@
         android:layout_height="wrap_content"
         android:id="@+id/favoritesListView">
     </ListView>
-</RelativeLayout><!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/fragment_favorites.xml -->
+</RelativeLayout><!-- From: file:/Users/broccard/Documents/School/Fall%202014/Capstone%20II/capstone/Android/ZHOME/app/src/main/res/layout/fragment_favorites.xml -->

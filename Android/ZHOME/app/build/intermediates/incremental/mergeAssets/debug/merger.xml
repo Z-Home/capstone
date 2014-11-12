@@ -2,10 +2,10 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/assets" />
+        <source path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/assets" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/debug/assets" />
+        <source path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/debug/assets" />
     </dataSet>
 
 </merger>

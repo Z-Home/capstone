@@ -2,974 +2,1084 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res" >
+        <source path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res" >
             <file
                 name="ab_background_textured_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable/ab_background_textured_miztheme.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable/ab_background_textured_miztheme.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="btn_cab_done_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable/btn_cab_done_miztheme.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable/btn_cab_done_miztheme.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="ic_launcher"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable/ic_launcher.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable/ic_launcher.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="lights"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable/lights.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable/lights.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="outlets"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable/outlets.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable/outlets.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="progress_horizontal_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable/progress_horizontal_miztheme.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable/progress_horizontal_miztheme.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="security"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable/security.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable/security.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="selectable_background_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable/selectable_background_miztheme.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable/selectable_background_miztheme.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="sensors"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable/sensors.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable/sensors.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="spinner_background_ab_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable/spinner_background_ab_miztheme.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable/spinner_background_ab_miztheme.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="tab_indicator_ab_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable/tab_indicator_ab_miztheme.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable/tab_indicator_ab_miztheme.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="thermostat"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable/thermostat.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable/thermostat.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="ab_background_textured_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ab_background_textured_miztheme.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ab_background_textured_miztheme.xml"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="ab_bottom_solid_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ab_bottom_solid_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ab_bottom_solid_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="ab_solid_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ab_solid_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ab_solid_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="ab_stacked_solid_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ab_stacked_solid_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ab_stacked_solid_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="ab_texture_tile_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ab_texture_tile_miztheme.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ab_texture_tile_miztheme.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="ab_transparent_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ab_transparent_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ab_transparent_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="add"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/add.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/add.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="btn_cab_done_default_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/btn_cab_done_default_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/btn_cab_done_default_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="btn_cab_done_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/btn_cab_done_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/btn_cab_done_focused_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="btn_cab_done_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/btn_cab_done_miztheme.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/btn_cab_done_miztheme.xml"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="btn_cab_done_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/btn_cab_done_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/btn_cab_done_pressed_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="cab_background_bottom_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/cab_background_bottom_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/cab_background_bottom_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="cab_background_top_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/cab_background_top_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/cab_background_top_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="favorites"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/favorites.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/favorites.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="ic_action_copy"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ic_action_copy.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ic_action_copy.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="ic_action_important"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ic_action_important.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ic_action_important.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="ic_action_refresh"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ic_action_refresh.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ic_action_refresh.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="ic_action_share"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ic_action_share.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ic_action_share.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="ic_drawer"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ic_drawer.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ic_drawer.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="ic_launcher"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ic_launcher.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/ic_launcher.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="lights"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/lights.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/lights.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="list_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/list_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/list_focused_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="list_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/list_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/list_pressed_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="login"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/login.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/login.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="logo"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/logo.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/logo.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="menu_dropdown_panel_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/menu_dropdown_panel_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/menu_dropdown_panel_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="outlets"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/outlets.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/outlets.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="password"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/password.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/password.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="power_green"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/power_green.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/power_green.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="power_red"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/power_red.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/power_red.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="progress_bg_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/progress_bg_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/progress_bg_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="progress_horizontal_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/progress_horizontal_miztheme.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/progress_horizontal_miztheme.xml"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="progress_primary_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/progress_primary_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/progress_primary_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="progress_secondary_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/progress_secondary_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/progress_secondary_miztheme.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="rename"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/rename.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="rooms"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/rooms.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/rooms.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="scenarios"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/scenarios.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/scenarios.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="security"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/security.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/security.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="selectable_background_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/selectable_background_miztheme.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/selectable_background_miztheme.xml"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="sensors"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/sensors.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/sensors.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_default_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/spinner_ab_default_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/spinner_ab_default_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_disabled_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/spinner_ab_disabled_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/spinner_ab_disabled_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/spinner_ab_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/spinner_ab_focused_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/spinner_ab_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/spinner_ab_pressed_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_background_ab_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/spinner_background_ab_miztheme.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/spinner_background_ab_miztheme.xml"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="summary"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/summary.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/summary.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="tab_indicator_ab_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_indicator_ab_miztheme.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_indicator_ab_miztheme.xml"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="tab_selected_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_selected_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_selected_focused_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="tab_selected_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_selected_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_selected_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="tab_selected_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_selected_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_selected_pressed_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="tab_unselected_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_unselected_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_unselected_focused_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="tab_unselected_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_unselected_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_unselected_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="tab_unselected_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_unselected_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/tab_unselected_pressed_miztheme.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="thermostat"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/thermostat.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/thermostat.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="username"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/username.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/username.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="ab_bottom_solid_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ab_bottom_solid_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ab_bottom_solid_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="ab_solid_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ab_solid_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ab_solid_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="ab_stacked_solid_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ab_stacked_solid_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ab_stacked_solid_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="ab_texture_tile_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ab_texture_tile_miztheme.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ab_texture_tile_miztheme.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="ab_transparent_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ab_transparent_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ab_transparent_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="add"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/add.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/add.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="btn_cab_done_default_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/btn_cab_done_default_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/btn_cab_done_default_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="btn_cab_done_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/btn_cab_done_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/btn_cab_done_focused_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="btn_cab_done_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/btn_cab_done_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/btn_cab_done_pressed_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="cab_background_bottom_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/cab_background_bottom_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/cab_background_bottom_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="cab_background_top_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/cab_background_top_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/cab_background_top_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="favorites"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/favorites.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/favorites.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="ic_action_important"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ic_action_important.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ic_action_important.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="ic_launcher"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ic_launcher.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="lights"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/lights.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="list_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/list_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/list_focused_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="list_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/list_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/list_pressed_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="login"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/login.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/login.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="menu_dropdown_panel_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/menu_dropdown_panel_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/menu_dropdown_panel_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="outlets"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/outlets.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="password"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/password.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/password.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="power_green"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/power_green.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/power_green.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="power_red"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/power_red.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/power_red.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="progress_bg_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/progress_bg_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/progress_bg_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="progress_primary_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/progress_primary_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/progress_primary_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="progress_secondary_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/progress_secondary_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/progress_secondary_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="rename"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/rename.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="rooms"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/rooms.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/rooms.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="scenarios"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/scenarios.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/scenarios.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="security"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/security.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="sensors"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/sensors.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_default_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/spinner_ab_default_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/spinner_ab_default_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_disabled_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/spinner_ab_disabled_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/spinner_ab_disabled_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/spinner_ab_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/spinner_ab_focused_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/spinner_ab_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/spinner_ab_pressed_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="summary"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/summary.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/summary.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="tab_selected_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/tab_selected_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/tab_selected_focused_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="tab_selected_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/tab_selected_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/tab_selected_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="tab_selected_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/tab_selected_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/tab_selected_pressed_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="tab_unselected_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/tab_unselected_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/tab_unselected_focused_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="tab_unselected_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/tab_unselected_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/tab_unselected_miztheme.9.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="tab_unselected_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/tab_unselected_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/tab_unselected_pressed_miztheme.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="thermostat"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/thermostat.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="username"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/username.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/username.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="ab_bottom_solid_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ab_bottom_solid_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ab_bottom_solid_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="ab_solid_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ab_solid_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ab_solid_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="ab_stacked_solid_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ab_stacked_solid_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ab_stacked_solid_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="ab_texture_tile_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ab_texture_tile_miztheme.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ab_texture_tile_miztheme.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="ab_transparent_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ab_transparent_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ab_transparent_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="add"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/add.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/add.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="btn_cab_done_default_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/btn_cab_done_default_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/btn_cab_done_default_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="btn_cab_done_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/btn_cab_done_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/btn_cab_done_focused_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="btn_cab_done_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/btn_cab_done_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/btn_cab_done_pressed_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="cab_background_bottom_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/cab_background_bottom_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/cab_background_bottom_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="cab_background_top_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/cab_background_top_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/cab_background_top_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="favorites"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/favorites.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/favorites.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="ic_action_important"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ic_action_important.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ic_action_important.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="ic_launcher"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="lights"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/lights.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="list_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/list_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/list_focused_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="list_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/list_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/list_pressed_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="login"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/login.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/login.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="menu_dropdown_panel_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/menu_dropdown_panel_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/menu_dropdown_panel_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="outlets"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/outlets.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="password"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/password.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/password.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="power_green"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/power_green.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/power_green.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="power_red"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/power_red.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/power_red.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="progress_bg_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/progress_bg_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/progress_bg_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="progress_primary_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/progress_primary_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/progress_primary_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="progress_secondary_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/progress_secondary_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/progress_secondary_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="rename"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/rename.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="rooms"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/rooms.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/rooms.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="scenarios"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/scenarios.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/scenarios.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="security"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/security.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="sensors"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/sensors.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_default_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/spinner_ab_default_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/spinner_ab_default_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_disabled_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/spinner_ab_disabled_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/spinner_ab_disabled_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/spinner_ab_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/spinner_ab_focused_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/spinner_ab_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/spinner_ab_pressed_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="summary"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/summary.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/summary.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="tab_selected_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/tab_selected_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/tab_selected_focused_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="tab_selected_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/tab_selected_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/tab_selected_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="tab_selected_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/tab_selected_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/tab_selected_pressed_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="tab_unselected_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/tab_unselected_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/tab_unselected_focused_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="tab_unselected_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/tab_unselected_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/tab_unselected_miztheme.9.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="tab_unselected_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/tab_unselected_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/tab_unselected_pressed_miztheme.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="thermostat"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/thermostat.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="username"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/username.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/username.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="ab_bottom_solid_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ab_bottom_solid_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ab_bottom_solid_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="ab_solid_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ab_solid_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ab_solid_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="ab_stacked_solid_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ab_stacked_solid_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ab_stacked_solid_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="ab_texture_tile_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ab_texture_tile_miztheme.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ab_texture_tile_miztheme.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="ab_transparent_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ab_transparent_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ab_transparent_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="add"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/add.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/add.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="btn_cab_done_default_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/btn_cab_done_default_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/btn_cab_done_default_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="btn_cab_done_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/btn_cab_done_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/btn_cab_done_focused_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="btn_cab_done_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/btn_cab_done_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/btn_cab_done_pressed_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="cab_background_bottom_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/cab_background_bottom_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/cab_background_bottom_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="cab_background_top_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/cab_background_top_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/cab_background_top_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="favorites"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/favorites.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/favorites.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="ic_action_important"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ic_action_important.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ic_action_important.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="ic_launcher"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="lights"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/lights.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="list_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/list_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/list_focused_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="list_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/list_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/list_pressed_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="login"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/login.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/login.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="menu_dropdown_panel_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/menu_dropdown_panel_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/menu_dropdown_panel_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="outlets"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/outlets.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="password"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/password.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/password.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="power_green"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/power_green.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/power_green.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="power_red"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/power_red.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/power_red.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="progress_bg_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/progress_bg_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/progress_bg_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="progress_primary_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/progress_primary_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/progress_primary_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="progress_secondary_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/progress_secondary_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/progress_secondary_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="rename"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/rename.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="rooms"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/rooms.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/rooms.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="scenarios"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/scenarios.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/scenarios.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="security"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/security.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="sensors"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/sensors.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_default_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/spinner_ab_default_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/spinner_ab_default_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_disabled_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/spinner_ab_disabled_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/spinner_ab_disabled_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/spinner_ab_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/spinner_ab_focused_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="spinner_ab_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/spinner_ab_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/spinner_ab_pressed_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="summary"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/summary.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/summary.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="tab_selected_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/tab_selected_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/tab_selected_focused_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="tab_selected_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/tab_selected_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/tab_selected_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="tab_selected_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/tab_selected_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/tab_selected_pressed_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="tab_unselected_focused_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/tab_unselected_focused_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/tab_unselected_focused_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="tab_unselected_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/tab_unselected_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/tab_unselected_miztheme.9.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="tab_unselected_pressed_miztheme"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/tab_unselected_pressed_miztheme.9.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/tab_unselected_pressed_miztheme.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="thermostat"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/thermostat.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="username"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/username.png"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/username.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="activity_login"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/activity_login.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/activity_login.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="activity_main"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/activity_main.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="control_thermostat"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/control_thermostat.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="fragment_favorites"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/fragment_favorites.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/fragment_favorites.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="fragment_rooms"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/fragment_rooms.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/fragment_rooms.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="fragment_scenarios"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/fragment_scenarios.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/fragment_scenarios.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="fragment_summary"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/fragment_summary.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/fragment_summary.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="fragment_test"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/fragment_test.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/fragment_test.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="grid_single_rooms"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/grid_single_rooms.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/grid_single_rooms.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="listview_item_row"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/listview_item_row.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/listview_item_row.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="row_layout_favorites"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/row_layout_favorites.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/row_layout_favorites.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="row_layout_lights"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/row_layout_lights.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/row_layout_lights.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="row_layout_thermostat"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/row_layout_thermostat.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="screen_lights"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/screen_lights.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/screen_lights.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="screen_thermostat"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/layout/screen_thermostat.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="main"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/menu/main.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/menu/main.xml"
                 qualifiers=""
                 type="menu" />
             <file
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values/dimens.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/values/dimens.xml"
                 qualifiers="" >
                 <dimen name="activity_horizontal_margin" >16dp
                 </dimen>
@@ -977,7 +1087,7 @@
                 </dimen>
             </file>
             <file
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values/strings.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/values/strings.xml"
                 qualifiers="" >
                 <string name="security_btn" >Security
                 </string>
@@ -1020,7 +1130,7 @@ Test
                 </string>
             </file>
             <file
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values/styles.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/values/styles.xml"
                 qualifiers="" >
 
                 <style
@@ -1042,7 +1152,7 @@ Test
                 </style>
             </file>
             <file
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values/styles_miztheme.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/values/styles_miztheme.xml"
                 qualifiers="" >
 
                 <style
@@ -1180,13 +1290,13 @@ Test
                 </style>
             </file>
             <file
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values-sw720dp-land/dimens.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/values-sw720dp-land/dimens.xml"
                 qualifiers="sw720dp-land-v13" >
                 <dimen name="activity_horizontal_margin" >128dp
                 </dimen>
             </file>
             <file
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values-v11/styles.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/values-v11/styles.xml"
                 qualifiers="v11" >
 
                 <style
@@ -1197,7 +1307,7 @@ Test
                 </style>
             </file>
             <file
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/values-v14/styles.xml"
+                path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/main/res/values-v14/styles.xml"
                 qualifiers="v14" >
 
                 <style
@@ -1207,122 +1317,12 @@ Test
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
-            <file
-                name="rename"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/rename.png"
-                qualifiers="hdpi-v4"
-                type="drawable" />
-            <file
-                name="rename"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/rename.png"
-                qualifiers="xxhdpi-v4"
-                type="drawable" />
-            <file
-                name="rename"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/rename.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="rename"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/rename.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="thermostat"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/thermostat.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="security"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/security.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="security"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/security.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="thermostat"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/thermostat.png"
-                qualifiers="xxhdpi-v4"
-                type="drawable" />
-            <file
-                name="lights"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/lights.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="outlets"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/outlets.png"
-                qualifiers="xxhdpi-v4"
-                type="drawable" />
-            <file
-                name="thermostat"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/thermostat.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="outlets"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/outlets.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="outlets"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/outlets.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="sensors"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/sensors.png"
-                qualifiers="xxhdpi-v4"
-                type="drawable" />
-            <file
-                name="lights"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/lights.png"
-                qualifiers="xxhdpi-v4"
-                type="drawable" />
-            <file
-                name="sensors"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/sensors.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="sensors"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-mdpi/sensors.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="security"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xxhdpi/security.png"
-                qualifiers="xxhdpi-v4"
-                type="drawable" />
-            <file
-                name="lights"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-xhdpi/lights.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="screen_thermostat"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/screen_thermostat.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="control_thermostat"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/control_thermostat.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="row_layout_thermostat"
-                path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/row_layout_thermostat.xml"
-                qualifiers=""
-                type="layout" />
         </source>
-        <source path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/build/generated/res/rs/debug" />
-        <source path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/build/generated/res/generated/debug" />
+        <source path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/build/generated/res/rs/debug" />
+        <source path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/build/generated/res/generated/debug" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/debug/res" />
+        <source path="/Users/broccard/Documents/School/Fall 2014/Capstone II/capstone/Android/ZHOME/app/src/debug/res" />
     </dataSet>
 
 </merger>

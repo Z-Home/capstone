@@ -61,4 +61,4 @@
         android:layout_height="wrap_content"
         android:id="@+id/lightsListView">
     </ListView>
-</LinearLayout><!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/screen_thermostat.xml -->
+</LinearLayout><!-- From: file:/Users/broccard/Documents/School/Fall%202014/Capstone%20II/capstone/Android/ZHOME/app/src/main/res/layout/screen_thermostat.xml -->

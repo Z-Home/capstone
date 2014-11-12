@@ -22,4 +22,4 @@
     <item android:state_pressed="false" android:state_focused="true" android:drawable="@drawable/list_focused_miztheme" />
     <item android:state_pressed="true" android:drawable="@drawable/list_pressed_miztheme" />
     <item android:drawable="@android:color/transparent" />
-</selector><!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/selectable_background_miztheme.xml -->
+</selector><!-- From: file:/Users/broccard/Documents/School/Fall%202014/Capstone%20II/capstone/Android/ZHOME/app/src/main/res/drawable-hdpi/selectable_background_miztheme.xml -->
