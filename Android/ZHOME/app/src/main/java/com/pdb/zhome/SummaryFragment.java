@@ -33,6 +33,7 @@ public class SummaryFragment extends Fragment {
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Lights");
+                MainActivity.setCurrentFragment(screen);
             }
         });
 
