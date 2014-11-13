@@ -1,5 +1,6 @@
 package com.pdb.zhome;
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.Fragment;
@@ -32,7 +33,7 @@ public class MainActivity extends FragmentActivity {
     private Fragment scenariosFragment;
     private Fragment testFragment;
     private Fragment roomsFragment;
-    private Fragment currentFragment;
+    static private Fragment currentFragment;
 
     // nav drawer title
     private CharSequence mDrawerTitle;
@@ -123,9 +124,17 @@ public class MainActivity extends FragmentActivity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
-	
-	@Override
+
+    public static void setCurrentFragment(Fragment currentFragment) {
+        MainActivity.currentFragment = currentFragment;
+    }
+
+    public static Fragment getCurrentFragment() {
+
+        return currentFragment;
+    }
+
+    @Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
         // The action bar home/up action should open or close the drawer.
@@ -235,6 +244,13 @@ public class MainActivity extends FragmentActivity {
                 TestFragment fragment = (TestFragment) testFragment;
                 fragment.fillUI();
             }
+        }else if (values[0].equals("update")){
+            Fragment frg = null;
+            frg = getCurrentFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.detach(frg);
+            ft.attach(frg);
+            ft.commit();
         }
     }
 
