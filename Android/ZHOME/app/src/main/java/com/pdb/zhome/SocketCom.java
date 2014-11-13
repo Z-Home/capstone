@@ -155,6 +155,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                 String innerKeys = keys.next();
 
                 JSONObject commandClasses = devices.getJSONObject(innerKeys).getJSONObject("commandClasses");
+                String devName = devices.getJSONObject(innerKeys).getString("devName");
                 Iterator<String> classes = commandClasses.keys();
 
                 List<String> cc = new ArrayList<String>();
@@ -171,7 +172,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                 if (cc.contains("66")){
                     device = new Thermostat(map, innerKeys);
                 }else if (cc.contains("37") || cc.contains("38")){
-                    device = new Switch(map, innerKeys);
+                    device = new Switch(map, innerKeys, devName);
                 }else if (cc.contains("48") || cc.contains("49")){
                     device = new Sensor(map, innerKeys);
                 }

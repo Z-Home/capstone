@@ -21,6 +21,11 @@ public class Sensor implements Device {
     public String getType(){return this.type;}
 
     @Override
+    public String getDevName() {
+        return null;
+    }
+
+    @Override
     public String getDevNum() {return this.devNum;}
 
     @Override

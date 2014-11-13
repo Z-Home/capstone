@@ -39,7 +39,7 @@ class lightsScreenAdapter extends ArrayAdapter<String> {
 
         TextView theTextView = (TextView) theView.findViewById(R.id.lightsScreenText);
 
-        theTextView.setText(favoriteItem);
+        theTextView.setText(deviceHashMap.get(favoriteItem).getDevName());
 
         ImageView theImageView = (ImageView) theView.findViewById(R.id.lightsScreenImageView);
 

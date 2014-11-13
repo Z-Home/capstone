@@ -15,4 +15,5 @@ public interface Device {
     String[] formatUIinfo(String cc, String value);
     String getDevNum();
     String getType();
+    String getDevName();
 }
