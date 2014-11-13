@@ -1,8 +1,10 @@
 package connect
 
 import (
-	"code.google.com/p/go.crypto/scrypt"
+	//"code.google.com/p/go.crypto/scrypt"
+	"code.google.com/p/go.crypto/pbkdf2"
 	"crypto/rand"
+	"crypto/sha256"
 	"encoding/json"
 	"fmt"
 	"github.com/jeffail/gabs"
@@ -67,10 +69,7 @@ func CheckPass(cred string) int {
 		return 3
 	}
 
-	temp, err := scrypt.Key([]byte(c.Pass), []byte(result.Salt), 16384, 8, 1, 32)
-	if err != nil {
-		fmt.Println("error")
-	}
+	temp := HashPassword([]byte(c.Pass), []byte(result.Salt))
 
 	hash := fmt.Sprintf("%x", temp)
 
@@ -86,6 +85,10 @@ func CheckPass(cred string) int {
 	return 3
 }
 
+func HashPassword(password, salt []byte) []byte {
+	return pbkdf2.Key(password, salt, 4096, sha256.Size, sha256.New)
+}
+
 func NewUser(user string, password string) {
 	salt := make([]byte, 32)
 	_, err := io.ReadFull(rand.Reader, salt)
@@ -95,10 +98,7 @@ func NewUser(user string, password string) {
 
 	s := fmt.Sprintf("%x", salt)
 
-	hash, err := scrypt.Key([]byte(password), []byte(s), 16384, 8, 1, 32)
-	if err != nil {
-		log.Fatal(err)
-	}
+	hash := HashPassword([]byte(password), []byte(s))
 
 	h := fmt.Sprintf("%x", hash)
 

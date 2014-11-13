@@ -4,12 +4,12 @@ import (
 	"net"
 
 	"capstone/connect"
-	"github.com/davecheney/profile"
+	//"github.com/davecheney/profile"
 )
 
 func main() {
-	defer profile.Start(profile.CPUProfile).Stop()
-	defer profile.Start(profile.MemProfile).Stop()
+	//defer profile.Start(profile.CPUProfile).Stop()
+	//defer profile.Start(profile.MemProfile).Stop()
 
 	zHome := connect.NewZHome()
 
