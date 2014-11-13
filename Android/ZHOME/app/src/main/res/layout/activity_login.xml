@@ -5,7 +5,7 @@
     tools:context="com.pdb.zhome.LoginFragment"
     android:orientation="vertical"
     android:theme="@android:style/Theme.Holo.Light.NoActionBar"
-    android:background="#f1B82D">
+    android:background="#F1B82D">
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
