@@ -12,18 +12,30 @@ import android.widget.Toast;
 
 import com.miz.pdb.R;
 
+import org.json.JSONObject;
+
+import java.util.HashMap;
+
 class lightsScreenAdapter extends ArrayAdapter<String> {
+
+    private HashMap<String, Device> deviceHashMap;
+    private SocketCom socketCom;
     public lightsScreenAdapter(Context context, String[] values) {
         super(context, R.layout.row_layout_favorites, values);
     }
 
     @Override
     public View getView(int position, final View convertView, ViewGroup parent) {
+        deviceHashMap = MainActivity.getHashMap();
+        socketCom = SocketCom.getInstance();
         LayoutInflater theInflater = LayoutInflater.from(getContext());
 
         View theView = theInflater.inflate(R.layout.row_layout_lights, parent, false);
 
-        String favoriteItem = getItem(position);
+        final String favoriteItem = getItem(position);
+
+        String status = HashMapHelper.getStatus(favoriteItem);
+        System.out.println(status + ": this is the items status");
 
         TextView theTextView = (TextView) theView.findViewById(R.id.lightsScreenText);
 
@@ -35,11 +47,31 @@ class lightsScreenAdapter extends ArrayAdapter<String> {
 
         final ImageButton powerBtn = (ImageButton) theView.findViewById(R.id.powerBtn);
 
-        powerBtn.setImageResource(R.drawable.power_red);
+        if (status.equals("0")){
+            powerBtn.setImageResource(R.drawable.power_red);
+        }
+        else
+            powerBtn.setImageResource(R.drawable.power_green);
+
         powerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                powerBtn.setImageResource(R.drawable.power_green);
+                deviceHashMap = MainActivity.getHashMap();
+                String status = HashMapHelper.getStatus(favoriteItem);
+                if (status.equals("0")){
+                    JSONObject command;
+                    command = deviceHashMap.get(favoriteItem).command("37", "1");
+                    socketCom.sendMessage(command);
+                    powerBtn.setImageResource(R.drawable.power_green);
+                    System.out.println("Turning switch on.....");
+                }
+                else {
+                    JSONObject command;
+                    command = deviceHashMap.get(favoriteItem).command("37", "0");
+                    socketCom.sendMessage(command);
+                    powerBtn.setImageResource(R.drawable.power_red);
+                    System.out.println("Turning switch off.....");
+                }
             }
         });
 

@@ -15,7 +15,7 @@ public class Switch implements Device {
     private String type;
 
     public Switch(HashMap<String, String> map, String devNum) {
-        this.type = type;
+        this.type = "switch";
         setValues(map);
         setDevNum(devNum);
     }

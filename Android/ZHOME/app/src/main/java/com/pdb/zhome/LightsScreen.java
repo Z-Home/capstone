@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.miz.pdb.R;
 
+import java.util.ArrayList;
+
 public class LightsScreen extends Fragment{
 
     public LightsScreen() {
@@ -24,27 +26,9 @@ public class LightsScreen extends Fragment{
 
         final View rootView = inflater.inflate(R.layout.screen_lights, container, false);
 
-        //Sample Data only
-        String[] lightsListArray = {
-                "Bedroom Bed Light Test Long text to see what happens? 12 34567 890",
-                "Living Room Light 1",
-                "Living Room Light 2",
-                "Living Room Light 3",
-                "Main Entrance Light",
-                "Outdoor Light 1",
-                "Outdoor Light 2",
-                "Outdoor Light 3",
-                "Backyard Light",
-                "Bedroom Bed Light",
-                "Living Room Light 1",
-                "Living Room Light 2",
-                "Living Room Light 3",
-                "Main Entrance Light",
-                "Outdoor Light 1",
-                "Outdoor Light 2",
-                "Outdoor Light 3",
-                "Backyard Light"
-        };
+        ArrayList<String> deviceArrayList = new ArrayList<String>(HashMapHelper.getDeviceNames("switch"));
+
+        String[] lightsListArray = deviceArrayList.toArray(new String[deviceArrayList.size()]);
 
 
         ListAdapter lightsScreenAdapter = new lightsScreenAdapter(getActivity(), lightsListArray);

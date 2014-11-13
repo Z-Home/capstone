@@ -14,7 +14,7 @@ public class Sensor implements Device {
 
     public Sensor(HashMap<String, String> map, String devNum) {
         this.devNum = devNum;
-        this.type = type;
+        this.type = "sensor";
     }
 
     @Override

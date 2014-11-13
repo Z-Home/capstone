@@ -27,6 +27,9 @@ public final class HashMapHelper {
         String status;
         if (device.getType().equals("switch")){
             status = device.getValues().get("37");
+            if (status ==null)
+                status = device.getValues().get("38");
+            System.out.println("The status of this device = " + status);
         }
         else
             status = null;

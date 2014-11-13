@@ -14,7 +14,7 @@ public class Thermostat implements Device {
     private String type;
 
     public Thermostat(HashMap<String, String> map, String devNum) {
-        this.type = type;
+        this.type = "thermostat";
         setDevNum(devNum);
     }
 
