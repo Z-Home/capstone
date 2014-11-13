@@ -112,7 +112,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                         case 2://UPDATE
                             System.out.println("2: UPDATE");
                             String[] info = updateHashMap(fromServerJson.getJSONObject("Message").getJSONObject("update"));
-                            //publishProgress(info);
+                            publishProgress("update");
                             break;
                         default:
                             System.out.println("DEFAULT");
