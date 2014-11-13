@@ -47,7 +47,7 @@ class lightsScreenAdapter extends ArrayAdapter<String> {
 
         final ImageButton powerBtn = (ImageButton) theView.findViewById(R.id.powerBtn);
 
-        if (status.equals("0")){
+        if (status.equals("0") || status.equals("false")){
             powerBtn.setImageResource(R.drawable.power_red);
         }
         else
@@ -58,19 +58,26 @@ class lightsScreenAdapter extends ArrayAdapter<String> {
             public void onClick(View view) {
                 deviceHashMap = MainActivity.getHashMap();
                 String status = HashMapHelper.getStatus(favoriteItem);
-                if (status.equals("0")){
+                System.out.println("The status of this device on click is: " + status);
+                if (status.equals("0") || status.equals("false")){
                     JSONObject command;
-                    command = deviceHashMap.get(favoriteItem).command("37", "1");
+                    if (deviceHashMap.get(favoriteItem).getValues().keySet().contains("38")) {
+                        command = deviceHashMap.get(favoriteItem).command("38", "99");
+                    }
+                    else
+                        command = deviceHashMap.get(favoriteItem).command("37", "1");
                     socketCom.sendMessage(command);
                     powerBtn.setImageResource(R.drawable.power_green);
-                    System.out.println("Turning switch on.....");
                 }
                 else {
                     JSONObject command;
-                    command = deviceHashMap.get(favoriteItem).command("37", "0");
+                    if (deviceHashMap.get(favoriteItem).getValues().keySet().contains("38")) {
+                        command = deviceHashMap.get(favoriteItem).command("38", "0");
+                    }
+                    else
+                        command = deviceHashMap.get(favoriteItem).command("37", "0");
                     socketCom.sendMessage(command);
                     powerBtn.setImageResource(R.drawable.power_red);
-                    System.out.println("Turning switch off.....");
                 }
             }
         });
