@@ -88,7 +88,20 @@ public class SummaryFragment extends Fragment {
                 getActivity().getActionBar().setTitle("Thermostat");
             }
         });
-		return rootView;
+
+        // Rename Devices Button
+        ImageButton renameBtn = (ImageButton) rootView.findViewById(R.id.renameBtn);
+        renameBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                screen = new RenameScreen();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
+                getActivity().getActionBar().setTitle("Rename Devices");
+            }
+        });
+        return rootView;
 	}
 
 

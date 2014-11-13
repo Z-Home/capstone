@@ -22,6 +22,12 @@ public final class HashMapHelper {
         return  deviceArrayList;
     }
 
+    public static String[] getAllDeviceNames(){
+
+        return deviceHashMap.keySet().toArray(new String[deviceHashMap.size()]);
+
+    }
+
     public static String getStatus(String name){
         Device device = deviceHashMap.get(name);
         String status;
@@ -34,6 +40,12 @@ public final class HashMapHelper {
         else
             status = null;
         return status;
+    }
+
+    public static String getType(String name){
+        String type = deviceHashMap.get(name).getType();
+
+        return type;
     }
 
 }

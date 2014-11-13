@@ -32,7 +32,7 @@ public class Thermostat implements Device {
 
     @Override
     public String getDevName() {
-        return null;
+        return "Thermostat";
     }
 
     @Override

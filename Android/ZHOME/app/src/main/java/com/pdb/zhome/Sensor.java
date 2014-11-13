@@ -22,7 +22,7 @@ public class Sensor implements Device {
 
     @Override
     public String getDevName() {
-        return null;
+        return "Sensor";
     }
 
     @Override

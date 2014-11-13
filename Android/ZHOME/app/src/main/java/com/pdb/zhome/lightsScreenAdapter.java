@@ -43,7 +43,7 @@ class lightsScreenAdapter extends ArrayAdapter<String> {
 
         ImageView theImageView = (ImageView) theView.findViewById(R.id.lightsScreenImageView);
 
-        theImageView.setImageResource(R.drawable.sensors);
+        theImageView.setImageResource(R.drawable.lights);
 
         final ImageButton powerBtn = (ImageButton) theView.findViewById(R.id.powerBtn);
 
