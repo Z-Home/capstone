@@ -13,35 +13,25 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_centerVertical="true"
-        android:id="@+id/lightsScreenImageView"
-        android:src="@drawable/lights"/>
+        android:id="@+id/renameImageView"
+        android:src="@drawable/thermostat"
+        />
 
-    <TextView
+    <EditText
+        android:id="@+id/renameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:layout_toEndOf="@+id/lightsScreenImageView"
-        android:layout_toRightOf="@+id/lightsScreenImageView"
-        android:layout_toStartOf="@+id/powerBtn"
-        android:layout_toLeftOf="@+id/powerBtn"
-        android:id="@+id/lightsScreenText"
-        android:textSize="15sp"
-        android:text="This is sample text 1234567890"/>
-
-    <ImageButton
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@id/renameImageView"
+        android:layout_toRightOf="@id/renameImageView"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:id="@+id/powerBtn"
-        android:background="@android:color/transparent"
-        android:src="@drawable/power_green"
-        android:scaleType="fitXY"/>
+        android:textSize="15sp"
+        android:padding="10dp"
+        android:text="SAMPLE TEXT"
+        />
 
 </RelativeLayout>
 

@@ -2,7 +2,6 @@ package com.pdb.zhome;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -82,7 +81,7 @@ public class SummaryFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                screen = new LightsScreen();
+                screen = new ThermostatListScreen();
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Thermostat");

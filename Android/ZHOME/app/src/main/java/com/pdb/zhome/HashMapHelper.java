@@ -35,12 +35,23 @@ public final class HashMapHelper {
             status = device.getValues().get("37");
             if (status ==null)
                 status = device.getValues().get("38");
-            System.out.println("The status of this device = " + status);
         }
         else
             status = null;
         return status;
     }
+
+   public static int getSwitchesOn(){
+       int switchesOn=0;
+       Device[] allDevices = deviceHashMap.values().toArray(new Device[deviceHashMap.size()]);
+
+       for (int i =0; i<allDevices.length; i++){
+           if (allDevices[i].getType().equals("switch"))
+               if(getStatus(allDevices[i].getDevNum()).equals("true") || getStatus(allDevices[i].getDevNum()).equals("99"))
+                   switchesOn++;
+       }
+       return switchesOn;
+   }
 
     public static String getType(String name){
         String type = deviceHashMap.get(name).getType();

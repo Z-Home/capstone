@@ -10,9 +10,12 @@ import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.miz.pdb.R;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -27,6 +30,14 @@ public class LightsScreen extends Fragment{
         final View rootView = inflater.inflate(R.layout.screen_lights, container, false);
 
         ArrayList<String> deviceArrayList = new ArrayList<String>(HashMapHelper.getDeviceNames("switch"));
+
+        TextView totalSwitches = (TextView) rootView.findViewById(R.id.totalLightsNumTxt);
+        Integer switches = deviceArrayList.size();
+        totalSwitches.setText(switches.toString());
+
+        TextView numSwitchesOn = (TextView) rootView.findViewById(R.id.lightsOnNumTxt);
+        Integer switchesOn = HashMapHelper.getSwitchesOn();
+        numSwitchesOn.setText(switchesOn.toString());
 
         String[] lightsListArray = deviceArrayList.toArray(new String[deviceArrayList.size()]);
 

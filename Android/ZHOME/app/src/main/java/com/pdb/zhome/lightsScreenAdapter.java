@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.miz.pdb.R;
 
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 
@@ -20,6 +21,7 @@ class lightsScreenAdapter extends ArrayAdapter<String> {
 
     private HashMap<String, Device> deviceHashMap;
     private SocketCom socketCom;
+    private int lightsOn;
     public lightsScreenAdapter(Context context, String[] values) {
         super(context, R.layout.row_layout_favorites, values);
     }
@@ -35,7 +37,6 @@ class lightsScreenAdapter extends ArrayAdapter<String> {
         final String favoriteItem = getItem(position);
 
         String status = HashMapHelper.getStatus(favoriteItem);
-        System.out.println(status + ": this is the items status");
 
         TextView theTextView = (TextView) theView.findViewById(R.id.lightsScreenText);
 

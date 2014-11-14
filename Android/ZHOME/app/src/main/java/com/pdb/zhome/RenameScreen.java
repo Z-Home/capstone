@@ -19,7 +19,7 @@ public class RenameScreen extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        final View rootView = inflater.inflate(R.layout.fragment_favorites, container, false);
+        final View rootView = inflater.inflate(R.layout.screen_rename, container, false);
 
 
         String[] deviceNames = HashMapHelper.getAllDeviceNames();
@@ -27,7 +27,7 @@ public class RenameScreen extends Fragment{
 
         ListAdapter renameScreenAdapter = new renameScreenAdapter(getActivity(), deviceNames);
 
-        ListView lightsListView = (ListView) rootView.findViewById(R.id.favoritesListView);
+        ListView lightsListView = (ListView) rootView.findViewById(R.id.renameScreenListView);
 
         lightsListView.setAdapter(renameScreenAdapter);
 
