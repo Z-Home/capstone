@@ -3,6 +3,7 @@ package com.pdb.zhome;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * Created by Bryan on 10/13/2014.
@@ -11,9 +12,12 @@ public class Sensor implements Device {
 
     private String type;
     private String devNum;
+    private String devName;
 
-    public Sensor(HashMap<String, String> map, String devNum) {
-        this.devNum = devNum;
+    public Sensor(HashMap<String, String> map, String devNum, String devName) {
+        setDevNum(devNum);
+        setDevName(devName);
+        setValues(map);
         this.type = "sensor";
     }
 
@@ -22,15 +26,32 @@ public class Sensor implements Device {
 
     @Override
     public String getDevName() {
-        return "Sensor";
+        return this.devName;
     }
 
     @Override
     public String getDevNum() {return this.devNum;}
 
+    public void setDevNum(String devNum) {
+        this.devNum = devNum;
+    }
+
+    public void setDevName(String devName) {
+
+        this.devName = devName;
+    }
+
     @Override
     public void setValues(HashMap<String, String> map) {
-
+//        System.out.println("------------------ "+map+" ---------------------");
+//        Iterator<String> keys = map.keySet().iterator();
+//        while(keys.hasNext()){
+//            if (keys.next().equals("48")){
+//                System.out.println(map.get("48"));
+//            } else if (keys.next().equals("49")){
+//                System.out.println(map.get("49"));
+//            }
+//        }
     }
 
     @Override

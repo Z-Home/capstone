@@ -100,8 +100,14 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                         case 0://AUTHENTICATE
                             publishProgress("Started");
                             System.out.println("0: LOGGING IN");
-                            if(fromServerJson.getString("Message") == "Incorrect Login"){
-                                loginActivity.initLoginScreen();
+                            System.out.println("JSON Message: " + fromServerJson.getString("Message"));
+                            if(fromServerJson.getString("Message").equals("Incorrect Login")){
+                                System.out.println("Incorrect Login");
+                                if(!loginActivity.isViewInitialized()) {
+                                    loginActivity.initLoginScreen();
+                                }else{
+                                    loginActivity.showIncorrectLoginDialog();
+                                }
                             }
                             break;
                         case 1://DEVICE ACCESS
@@ -174,11 +180,11 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
 
                 Device device = null;
                 if (cc.contains("66")){
-                    device = new Thermostat(map, innerKeys);
+                    device = new Thermostat(map, innerKeys, devName);
                 }else if (cc.contains("37") || cc.contains("38")){
                     device = new Switch(map, innerKeys, devName);
                 }else if (cc.contains("48") || cc.contains("49")){
-                    device = new Sensor(map, innerKeys);
+                    device = new Sensor(map, innerKeys, devName);
                 }
 
                 deviceHashMap.put(innerKeys, device);

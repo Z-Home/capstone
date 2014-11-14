@@ -12,14 +12,20 @@ public class Thermostat implements Device {
 
     private String devNum;
     private String type;
+    private String devName;
 
-    public Thermostat(HashMap<String, String> map, String devNum) {
+    public Thermostat(HashMap<String, String> map, String devNum, String devName) {
         this.type = "thermostat";
         setDevNum(devNum);
+        setDevName(devName);
     }
 
     public void setDevNum(String devNum) {
         this.devNum = devNum;
+    }
+
+    public void setDevName(String devName) {
+        this.devName = devName;
     }
 
     @Override
@@ -32,7 +38,7 @@ public class Thermostat implements Device {
 
     @Override
     public String getDevName() {
-        return "Thermostat";
+        return this.devName;
     }
 
     @Override
