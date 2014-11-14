@@ -88,7 +88,10 @@ public class LoginActivity extends Activity {
 
     public void update(String[] values){
         if(values[0].equals("Connected")){
-           switchToMainActivity();
+            editor.putString("username", usernameEditText.getText().toString());
+            editor.putString("password", passwordEditText.getText().toString());
+            editor.commit();
+            switchToMainActivity();
         }else if(values[0].equals("Incorrect Login") && loginBtnClicked){
             showIncorrectLoginDialog();
         }

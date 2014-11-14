@@ -20,6 +20,7 @@ public class SplashScreenActivity extends Activity {
     private SocketCom socketCom;
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
+    private boolean attempted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +59,12 @@ public class SplashScreenActivity extends Activity {
     }
 
     public void update(String[] values){
+        System.out.println("IN UPDATE: " + values[0]);
         if(values[0].equals("Started")){
-            if(preferences.getString("username", null) != null && preferences.getString("password", null) != null) {
+            //Attempted variable makes sure we only attempt the login once.
+            if(preferences.getString("username", null) != null && preferences.getString("password", null) != null && !attempted) {
+                System.out.println("TRYING: " + preferences.getString("username", null) + " " + preferences.getString("password", null));
+                attempted = true;
                 socketCom.attemptLogin(preferences.getString("username", null), preferences.getString("password", null));
             }else{
                 startLoginActivity();
