@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import com.miz.pdb.R;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Context;
 
 import static com.pdb.zhome.SocketCom.*;
 
@@ -22,7 +25,7 @@ public class LoginActivity extends Activity {
     private SharedPreferences preferences;
     private Editor editor;
     private boolean initializedView = false;
-
+    final Context loginContext = this;
 
 
     @Override
@@ -94,5 +97,40 @@ public class LoginActivity extends Activity {
     public void onLoginButtonClicked(View view) {
         System.out.println("button clicked!");
         socketCom.attemptLogin(usernameEditText.getText().toString(), passwordEditText.getText().toString());
+    }
+
+    public void showIncorrectLoginDialog(){
+        this.runOnUiThread(new Runnable() {
+            public void run() {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(loginContext);
+
+                // set title
+                alertDialogBuilder.setTitle("Your Title");
+
+                // set dialog message
+                alertDialogBuilder
+                        .setMessage("Incorrect Login Information")
+                        .setCancelable(false)
+                        .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // if this button is clicked, just close
+                                // the dialog box and do nothing
+                                dialog.cancel();
+                            }
+                        });
+
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
+
+                // show it
+                alertDialog.show();
+            }
+        });
+
+
+    }
+
+    public boolean isViewInitialized() {
+        return initializedView;
     }
 }
