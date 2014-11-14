@@ -38,11 +38,12 @@ type Cred struct {
 type dev struct {
 	Devlist string
 	Value   string
+	Rooms   string
 }
 
 var collection *mgo.Collection
 
-func StartDB(zHome *ZHome) {
+func StartDB() {
 
 	url := fmt.Sprintf("mongodb://%s:%s@%s:27017/%s", DB_USER, DB_PASS, IP_ADDRESS, DB_DB)
 
@@ -176,4 +177,17 @@ func UpdateDevList(x string) {
 	if err != nil {
 		fmt.Printf("Can't update document %v\n", err)
 	}
+}
+
+func GetRooms() string {
+	list := dev{}
+
+	err := collection.Find(bson.M{"devlist": 1}).One(&list)
+	if err != nil {
+		fmt.Printf("got an error finding a doc %v\n")
+		return "nil"
+	}
+
+	fmt.Println(list.Rooms)
+	return list.Rooms
 }

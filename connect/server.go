@@ -25,6 +25,7 @@ type ZHome struct {
 	devices    []*Devices
 	deviceList string
 	collection *mgo.Collection
+	rooms      string
 }
 
 type Devices struct {
@@ -51,6 +52,7 @@ func (zHome *ZHome) Join(connection net.Conn) {
 		select {
 		case <-joined:
 			client.outgoing <- fmt.Sprintf("{\"Type\":1,\"Message\":%s}\n", deviceList)
+			client.outgoing <- fmt.Sprintf("{\"Type\":3,\"Message\":%s}\n", zHome.rooms)
 			if client.admin {
 				client.outgoing <- "ADMIN\n"
 			}
@@ -383,6 +385,10 @@ func (zHome *ZHome) GetDevices() {
 }
 
 func NewZHome() *ZHome {
+
+	StartDB()
+	rooms := GetRooms()
+
 	zHome := &ZHome{
 		clients:  make(map[net.Conn]*Client),
 		joins:    make(chan net.Conn),
@@ -390,9 +396,8 @@ func NewZHome() *ZHome {
 		outgoing: make(chan string),
 		dead:     make(chan *Client),
 		devices:  make([]*Devices, 0),
+		rooms:    rooms,
 	}
-
-	StartDB(zHome)
 
 	zHome.GetDevices()
 	zHome.Listen()

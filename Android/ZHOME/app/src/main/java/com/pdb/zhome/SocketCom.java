@@ -8,6 +8,7 @@ import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.app.Activity;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -114,6 +115,9 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                             String[] info = updateHashMap(fromServerJson.getJSONObject("Message").getJSONObject("update"));
                             publishProgress("update");
                             break;
+                        case 3://ROOMS
+                            JSONArray rooms = fromServerJson.getJSONObject("Message").getJSONArray("rooms");
+                            System.out.println(rooms);
                         default:
                             System.out.println("DEFAULT");
                             break;
