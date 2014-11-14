@@ -101,7 +101,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                             publishProgress("Started");
                             System.out.println("0: LOGGING IN");
                             System.out.println("JSON Message: " + fromServerJson.getString("Message"));
-                            if(fromServerJson.getString("Message").equals("Incorect Login")){
+                            if(fromServerJson.getString("Message").equals("Incorrect Login")){
                                 System.out.println("Incorrect Login");
                                 if(!loginActivity.isViewInitialized()) {
                                     loginActivity.initLoginScreen();
