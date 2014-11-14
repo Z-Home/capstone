@@ -24,36 +24,20 @@ public class LoginActivity extends Activity {
     private EditText passwordEditText;
     private SharedPreferences preferences;
     private Editor editor;
-    private boolean initializedView = false;
     final Context loginContext = this;
-
+    private boolean loginBtnClicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         socketCom = getInstance();
         socketCom.switchContext(this, context.LOGIN);
-        System.out.println("About to connect (in login activity).");
-        socketCom.conn();
-        System.out.println("Done with connect.");
         preferences = getApplicationContext().getSharedPreferences("ZhomePreferences", MODE_PRIVATE);
         editor = preferences.edit();
-
+        init();
     }
 
-    public void update(String[] values){
-        if(values[0].equals("Started")){
-            if(preferences.getString("username", null) != null && preferences.getString("password", null) != null) {
-                System.out.println("about to attempt login");
-                socketCom.attemptLogin(preferences.getString("username", null), preferences.getString("password", null));
-            }else{
-                initLoginScreen();
-            }
-        }
-    }
-
-    public void initLoginScreen(){
-        initializedView = true;
+    public void init(){
         setContentView(R.layout.activity_login);
         usernameEditText = (EditText)findViewById(R.id.usernameEditText);
         passwordEditText = (EditText)findViewById(R.id.passwordEditText);
@@ -65,41 +49,13 @@ public class LoginActivity extends Activity {
         finish();
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void login() {
-        if(initializedView){
-            editor.putString("username", usernameEditText.getText().toString());
-            editor.putString("password", passwordEditText.getText().toString());
-            editor.commit();
-        }
-        switchToMainActivity();
-    }
-
     public void onLoginButtonClicked(View view) {
         System.out.println("button clicked!");
+        loginBtnClicked = true;
         socketCom.attemptLogin(usernameEditText.getText().toString(), passwordEditText.getText().toString());
     }
 
-    public void showIncorrectLoginDialog(){
+    private void showIncorrectLoginDialog(){
         this.runOnUiThread(new Runnable() {
             public void run() {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(loginContext);
@@ -130,7 +86,12 @@ public class LoginActivity extends Activity {
 
     }
 
-    public boolean isViewInitialized() {
-        return initializedView;
+    public void update(String[] values){
+        if(values[0].equals("Connected")){
+           switchToMainActivity();
+        }else if(values[0].equals("Incorrect Login") && loginBtnClicked){
+            showIncorrectLoginDialog();
+        }
+        loginBtnClicked = false;
     }
 }

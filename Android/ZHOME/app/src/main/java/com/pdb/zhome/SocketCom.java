@@ -28,11 +28,12 @@ import java.util.List;
  */
 public class SocketCom extends AsyncTask<Void, String, Void> {
 
-    public static enum context{LOGIN, MAIN};
-    private context currentContext = context.LOGIN;
+    public static enum context{LOGIN, MAIN, SPLASH};
+    private context currentContext = context.SPLASH;
     private Activity currentActivity = null;
     private LoginActivity loginActivity = null;
     private MainActivity mainActivity = null;
+    private SplashScreenActivity splashActivity = null;
     private static SocketCom socketCom = new SocketCom();
 
     private String dstAddress, fromServerString;
@@ -101,19 +102,13 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                             publishProgress("Started");
                             System.out.println("0: LOGGING IN");
                             System.out.println("JSON Message: " + fromServerJson.getString("Message"));
-                            if(fromServerJson.getString("Message").equals("Incorect Login")){
-                                System.out.println("Incorrect Login");
-                                if(!loginActivity.isViewInitialized()) {
-                                    loginActivity.initLoginScreen();
-                                }else{
-                                    loginActivity.showIncorrectLoginDialog();
-                                }
+                            if(fromServerJson.getString("Message").equals("Incorrect Login")){
+                                publishProgress("Incorrect Login");
                             }
                             break;
                         case 1://DEVICE ACCESS
                             System.out.println("1: LOGGED IN");
                             publishProgress("Connected");
-                            loginActivity.login();
                             createDevices(fromServerJson.getJSONObject("Message").getJSONObject("devices"));
                             break;
                         case 2://UPDATE
@@ -152,6 +147,8 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
     protected void onProgressUpdate(String... values) {
         if(currentContext == context.MAIN) {
             mainActivity.update(values);
+        }else if(currentContext == context.SPLASH){
+            splashActivity.update(values);
         }else{
             loginActivity.update(values);
         }
@@ -214,25 +211,14 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
     }
 
     public void attemptLogin(String username, String password) {
-        System.out.println("Attempting login. Username: " + username + ". Password: " + password);
         JSONObject jsonLoginInfo = new JSONObject();
         try{
-            System.out.println("in try");
             if(currentContext == context.LOGIN) {
-                System.out.println("in context block");
                 jsonLoginInfo.put("User", username);
                 jsonLoginInfo.put("Pass", password);
             }
         }catch(JSONException e){
             e.printStackTrace();
-        }
-        if(out == null){
-            System.out.println("out is null");
-
-        }else if(jsonLoginInfo == null){
-            System.out.println("jsonLoginInfo is null");
-        }else{
-
         }
         out.println(jsonLoginInfo.toString());
     }
@@ -242,10 +228,17 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
             loginActivity = (LoginActivity)activeActivity;
             currentActivity = loginActivity;
             mainActivity = null;
+            splashActivity = null;
+        }else if(con == context.SPLASH){
+            splashActivity = (SplashScreenActivity)activeActivity;
+            currentActivity = splashActivity;
+            mainActivity = null;
+            loginActivity = null;
         }else{
             mainActivity = (MainActivity) activeActivity;
             currentActivity = mainActivity;
             loginActivity = null;
+            splashActivity = null;
         }
 
         currentContext = con;
