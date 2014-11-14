@@ -174,11 +174,11 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
 
                 Device device = null;
                 if (cc.contains("66")){
-                    device = new Thermostat(map, innerKeys);
+                    device = new Thermostat(map, innerKeys, devName);
                 }else if (cc.contains("37") || cc.contains("38")){
                     device = new Switch(map, innerKeys, devName);
                 }else if (cc.contains("48") || cc.contains("49")){
-                    device = new Sensor(map, innerKeys);
+                    device = new Sensor(map, innerKeys, devName);
                 }
 
                 deviceHashMap.put(innerKeys, device);
