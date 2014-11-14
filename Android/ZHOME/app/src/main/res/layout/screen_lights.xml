@@ -55,7 +55,6 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="5dp"
-                android:text="46"
                 />
             <TextView
                 android:id="@+id/lightsOnNumTxt"
