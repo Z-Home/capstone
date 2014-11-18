@@ -45,6 +45,7 @@ public class MainActivity extends FragmentActivity {
     private CharSequence mTitle;
 
     public static HashMap<String, Device> deviceHashMap = new HashMap<String, Device>();
+    public static HashMap<String, String[]> roomsHashMap = new HashMap<String, String[]>();
 
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
@@ -268,6 +269,10 @@ public class MainActivity extends FragmentActivity {
 
     public static HashMap<String,Device> getHashMap(){
         return deviceHashMap;
+    }
+
+    public static HashMap<String,String[]> getRoomsHashMap(){
+        return roomsHashMap;
     }
 
     private void logout(){

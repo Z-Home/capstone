@@ -41,7 +41,6 @@ public class LightsScreen extends Fragment{
 
         String[] lightsListArray = deviceArrayList.toArray(new String[deviceArrayList.size()]);
 
-
         ListAdapter lightsScreenAdapter = new lightsScreenAdapter(getActivity(), lightsListArray);
 
         ListView lightsListView = (ListView) rootView.findViewById(R.id.lightsListView);

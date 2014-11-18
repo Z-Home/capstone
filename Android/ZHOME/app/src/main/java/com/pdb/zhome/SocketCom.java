@@ -42,7 +42,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
     private BufferedReader in;
     private static PrintWriter out;
     private HashMap<String,Device> deviceHashMap;
-
+    private HashMap<String, String[]> roomsHashMap;
     private boolean isConnected = false;
 
     private SocketCom(){}
@@ -133,6 +133,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                             break;
                         case 3://ROOMS
                             JSONArray rooms = fromServerJson.getJSONObject("Message").getJSONArray("rooms");
+                            createRooms(rooms);
                             System.out.println(rooms);
                         default:
                             System.out.println("DEFAULT");
@@ -206,6 +207,36 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
         }
 
         publishProgress("Started");
+    }
+
+    private void createRooms(JSONArray roomsArray){
+        roomsHashMap = MainActivity.getRoomsHashMap();
+
+        int i = 0;
+        int length = roomsArray.length();
+        for(i = 0; i < length; i++){
+            try {
+                //Get the room as a JSONObject
+                JSONObject room = roomsArray.getJSONObject(i);
+                //Get the room name from the JSONObject
+                String roomName = room.getString("name");
+                //Get the array of devices as a JSONArray
+                JSONArray devicesJsonArray = room.getJSONArray("devices");
+                //Get length of JSONArray
+                int numDevices = devicesJsonArray.length();
+                //Initialize roomDevices array
+                String[] roomDevices = new String[numDevices];
+                //Put JSONArray of devices into String room array
+                int j = 0;
+                for(j = 0; j < numDevices; j++){
+                    roomDevices[j] = devicesJsonArray.getString(j);
+                }
+                //Add to hash map
+                roomsHashMap.put(roomName, roomDevices);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private String[] updateHashMap(JSONObject update){

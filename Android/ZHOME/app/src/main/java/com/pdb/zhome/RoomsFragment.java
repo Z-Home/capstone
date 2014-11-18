@@ -1,16 +1,22 @@
 package com.pdb.zhome;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListAdapter;
+
+import java.util.HashMap;
 
 import com.miz.pdb.R;
 
 public class RoomsFragment extends Fragment {
+
+    private Fragment screen;
 
 	public RoomsFragment() {
 	}
@@ -20,31 +26,28 @@ public class RoomsFragment extends Fragment {
 
 		View rootView = inflater.inflate(R.layout.fragment_rooms, container, false);
 
-        String[] roomsListArray = {
-                "Bedroom 1",
-                "Bedroom 2",
-                "Bedroom 3",
-                "Bedroom 4",
-                "Bedroom 5",
-                "Bedroom 6",
-                "Bedroom 7",
-                "Bedroom 8",
-                "Bedroom 9",
-                "Bathroom 1",
-                "Bathroom 2",
-                "Bathroom 3",
-                "Bathroom 4",
-                "Kitchen",
-                "Living Room",
-                "Basement"
-        };
+        final HashMap<String, String[]> roomsHashMap = MainActivity.getRoomsHashMap();
 
+        String[] roomsListArray = roomsHashMap.keySet().toArray(new String[roomsHashMap.size()]);
 
-        ListAdapter favoritesListAdapter = new roomsCustomAdapter(getActivity(), roomsListArray);
+        ListAdapter roomsListAdapter = new roomsCustomAdapter(getActivity(), roomsListArray);
 
-        GridView favoritesListView = (GridView) rootView.findViewById(R.id.roomsGridView);
+        GridView roomsListView = (GridView) rootView.findViewById(R.id.roomsGridView);
 
-        favoritesListView.setAdapter(favoritesListAdapter);
+        roomsListView.setAdapter(roomsListAdapter);
+
+//        roomsListView.setOnItemClickListener(new  AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                String roomName = String.valueOf(adapterView.getItemAtPosition(i));
+//                System.out.println("ROOM NAME: " + roomName);
+//                screen = RoomDevicesScreen.newInstance(String.valueOf(roomName), roomsHashMap.get(roomName));
+//
+//                FragmentManager fragmentManager = getFragmentManager();
+//                fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
+//                getActivity().getActionBar().setTitle(String.valueOf(adapterView.getItemAtPosition(i)));
+//            }
+//        });
 
 		return rootView;
 	}
