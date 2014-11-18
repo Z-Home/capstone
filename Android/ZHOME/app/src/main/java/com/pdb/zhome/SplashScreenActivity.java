@@ -21,6 +21,7 @@ public class SplashScreenActivity extends Activity {
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
     private boolean attempted = false;
+    private boolean blockUpdate = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,6 @@ public class SplashScreenActivity extends Activity {
             public void run() {
                 // This will be executed once the timer is over
                 init();
-
             }
         }, SPLASH_TIME_OUT);
     }
@@ -59,20 +59,27 @@ public class SplashScreenActivity extends Activity {
     }
 
     public void update(String[] values){
-        System.out.println("IN UPDATE: " + values[0]);
-        if(values[0].equals("Started")){
-            //Attempted variable makes sure we only attempt the login once.
-            if(preferences.getString("username", null) != null && preferences.getString("password", null) != null && !attempted) {
-                System.out.println("TRYING: " + preferences.getString("username", null) + " " + preferences.getString("password", null));
-                attempted = true;
-                socketCom.attemptLogin(preferences.getString("username", null), preferences.getString("password", null));
-            }else{
+        //Once we are starting another activity, we do not want the socket to update this activity
+        if(!blockUpdate) {
+            System.out.println("IN UPDATE: " + values[0]);
+            if (values[0].equals("Started")) {
+                //Attempted variable makes sure we only attempt the login once.
+                if (preferences.getString("username", null) != null && preferences.getString("password", null) != null && !attempted) {
+                    System.out.println("TRYING: " + preferences.getString("username", null) + " " + preferences.getString("password", null));
+                    attempted = true;
+                    socketCom.attemptLogin(preferences.getString("username", null), preferences.getString("password", null));
+                } else {
+                    startLoginActivity();
+                }
+            } else if (values[0].equals("Connected")) {
+                blockUpdate = true;
+                System.out.println("Connected....Starting main activity");
+                startMainActivity();
+            } else {
+                blockUpdate = true;
+                System.out.println("Starting login screen");
                 startLoginActivity();
             }
-        }else if(values[0].equals("Connected")){
-            startMainActivity();
-        }else{
-            startLoginActivity();
         }
     }
 

@@ -74,10 +74,6 @@ public class MainActivity extends FragmentActivity {
         // set the item click listener
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
         
-        
-        
-
-        
         // for app icon control for nav drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerToggle = new ActionBarDrawerToggle(
