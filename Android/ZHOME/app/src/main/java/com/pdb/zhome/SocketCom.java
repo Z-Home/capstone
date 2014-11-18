@@ -214,10 +214,8 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
         System.out.println("IN SOCKET TRYING: " + username + " " + password);
         JSONObject jsonLoginInfo = new JSONObject();
         try{
-            if(currentContext == context.LOGIN) {
-                jsonLoginInfo.put("User", username);
-                jsonLoginInfo.put("Pass", password);
-            }
+            jsonLoginInfo.put("User", username);
+            jsonLoginInfo.put("Pass", password);
         }catch(JSONException e){
             e.printStackTrace();
         }
