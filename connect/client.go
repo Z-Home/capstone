@@ -59,7 +59,7 @@ func SetDevicesAccess(data string, devices []string) string {
 		for _, v := range devices {
 			if v == val.Path("devNumber").Data().(string) {
 				de := val.String()
-				jsonObj.Set(de, "Message", v)
+				jsonObj.Set(de, "Message", "devices", v)
 			}
 		}
 	}
