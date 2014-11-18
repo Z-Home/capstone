@@ -37,29 +37,14 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="5dp"
         android:layout_marginStart="5dp"
-        android:layout_toStartOf="@+id/renameBtn"
-        android:layout_toLeftOf="@+id/renameBtn"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:id="@+id/temperatureTxt"
         android:background="@drawable/lights"
         android:scaleType="fitXY"
         android:text="72"
         android:gravity="center"
         android:textStyle="bold"/>
-
-
-    <ImageButton
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginStart="5dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:id="@+id/renameBtn"
-        android:background="@android:color/transparent"
-        android:src="@drawable/rename"
-        android:scaleType="fitXY"
-        android:onClick="renameBtnClick"/>
 
 </RelativeLayout>
 

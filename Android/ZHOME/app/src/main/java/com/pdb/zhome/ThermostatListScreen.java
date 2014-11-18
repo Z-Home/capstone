@@ -30,7 +30,7 @@ public class ThermostatListScreen extends Fragment{
         //Sample Data only
         String[] thermostatStringArray = stringArrayList.toArray(new String[stringArrayList.size()]);
 
-        ListAdapter thermostatScreen = new ThermostatCustomAdapter(getActivity(), thermostatStringArray);
+        ListAdapter thermostatScreen = new thermostatCustomAdapter(getActivity(), thermostatStringArray);
 
         ListView thermostatListView = (ListView) rootView.findViewById(R.id.thermostatListView);
 
@@ -39,13 +39,11 @@ public class ThermostatListScreen extends Fragment{
         thermostatListView.setOnItemClickListener(new  AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String favoriteItemPicked = "You have selected " + String.valueOf(adapterView.getItemAtPosition(i));
-                Toast.makeText(getActivity(), favoriteItemPicked, Toast.LENGTH_SHORT).show();
-//                String thermostatPicked = String.valueOf(adapterView.getItemAtPosition(i));
-//                Fragment thermostatView = new ThermostatView();
-//                FragmentManager fragmentManager = getFragmentManager();
-//                fragmentManager.beginTransaction().replace(R.id.content_frame, thermostatView).addToBackStack(null).commit();
-//                getActivity().getActionBar().setTitle(thermostatPicked);
+                String thermostatPicked = String.valueOf(adapterView.getItemAtPosition(i));
+                Fragment thermostatView = new ThermostatView();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, thermostatView).addToBackStack(null).commit();
+                getActivity().getActionBar().setTitle(thermostatPicked);
 
             }
         });

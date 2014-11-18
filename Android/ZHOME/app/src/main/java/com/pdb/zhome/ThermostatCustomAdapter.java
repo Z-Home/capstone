@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import com.miz.pdb.R;
 
-class ThermostatCustomAdapter extends ArrayAdapter<String> {
-    public ThermostatCustomAdapter(Context context, String[] values) {
+class thermostatCustomAdapter extends ArrayAdapter<String> {
+    public thermostatCustomAdapter(Context context, String[] values) {
         super(context, R.layout.row_layout_thermostat, values);
     }
 
@@ -21,11 +21,11 @@ class ThermostatCustomAdapter extends ArrayAdapter<String> {
 
         View theView = theInflater.inflate(R.layout.row_layout_thermostat, parent, false);
 
-        String favoriteItem = getItem(position);
+        String item = getItem(position);
 
-        TextView theTextView = (TextView) theView.findViewById(R.id.temperatureTxt);
+        TextView theTextView = (TextView) theView.findViewById(R.id.thermostatScreenText);
 
-        theTextView.setText(favoriteItem);
+        theTextView.setText(item);
 
         ImageView theImageView = (ImageView) theView.findViewById(R.id.thermostatScreenImageView);
 
