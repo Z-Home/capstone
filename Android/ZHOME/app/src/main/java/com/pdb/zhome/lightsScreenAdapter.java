@@ -83,17 +83,7 @@ class lightsScreenAdapter extends ArrayAdapter<String> {
             }
         });
 
-        final ImageButton renameBtn = (ImageButton) theView.findViewById(R.id.renameBtn);
-        renameBtn.setTag(position);
-        renameBtn.setImageResource(R.drawable.rename);
-        renameBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int position=(Integer)view.getTag();
-                String msg = "You clicked rename at position: " + position;
-                Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
-            }
-        });
+//4
 
         return theView;
     }

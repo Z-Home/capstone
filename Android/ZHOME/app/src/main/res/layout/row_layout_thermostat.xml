@@ -29,7 +29,7 @@
         android:layout_toLeftOf="@+id/temperatureTxt"
         android:id="@+id/thermostatScreenText"
         android:textSize="15sp"
-        android:text="This is sample text 1234567890"/>
+        android:text="Thermostat"/>
 
     <TextView
         android:layout_width="30dp"
