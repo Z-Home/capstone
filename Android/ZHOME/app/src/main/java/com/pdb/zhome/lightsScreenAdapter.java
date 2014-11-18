@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.miz.pdb.R;
 
@@ -23,7 +23,7 @@ class lightsScreenAdapter extends ArrayAdapter<String> {
     private SocketCom socketCom;
     private int lightsOn;
     public lightsScreenAdapter(Context context, String[] values) {
-        super(context, R.layout.row_layout_favorites, values);
+        super(context, R.layout.row_layout_lights, values);
     }
 
     @Override
@@ -32,58 +32,103 @@ class lightsScreenAdapter extends ArrayAdapter<String> {
         socketCom = SocketCom.getInstance();
         LayoutInflater theInflater = LayoutInflater.from(getContext());
 
-        View theView = theInflater.inflate(R.layout.row_layout_lights, parent, false);
+        View theView;
 
-        final String favoriteItem = getItem(position);
+        final String rowItem = getItem(position);
 
-        String status = HashMapHelper.getStatus(favoriteItem);
+        String status = HashMapHelper.getStatus(rowItem);
 
-        TextView theTextView = (TextView) theView.findViewById(R.id.lightsScreenText);
+        if (deviceHashMap.get(rowItem).getValues().keySet().contains("37")){
+            // LIGHT SWITCH
 
-        theTextView.setText(deviceHashMap.get(favoriteItem).getDevName());
+            // Set the view to row layout for lights
+            theView = theInflater.inflate(R.layout.row_layout_lights, parent, false);
 
-        ImageView theImageView = (ImageView) theView.findViewById(R.id.lightsScreenImageView);
+            TextView theTextView = (TextView) theView.findViewById(R.id.lightsScreenText);
 
-        theImageView.setImageResource(R.drawable.lights);
+            theTextView.setText(deviceHashMap.get(rowItem).getDevName());
 
-        final ImageButton powerBtn = (ImageButton) theView.findViewById(R.id.powerBtn);
+            ImageView theImageView = (ImageView) theView.findViewById(R.id.lightsScreenImageView);
 
-        if (status.equals("0") || status.equals("false")){
-            powerBtn.setImageResource(R.drawable.power_red);
-        }
-        else
-            powerBtn.setImageResource(R.drawable.power_green);
+            theImageView.setImageResource(R.drawable.lights);
 
-        powerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                deviceHashMap = MainActivity.getHashMap();
-                String status = HashMapHelper.getStatus(favoriteItem);
-                System.out.println("The status of this device on click is: " + status);
-                if (status.equals("0") || status.equals("false")){
-                    JSONObject command;
-                    if (deviceHashMap.get(favoriteItem).getValues().keySet().contains("38")) {
-                        command = deviceHashMap.get(favoriteItem).command("38", "99");
-                    }
-                    else
-                        command = deviceHashMap.get(favoriteItem).command("37", "1");
-                    socketCom.sendMessage(command);
-                    powerBtn.setImageResource(R.drawable.power_green);
-                }
-                else {
-                    JSONObject command;
-                    if (deviceHashMap.get(favoriteItem).getValues().keySet().contains("38")) {
-                        command = deviceHashMap.get(favoriteItem).command("38", "0");
-                    }
-                    else
-                        command = deviceHashMap.get(favoriteItem).command("37", "0");
-                    socketCom.sendMessage(command);
-                    powerBtn.setImageResource(R.drawable.power_red);
-                }
+            final ImageButton powerBtn = (ImageButton) theView.findViewById(R.id.powerBtn);
+
+            if (status.equals("0") || status.equals("false")){
+                powerBtn.setImageResource(R.drawable.power_red);
             }
-        });
+            else {
+                powerBtn.setImageResource(R.drawable.power_green);
+            }
 
-//4
+            powerBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    JSONObject command;
+
+                    deviceHashMap = MainActivity.getHashMap();
+                    String status = HashMapHelper.getStatus(rowItem);
+
+                    if (status.equals("0") || status.equals("false")){
+
+                        command = deviceHashMap.get(rowItem).command("37", "1");
+                        socketCom.sendMessage(command);
+                        powerBtn.setImageResource(R.drawable.power_green);
+                    }
+                    else {
+                        command = deviceHashMap.get(rowItem).command("37", "0");
+                        socketCom.sendMessage(command);
+                        powerBtn.setImageResource(R.drawable.power_red);
+                    }
+                }
+
+            });
+
+        }else {
+            // DIMMER
+
+            // Set the view to row layout for lights
+            theView = theInflater.inflate(R.layout.row_layout_dimmer, parent, false);
+
+            TextView theTextView = (TextView) theView.findViewById(R.id.dimmerScreenText);
+            theTextView.setText(deviceHashMap.get(rowItem).getDevName());
+            ImageView theImageView = (ImageView) theView.findViewById(R.id.dimmerScreenImageView);
+            theImageView.setImageResource(R.drawable.dimmer);
+
+            // Declare dimmer slider
+            SeekBar dimmerSlider = (SeekBar) theView.findViewById(R.id.dimmerSeekBar);
+
+            // Convert status to integer
+            dimmerSlider.setProgress(Integer.parseInt(status));
+
+            dimmerSlider.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+                // Slider progress tracker
+                Integer progressChanged = 0;
+
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+                    progressChanged = progress;
+
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+                    JSONObject command;
+
+                    command = deviceHashMap.get(rowItem).command("38", progressChanged.toString());
+
+                    socketCom.sendMessage(command);
+
+                }
+            });
+
+        }
 
         return theView;
     }

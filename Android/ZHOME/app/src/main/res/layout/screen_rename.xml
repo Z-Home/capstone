@@ -23,6 +23,6 @@
         android:paddingRight="10dp"
         android:background="#F1B82D"
         android:text="Save Changes"
-        android:onClick="onRenameBtnClick"
+        android:onClick="onRenameSaveBtnClick"
         />
 </RelativeLayout>

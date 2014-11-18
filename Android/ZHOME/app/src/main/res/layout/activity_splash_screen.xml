@@ -23,9 +23,8 @@
             android:layout_gravity="center"
             android:src="@drawable/logo"
             android:paddingTop="30dp"
-            android:paddingBottom="20dp"
+            android:paddingBottom="30dp"
             android:id="@+id/loginLogoImg"
             android:layout_marginTop="50dp" />
-
     </LinearLayout>
 </LinearLayout>
