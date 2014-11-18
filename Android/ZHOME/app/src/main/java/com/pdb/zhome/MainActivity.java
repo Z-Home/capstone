@@ -19,6 +19,7 @@ import android.content.Intent;
 
 import com.miz.pdb.R;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 public class MainActivity extends FragmentActivity {
@@ -273,6 +274,11 @@ public class MainActivity extends FragmentActivity {
         editor.remove("username");
         editor.remove("password");
         editor.commit();
+        try {
+            SocketCom.getInstance().closeConnection();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
         startLoginActivity();
     }
 

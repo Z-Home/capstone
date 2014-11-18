@@ -30,8 +30,11 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        socketCom = getInstance();
+        socketCom = SocketCom.getInstance();
         socketCom.switchContext(this, context.LOGIN);
+        if(!socketCom.isConnected()){
+           socketCom.conn();
+        }
         preferences = getApplicationContext().getSharedPreferences("ZhomePreferences", MODE_PRIVATE);
         editor = preferences.edit();
         init();

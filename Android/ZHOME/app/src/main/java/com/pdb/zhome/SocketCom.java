@@ -43,10 +43,17 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
     private static PrintWriter out;
     private HashMap<String,Device> deviceHashMap;
 
+    private boolean isConnected = false;
+
     private SocketCom(){}
 
     public static SocketCom getInstance(){
-        return socketCom;
+        if(socketCom != null) {
+            return socketCom;
+        }else{
+            socketCom = new SocketCom();
+            return socketCom;
+        }
     }
 
     public void conn(){
@@ -73,6 +80,10 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
         execute();
     }
 
+    public boolean isConnected(){
+        return isConnected;
+    }
+
     private void setAddress(String address) {
         this.dstAddress = address;
     }
@@ -85,6 +96,9 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
     protected Void doInBackground(Void... arg0) {
         try {
             socket = new Socket(dstAddress, dstPort);
+            if(socket.isConnected()){
+                isConnected = true;
+            }
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new PrintWriter(socket.getOutputStream(), true);
 
@@ -246,5 +260,12 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
 
     public static void sendMessage(JSONObject json) {
         out.println(json.toString());
+    }
+
+    public void closeConnection() throws IOException {
+        socket.close();
+        this.cancel(true);
+        isConnected = false;
+        socketCom = null;
     }
 }
