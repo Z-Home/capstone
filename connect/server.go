@@ -35,26 +35,33 @@ type Devices struct {
 	level          map[string]string
 }
 
-var deviceList string
-
 func (zHome *ZHome) Broadcast(data string) {
 	for _, client := range zHome.clients {
 		client.outgoing <- data
 	}
 }
 
+func (zHome *ZHome) BroadcastDevices(data string) {
+	for _, client := range zHome.clients {
+		client.outgoingDevices <- data
+	}
+}
+
 func (zHome *ZHome) Join(connection net.Conn) {
 	client := NewClient(connection)
+	client.zhome = zHome
 	joined := make(chan bool)
 	go zHome.Auth(client, joined)
 
 	go func() {
 		select {
 		case <-joined:
-			client.outgoing <- fmt.Sprintf("{\"Type\":1,\"Message\":%s}\n", deviceList)
+			client.outgoingDevices <- fmt.Sprintf("{\"Type\":1,\"Message\":%s}\n", zHome.deviceList)
 			client.outgoing <- fmt.Sprintf("{\"Type\":3,\"Message\":%s}\n", zHome.rooms)
 			if client.admin {
-				client.outgoing <- "ADMIN\n"
+				client.outgoing <- "{\"Type\":4,\"Message\":true}\n"
+			} else {
+				client.outgoing <- "{\"Type\":4,\"Message\":false}\n"
 			}
 			client.auth = true
 			zHome.clients[connection] = client
@@ -68,16 +75,29 @@ func (zHome *ZHome) Join(connection net.Conn) {
 }
 
 func (zHome *ZHome) Auth(client *Client, joined chan bool) {
+	type Cred struct {
+		User string
+	}
+
 	x := `{"Type":0,"Message":""}`
 	client.outgoing <- fmt.Sprintf("%s\n", x)
 	go func() {
 		for {
 			select {
 			case line := <-client.authChan:
+				var c Cred
+				json.Unmarshal([]byte(line), &c)
+
 				if check := CheckPass(line); check == 1 {
 					client.admin = true
+					if c.User != "" {
+						client.devices = AccessDevices(c.User)
+					}
 					joined <- true
 				} else if check == 2 {
+					if c.User != "" {
+						client.devices = AccessDevices(c.User)
+					}
 					joined <- true
 				} else if check == 3 {
 					client.outgoing <- "{\"Type\":0,\"Message\":\"Incorrect Login\"}\n"
@@ -251,10 +271,9 @@ func (zHome *ZHome) Ticker() {
 							jsonObj.Set(val.level[v], "update", "value")
 							zHome.NewIncoming(fmt.Sprintf("{\"Type\":2,\"Message\":%s}\n", jsonObj.String()))
 
-							devList, _ := gabs.ParseJSON([]byte(deviceList))
+							devList, _ := gabs.ParseJSON([]byte(zHome.deviceList))
 							devList.Set(val.level[v], "devices", x, "commandClasses", v)
-							deviceList = devList.String()
-							//deviceList = devList.String()
+							zHome.deviceList = devList.String()
 						}
 					}
 				}
@@ -376,8 +395,8 @@ func (zHome *ZHome) GetDevices() {
 
 	list := jsonObj.String()
 
-	deviceList = DeviceName(list)
-	//deviceList = deviceList
+	zHome.deviceList = DeviceName(list)
+	//zHome.deviceList = zHome.deviceList
 
 	fmt.Println("Got Devices")
 	go zHome.Ticker()

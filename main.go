@@ -13,6 +13,8 @@ func main() {
 
 	zHome := connect.NewZHome()
 
+	defer connect.SessClose()
+
 	listener, _ := net.Listen("tcp", ":8000")
 
 	for {

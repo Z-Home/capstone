@@ -2,18 +2,24 @@ package connect
 
 import (
 	"bufio"
+	"fmt"
+	"github.com/jeffail/gabs"
 	"net"
+	"strings"
 )
 
 type Client struct {
-	incoming chan string
-	outgoing chan string
-	reader   *bufio.Reader
-	conn     net.Conn
-	dead     chan *Client
-	auth     bool
-	authChan chan string
-	admin    bool
+	incoming        chan string
+	outgoing        chan string
+	outgoingDevices chan string
+	reader          *bufio.Reader
+	conn            net.Conn
+	dead            chan *Client
+	auth            bool
+	authChan        chan string
+	admin           bool
+	zhome           *ZHome
+	devices         []string
 }
 
 func (client *Client) Read() {
@@ -26,10 +32,46 @@ func (client *Client) Read() {
 		if client.auth == false {
 			client.authChan <- line
 		} else {
-			go ReadCommand(line, client.admin)
+			go ReadCommand(line, client)
 		}
 	}
 	client.dead <- client
+}
+
+func (client *Client) WriteDevices() {
+	for data := range client.outgoingDevices {
+		data = fmt.Sprintf("%s\n", SetDevicesAccess(data, client.devices))
+		_, err := client.conn.Write([]byte(data))
+		if err != nil {
+			client.dead <- client
+		}
+	}
+}
+
+func SetDevicesAccess(data string, devices []string) string {
+	t, _ := gabs.ParseJSON([]byte(data))
+	rm, _ := t.S("Message", "devices").Children()
+
+	jsonObj, _ := gabs.Consume(map[string]interface{}{})
+	jsonObj.Set(1, "Type")
+
+	for _, val := range rm {
+		for _, v := range devices {
+			if v == val.Path("devNumber").Data().(string) {
+				de := val.String()
+				jsonObj.Set(de, "Message", v)
+			}
+		}
+	}
+
+	d := jsonObj.String()
+	d = strings.Replace(d, "\\\"", "\"", -1)
+	d = strings.Replace(d, "\\\\", "\\", -1)
+	d = strings.Replace(d, "\"{\"", "{\"", -1)
+	d = strings.Replace(d, "\"}\"", "\"}", -1)
+	d = strings.Replace(d, "\\\"}},\"devName\"", "\\\"}\"},\"devName\"", -1)
+
+	return d
 }
 
 func (client *Client) Write() {
@@ -44,20 +86,22 @@ func (client *Client) Write() {
 func (client *Client) Listen() {
 	go client.Read()
 	go client.Write()
+	go client.WriteDevices()
 }
 
 func NewClient(connection net.Conn) *Client {
 	reader := bufio.NewReader(connection)
 
 	client := &Client{
-		incoming: make(chan string),
-		outgoing: make(chan string),
-		reader:   reader,
-		conn:     connection,
-		dead:     make(chan *Client),
-		auth:     false,
-		authChan: make(chan string),
-		admin:    false,
+		incoming:        make(chan string),
+		outgoing:        make(chan string),
+		outgoingDevices: make(chan string),
+		reader:          reader,
+		conn:            connection,
+		dead:            make(chan *Client),
+		auth:            false,
+		authChan:        make(chan string),
+		admin:           false,
 	}
 
 	client.Listen()

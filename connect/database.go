@@ -1,7 +1,6 @@
 package connect
 
 import (
-	//"code.google.com/p/go.crypto/scrypt"
 	"code.google.com/p/go.crypto/pbkdf2"
 	"crypto/rand"
 	"crypto/sha256"
@@ -24,10 +23,11 @@ const (
 )
 
 type User struct {
-	User  string
-	Hash  string
-	Salt  string
-	Admin bool
+	User    string
+	Hash    string
+	Salt    string
+	Admin   bool
+	Devices string
 }
 
 type Cred struct {
@@ -42,6 +42,7 @@ type dev struct {
 }
 
 var collection *mgo.Collection
+var session *mgo.Session
 
 func StartDB() {
 
@@ -51,10 +52,13 @@ func StartDB() {
 	if err != nil {
 		fmt.Printf("Can't connect to mongo, go error %v\n", err)
 	}
-	//defer sess.Close()
 
 	sess.SetSafe(&mgo.Safe{})
 	collection = sess.DB(DB_DB).C(DB_COLLECTION)
+}
+
+func SessClose() {
+	session.Close()
 }
 
 func CheckPass(cred string) int {
@@ -64,23 +68,25 @@ func CheckPass(cred string) int {
 	var c Cred
 	json.Unmarshal([]byte(cred), &c)
 
-	err := collection.Find(bson.M{"user": c.User}).One(&result)
-	if err != nil {
-		fmt.Printf("got an error finding a doc %v\n")
-		return 3
-	}
-
-	temp := HashPassword([]byte(c.Pass), []byte(result.Salt))
-
-	hash := fmt.Sprintf("%x", temp)
-
-	debug.FreeOSMemory()
-
-	if hash == result.Hash {
-		if result.Admin {
-			return 1
+	if c.User != "" {
+		err := collection.Find(bson.M{"user": c.User}).One(&result)
+		if err != nil {
+			fmt.Printf("got an error finding a doc %v\n")
+			return 3
 		}
-		return 2
+
+		temp := HashPassword([]byte(c.Pass), []byte(result.Salt))
+
+		hash := fmt.Sprintf("%x", temp)
+
+		debug.FreeOSMemory()
+
+		if hash == result.Hash {
+			if result.Admin {
+				return 1
+			}
+			return 2
+		}
 	}
 
 	return 3
@@ -90,7 +96,7 @@ func HashPassword(password, salt []byte) []byte {
 	return pbkdf2.Key(password, salt, 4096, sha256.Size, sha256.New)
 }
 
-func NewUser(user string, password string) {
+func NewUser(user string, password string, admin string, dev string) {
 	salt := make([]byte, 32)
 	_, err := io.ReadFull(rand.Reader, salt)
 	if err != nil {
@@ -103,10 +109,28 @@ func NewUser(user string, password string) {
 
 	h := fmt.Sprintf("%x", hash)
 
-	err = collection.Insert(&User{user, h, s, false})
+	var ad bool
+	if strings.Contains(admin, "true") {
+		ad = true
+	} else {
+		ad = false
+	}
+
+	err = collection.Insert(&User{user, h, s, ad, dev})
 	if err != nil {
 		fmt.Printf("Can't insert document: %v\n", err)
 	}
+}
+
+func DeleteUser(user string) {
+	err := collection.Remove(bson.M{"user": user})
+	if err != nil {
+		fmt.Printf("Can't remove document %v\n", err)
+	}
+}
+
+func UpdateUserDevices(user, devices string) {
+
 }
 
 func DeviceName(deviceList string) string {
@@ -168,15 +192,36 @@ func DeviceName(deviceList string) string {
 			fmt.Printf("Can't update document %v\n", err)
 		}
 	}
-	fmt.Println(jsonParsed.String())
+	//fmt.Println(jsonParsed.String())
 	return jsonParsed.String()
 }
 
-func UpdateDevList(x string) {
-	err := collection.Update(bson.M{"devlist": 1}, bson.M{"$set": bson.M{"value": x}})
+func UpdateDevList(x string, y string) {
+	err := collection.Update(bson.M{"devlist": 1}, bson.M{"$set": bson.M{x: y}})
 	if err != nil {
 		fmt.Printf("Can't update document %v\n", err)
 	}
+}
+
+func AccessDevices(user string) []string {
+	devs := []string{}
+
+	devices := User{}
+	err := collection.Find(bson.M{"user": user}).One(&devices)
+	if err != nil {
+		fmt.Printf("got an error finding a doc %v\n")
+	}
+
+	if devices.Devices != "" {
+		jsonParsed, _ := gabs.ParseJSON([]byte(devices.Devices))
+		children, _ := jsonParsed.S("devices").Children()
+
+		for _, child := range children {
+			devs = append(devs, child.Data().(string))
+		}
+	}
+
+	return devs
 }
 
 func GetRooms() string {
@@ -188,6 +233,6 @@ func GetRooms() string {
 		return "nil"
 	}
 
-	fmt.Println(list.Rooms)
+	//fmt.Println(list.Rooms)
 	return list.Rooms
 }
