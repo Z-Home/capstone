@@ -99,11 +99,12 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                     int resp = fromServerJson.getInt("Type");
                     switch(resp){
                         case 0://AUTHENTICATE
-                            publishProgress("Started");
                             System.out.println("0: LOGGING IN");
                             System.out.println("JSON Message: " + fromServerJson.getString("Message"));
                             if(fromServerJson.getString("Message").equals("Incorrect Login")){
                                 publishProgress("Incorrect Login");
+                            }else{
+                                publishProgress("Started");
                             }
                             break;
                         case 1://DEVICE ACCESS

@@ -1,6 +1,7 @@
 package com.pdb.zhome;
 
 import android.app.FragmentTransaction;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.Fragment;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.content.Intent;
 
 import com.miz.pdb.R;
 
@@ -42,6 +44,9 @@ public class MainActivity extends FragmentActivity {
     private CharSequence mTitle;
 
     public static HashMap<String, Device> deviceHashMap = new HashMap<String, Device>();
+
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +60,9 @@ public class MainActivity extends FragmentActivity {
 		mNavigationDrawerItemTitles = getResources().getStringArray(R.array.navigation_drawer_items_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+        preferences = getApplicationContext().getSharedPreferences("ZhomePreferences", MODE_PRIVATE);
+        editor = preferences.edit();
         
         // list the drawer items
         ObjectDrawerItem[] drawerItem = new ObjectDrawerItem[5];
@@ -132,16 +140,23 @@ public class MainActivity extends FragmentActivity {
 
     @Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		
+
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_logout:
+                logout();
+                return true;
+        }
+
         // The action bar home/up action should open or close the drawer.
         // ActionBarDrawerToggle will take care of this.
        if (mDrawerToggle.onOptionsItemSelected(item)) {
            return true;
        }
-       
+
        return super.onOptionsItemSelected(item);
 	}
-	
+
 	// to change up caret
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -252,5 +267,18 @@ public class MainActivity extends FragmentActivity {
 
     public static HashMap<String,Device> getHashMap(){
         return deviceHashMap;
+    }
+
+    private void logout(){
+        editor.remove("username");
+        editor.remove("password");
+        editor.commit();
+        startLoginActivity();
+    }
+
+    private void startLoginActivity() {
+        Intent loginActivityIntent =new Intent(this, LoginActivity.class);
+        startActivity(loginActivityIntent);
+        finish();
     }
 }

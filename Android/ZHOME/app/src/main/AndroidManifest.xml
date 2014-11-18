@@ -31,7 +31,7 @@
         </activity>
         <activity
             android:name="com.pdb.zhome.SplashScreenActivity"
-            android:label="@string/title_activity_splash_screen" >
+            android:label="Z-Home" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

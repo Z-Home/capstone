@@ -61,7 +61,7 @@ public class LoginActivity extends Activity {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(loginContext);
 
                 // set title
-                alertDialogBuilder.setTitle("Your Title");
+                alertDialogBuilder.setTitle("Login Error");
 
                 // set dialog message
                 alertDialogBuilder
@@ -87,6 +87,7 @@ public class LoginActivity extends Activity {
     }
 
     public void update(String[] values){
+        System.out.println("IN UPDATE: " + values[0]);
         if(values[0].equals("Connected")){
             editor.putString("username", usernameEditText.getText().toString());
             editor.putString("password", passwordEditText.getText().toString());
