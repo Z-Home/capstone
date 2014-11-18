@@ -1,6 +1,8 @@
 package com.pdb.zhome;
 
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,15 +21,21 @@ import java.util.HashMap;
 
 class renameScreenAdapter extends ArrayAdapter<String> {
 
+    private String[] changedNameList;
     private HashMap<String, Device> deviceHashMap;
     private SocketCom socketCom;
     public renameScreenAdapter(Context context, String[] values) {
         super(context, R.layout.row_layout_rename, values);
     }
 
+    public String[] getChangedNameList(){
+        return this.changedNameList;
+    }
+
     @Override
-    public View getView(int position, final View convertView, ViewGroup parent) {
+    public View getView(final int position, final View convertView, ViewGroup parent) {
         deviceHashMap = MainActivity.getHashMap();
+        changedNameList = new String[deviceHashMap.size()];
         socketCom = SocketCom.getInstance();
         LayoutInflater theInflater = LayoutInflater.from(getContext());
 
@@ -40,6 +48,25 @@ class renameScreenAdapter extends ArrayAdapter<String> {
         EditText theEditText = (EditText) theView.findViewById(R.id.renameEditText);
 
         theEditText.setText(deviceHashMap.get(item).getDevName());
+
+        theEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                changedNameList[position] = s.toString();
+                System.out.println(s.toString());
+                final String changedName = s.toString();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         ImageView theImageView = (ImageView) theView.findViewById(R.id.renameImageView);
 
