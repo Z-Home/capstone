@@ -96,7 +96,7 @@ public class SummaryFragment extends Fragment {
 
                 screen = new RenameScreen();
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, screen, "Rename").addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Rename Devices");
             }
         });
