@@ -31,6 +31,7 @@
         </activity>
         <activity
             android:name="com.pdb.zhome.SplashScreenActivity"
+            android:screenOrientation="portrait"
             android:label="Z-Home" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

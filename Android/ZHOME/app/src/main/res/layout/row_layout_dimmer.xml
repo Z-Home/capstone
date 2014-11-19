@@ -39,8 +39,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:id="@+id/dimmerSeekBar"
-        android:background="@android:color/transparent"
         android:max="99"
+        android:fadingEdge="vertical"
+        android:progressDrawable="@drawable/progress_secondary_miztheme"
+        android:thumb="@drawable/ab_stacked_solid_miztheme"
         />
 
 </RelativeLayout>

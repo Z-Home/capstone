@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/roomsGridLayout">
@@ -15,4 +15,29 @@
         android:stretchMode="columnWidth"
         android:gravity="center"
         />
-</GridLayout><!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/fragment_rooms.xml -->
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:baselineAlignBottom="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/gold_circle"
+
+        />
+    <ImageButton
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:baselineAlignBottom="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/add"
+        android:background="@android:color/transparent"
+        android:id="@+id/addRoomBtn"
+        />
+
+</RelativeLayout><!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/fragment_rooms.xml -->

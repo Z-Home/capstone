@@ -20,7 +20,7 @@ public class SummaryFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-		final View rootView = inflater.inflate(R.layout.fragment_summary, container, false);
+		final View rootView = inflater.inflate(R.layout.fragment_summary2, container, false);
 
         // Lights Button
         ImageButton lightsBtn = (ImageButton) rootView.findViewById(R.id.lightsBtn);
