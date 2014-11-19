@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 
 import java.util.HashMap;
@@ -36,18 +37,18 @@ public class RoomsFragment extends Fragment {
 
         roomsListView.setAdapter(roomsListAdapter);
 
-//        roomsListView.setOnItemClickListener(new  AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                String roomName = String.valueOf(adapterView.getItemAtPosition(i));
-//                System.out.println("ROOM NAME: " + roomName);
-//                screen = RoomDevicesScreen.newInstance(String.valueOf(roomName), roomsHashMap.get(roomName));
-//
-//                FragmentManager fragmentManager = getFragmentManager();
-//                fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
-//                getActivity().getActionBar().setTitle(String.valueOf(adapterView.getItemAtPosition(i)));
-//            }
-//        });
+
+        ImageButton addRoomBtn = (ImageButton) rootView.findViewById(R.id.addRoomBtn);
+        addRoomBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                screen = new RoomAddFormScreen();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
+                getActivity().getActionBar().setTitle("Add Room");
+            }
+        });
 
 		return rootView;
 	}

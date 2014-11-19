@@ -40,7 +40,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:id="@+id/temperatureTxt"
-        android:background="@drawable/lights"
+        android:background="@drawable/gold_circle"
         android:scaleType="fitXY"
         android:text="72"
         android:gravity="center"

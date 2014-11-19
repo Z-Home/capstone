@@ -48,6 +48,7 @@ class renameScreenAdapter extends ArrayAdapter<String> {
         EditText theEditText = (EditText) theView.findViewById(R.id.renameEditText);
 
         theEditText.setText(deviceHashMap.get(item).getDevName());
+        theEditText.setId(Integer.parseInt(deviceHashMap.get(item).getDevNum()));
 
         theEditText.addTextChangedListener(new TextWatcher() {
             @Override
