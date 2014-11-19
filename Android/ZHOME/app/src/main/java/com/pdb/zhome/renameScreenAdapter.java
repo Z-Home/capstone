@@ -24,6 +24,7 @@ class renameScreenAdapter extends ArrayAdapter<String> {
     private String[] changedNameList;
     private HashMap<String, Device> deviceHashMap;
     private SocketCom socketCom;
+    private String changedName;
     public renameScreenAdapter(Context context, String[] values) {
         super(context, R.layout.row_layout_rename, values);
     }
@@ -37,6 +38,7 @@ class renameScreenAdapter extends ArrayAdapter<String> {
         deviceHashMap = MainActivity.getHashMap();
         changedNameList = new String[deviceHashMap.size()];
         socketCom = SocketCom.getInstance();
+
         LayoutInflater theInflater = LayoutInflater.from(getContext());
 
         View theView = theInflater.inflate(R.layout.row_layout_rename, parent, false);
@@ -45,9 +47,10 @@ class renameScreenAdapter extends ArrayAdapter<String> {
 
         String type = HashMapHelper.getType(item);
 
-        EditText theEditText = (EditText) theView.findViewById(R.id.renameEditText);
+        TextView theEditText = (TextView) theView.findViewById(R.id.renameEditText);
 
         theEditText.setText(deviceHashMap.get(item).getDevName());
+
 
         theEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -59,7 +62,7 @@ class renameScreenAdapter extends ArrayAdapter<String> {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 changedNameList[position] = s.toString();
                 System.out.println(s.toString());
-                final String changedName = s.toString();
+                changedName = s.toString();
             }
 
             @Override

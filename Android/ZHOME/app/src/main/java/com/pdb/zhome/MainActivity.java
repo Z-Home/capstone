@@ -3,7 +3,6 @@ package com.pdb.zhome;
 import android.app.FragmentTransaction;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -19,10 +18,12 @@ import android.content.Intent;
 
 import com.miz.pdb.R;
 
+import org.json.JSONException;
+
 import java.io.IOException;
 import java.util.HashMap;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends FragmentActivity implements Communicator {
 
 	// declare properties
     private String[] mNavigationDrawerItemTitles;
@@ -291,5 +292,12 @@ public class MainActivity extends FragmentActivity {
         Intent loginActivityIntent =new Intent(this, LoginActivity.class);
         startActivity(loginActivityIntent);
         finish();
+    }
+
+    @Override
+    public void respond(String data){
+        FragmentManager fragmentManager = getFragmentManager();
+        RenameScreen renameScreen = (RenameScreen) fragmentManager.findFragmentByTag("Rename");
+        renameScreen.changeText(data);
     }
 }

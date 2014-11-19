@@ -291,6 +291,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
 
     public static void sendMessage(JSONObject json) {
         out.println(json.toString());
+        System.out.println(json.toString());
     }
 
     public void closeConnection() throws IOException {
