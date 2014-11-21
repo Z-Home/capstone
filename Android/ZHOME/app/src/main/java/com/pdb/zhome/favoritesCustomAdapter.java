@@ -19,6 +19,11 @@ class favoritesCustomAdapter extends ArrayAdapter<String> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater theInflater = LayoutInflater.from(getContext());
 
+        //
+        // A bunch of if statements to check for command class and set the correct row layout
+        // (Just like customLightsAdapter)
+
+
         View theView = theInflater.inflate(R.layout.row_layout_favorites, parent, false);
 
         String favoriteItem = getItem(position);
