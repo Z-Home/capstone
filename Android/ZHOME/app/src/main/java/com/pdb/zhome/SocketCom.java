@@ -123,6 +123,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                             break;
                         case 1://DEVICE ACCESS
                             System.out.println("1: LOGGED IN");
+                            publishProgress("Connected");
                             createDevices(fromServerJson.getJSONObject("Message").getJSONObject("devices"));
                             publishProgress("update");
                             break;
