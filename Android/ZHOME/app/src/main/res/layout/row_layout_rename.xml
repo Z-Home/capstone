@@ -33,5 +33,16 @@
         android:text="SAMPLE TEXT"
         />
 
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/renameIcon"
+        android:src="@drawable/rename"/>
+
 </RelativeLayout>
 

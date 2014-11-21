@@ -13,11 +13,13 @@ public class Thermostat implements Device {
     private String devNum;
     private String type;
     private String devName;
+    private HashMap<String, String> values;
 
     public Thermostat(HashMap<String, String> map, String devNum, String devName) {
         this.type = "thermostat";
         setDevNum(devNum);
         setDevName(devName);
+        setValues(map);
     }
 
     public void setDevNum(String devNum) {
@@ -30,7 +32,7 @@ public class Thermostat implements Device {
 
     @Override
     public void setValues(HashMap<String, String> map) {
-
+        values = map;
     }
 
     @Override
@@ -46,7 +48,7 @@ public class Thermostat implements Device {
 
     @Override
     public HashMap<String, String> getValues() {
-        return null;
+        return values;
     }
 
     @Override

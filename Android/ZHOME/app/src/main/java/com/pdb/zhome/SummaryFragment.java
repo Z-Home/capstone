@@ -7,8 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.miz.pdb.R;
+
+import java.util.ArrayList;
 
 public class SummaryFragment extends Fragment {
 
@@ -21,6 +24,15 @@ public class SummaryFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 		final View rootView = inflater.inflate(R.layout.fragment_summary2, container, false);
+
+        ArrayList<String> lightsDevicesList = new ArrayList<String>(HashMapHelper.getDeviceNames("switch"));
+
+        // Set Lights Status
+        TextView lightsStatus = (TextView) rootView.findViewById(R.id.lightsStatusTxt);
+        Integer onLights = HashMapHelper.getSwitchesOn();
+        Integer totalLights = lightsDevicesList.size();
+        lightsStatus.setText(onLights.toString() + " / " + totalLights.toString());
+
 
         // Lights Button
         ImageButton lightsBtn = (ImageButton) rootView.findViewById(R.id.lightsBtn);
