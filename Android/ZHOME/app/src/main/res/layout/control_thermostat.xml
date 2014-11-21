@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/temperatureControlTxt"
             android:textSize="150sp"
-            android:text="72°"
+            android:text="70°"
             android:textStyle="bold"/>
 
         <LinearLayout

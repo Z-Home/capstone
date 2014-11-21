@@ -14,8 +14,11 @@ import android.widget.Toast;
 import com.miz.pdb.R;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ThermostatListScreen extends Fragment{
+
+    private HashMap<String, Device> deviceHashMap;
 
     public ThermostatListScreen() {
     }
@@ -30,7 +33,7 @@ public class ThermostatListScreen extends Fragment{
         //Sample Data only
         String[] thermostatStringArray = stringArrayList.toArray(new String[stringArrayList.size()]);
 
-        ListAdapter thermostatScreen = new thermostatCustomAdapter(getActivity(), thermostatStringArray);
+        ListAdapter thermostatScreen = new ThermostatCustomAdapter(getActivity(), thermostatStringArray);
 
         ListView thermostatListView = (ListView) rootView.findViewById(R.id.thermostatListView);
 
@@ -39,12 +42,17 @@ public class ThermostatListScreen extends Fragment{
         thermostatListView.setOnItemClickListener(new  AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                deviceHashMap = MainActivity.getHashMap();
                 String thermostatPicked = String.valueOf(adapterView.getItemAtPosition(i));
                 Fragment thermostatView = new ThermostatView();
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_frame, thermostatView).addToBackStack(null).commit();
-                getActivity().getActionBar().setTitle(thermostatPicked);
+                Bundle args = new Bundle();
+                args.putString(thermostatPicked, "devNum");
+                thermostatView.setArguments(args);
+                fragmentManager.beginTransaction().replace(R.id.content_frame, thermostatView, "ThermostatView").addToBackStack(null).commit();
 
+                MainActivity.setCurrentFragment(thermostatView);
+                getActivity().getActionBar().setTitle(deviceHashMap.get(thermostatPicked).getDevName());
             }
         });
 

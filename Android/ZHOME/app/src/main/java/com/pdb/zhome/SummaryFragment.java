@@ -45,6 +45,7 @@ public class SummaryFragment extends Fragment {
                 screen = new LightsScreen();
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
+                MainActivity.setCurrentFragment(screen);
                 getActivity().getActionBar().setTitle("Sensors");
             }
         });
@@ -59,19 +60,7 @@ public class SummaryFragment extends Fragment {
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Security");
-            }
-        });
-
-        // Outlets Button
-        ImageButton outletsBtn = (ImageButton) rootView.findViewById(R.id.outletBtn);
-        outletsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                screen = new LightsScreen();
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
-                getActivity().getActionBar().setTitle("Outlets");
+                MainActivity.setCurrentFragment(screen);
             }
         });
 
@@ -85,6 +74,7 @@ public class SummaryFragment extends Fragment {
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Thermostat");
+                MainActivity.setCurrentFragment(screen);
             }
         });
 
@@ -97,6 +87,7 @@ public class SummaryFragment extends Fragment {
                 screen = new RenameScreen();
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.content_frame, screen, "Rename").addToBackStack(null).commit();
+                MainActivity.setCurrentFragment(screen);
                 getActivity().getActionBar().setTitle("Rename Devices");
             }
         });

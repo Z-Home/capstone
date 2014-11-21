@@ -1,5 +1,8 @@
 package com.pdb.zhome;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -55,8 +58,29 @@ public final class HashMapHelper {
 
     public static String getType(String name){
         String type = deviceHashMap.get(name).getType();
-
         return type;
+    }
+
+    public static String getName(String key){
+        String name = deviceHashMap.get(key).getDevName();
+        return name;
+    }
+
+    public static String getTemp(String devNum){
+        try {
+            System.out.println(deviceHashMap.get(devNum).getValues().get("49"));
+            JSONObject multilevelSensor = new JSONObject(deviceHashMap.get(devNum).getValues().get("49"));
+            try{
+                JSONObject sensor = multilevelSensor.getJSONObject("sensor");
+                return sensor.getString("Temperature");
+            } catch (JSONException e){
+
+            }
+        }
+        catch (JSONException e){
+
+        }
+        return "Temp not available";
     }
 
 }

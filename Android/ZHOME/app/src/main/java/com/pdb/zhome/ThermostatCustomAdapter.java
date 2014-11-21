@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import com.miz.pdb.R;
 
-class thermostatCustomAdapter extends ArrayAdapter<String> {
-    public thermostatCustomAdapter(Context context, String[] values) {
+class ThermostatCustomAdapter extends ArrayAdapter<String> {
+    public ThermostatCustomAdapter(Context context, String[] values) {
         super(context, R.layout.row_layout_thermostat, values);
     }
 
@@ -25,7 +25,7 @@ class thermostatCustomAdapter extends ArrayAdapter<String> {
 
         TextView theTextView = (TextView) theView.findViewById(R.id.thermostatScreenText);
 
-        theTextView.setText(item);
+        theTextView.setText(HashMapHelper.getName(item));
 
         ImageView theImageView = (ImageView) theView.findViewById(R.id.thermostatScreenImageView);
 
