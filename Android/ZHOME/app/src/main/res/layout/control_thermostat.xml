@@ -96,28 +96,35 @@
         android:layout_below="@+id/topThermostatLayout"
         android:layout_marginTop="30dp">
 
-        <RadioButton
+        <RadioGroup
+            android:id="@+id/thermostatModeRadio"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:textSize="30sp"
-            android:text="OFF"
-            android:id="@+id/offThermostatRadioBtn" />
+            android:layout_height="wrap_content" >
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:textSize="30sp"
-            android:text="COOL"
-            android:id="@+id/coolThermostatRadioBtn"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textSize="30sp"
+                android:text="OFF"
+                android:id="@+id/offThermostatRadioBtn" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="HEAT"
-            android:id="@+id/heatThermostatRadioBtn"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textSize="30sp"
+                android:text="COOL"
+                android:id="@+id/coolThermostatRadioBtn"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="HEAT"
+                android:id="@+id/heatThermostatRadioBtn"/>
+            </RadioGroup>
+
 
         </LinearLayout>
 
