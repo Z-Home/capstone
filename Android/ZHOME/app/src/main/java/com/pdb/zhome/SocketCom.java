@@ -123,8 +123,8 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                             break;
                         case 1://DEVICE ACCESS
                             System.out.println("1: LOGGED IN");
-                            publishProgress("Connected");
                             createDevices(fromServerJson.getJSONObject("Message").getJSONObject("devices"));
+                            publishProgress("update");
                             break;
                         case 2://UPDATE
                             System.out.println("2: UPDATE");
@@ -291,7 +291,6 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
 
     public static void sendMessage(JSONObject json) {
         out.println(json.toString());
-        System.out.println(json.toString());
     }
 
     public void closeConnection() throws IOException {

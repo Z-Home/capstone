@@ -7,22 +7,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_above="@+id/saveRenameChangesBtn"
         android:paddingTop="20dp"
         android:id="@+id/renameScreenListView">
     </ListView>
 
-    <Button
-        android:id="@+id/saveRenameChangesBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:background="#F1B82D"
-        android:text="Save Changes"
-        android:onClick="onRenameSaveBtnClick"
-        />
 </RelativeLayout>

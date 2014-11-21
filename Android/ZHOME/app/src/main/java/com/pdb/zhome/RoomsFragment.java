@@ -25,7 +25,7 @@ public class RoomsFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-		View rootView = inflater.inflate(R.layout.fragment_rooms, container, false);
+		View rootView = inflater.inflate(R.layout.form_room_add, container, false);
 
         final HashMap<String, String[]> roomsHashMap = MainActivity.getRoomsHashMap();
 
@@ -33,12 +33,12 @@ public class RoomsFragment extends Fragment {
 
         ListAdapter roomsListAdapter = new roomsCustomAdapter(getActivity(), roomsListArray);
 
-        GridView roomsListView = (GridView) rootView.findViewById(R.id.roomsGridView);
+        GridView roomsListView = (GridView) rootView.findViewById(R.id.roomFormSpinner);
 
         roomsListView.setAdapter(roomsListAdapter);
 
 
-        ImageButton addRoomBtn = (ImageButton) rootView.findViewById(R.id.addRoomBtn);
+        ImageButton addRoomBtn = (ImageButton) rootView.findViewById(R.id.addRoomFormBtn);
         addRoomBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -59,39 +59,7 @@ func ReadCommand(line string, client *Client) {
 					NewUser(user, pass, ad, dev)
 				}
 			case "DeviceList":
-				// jsonParsed, _ := gabs.ParseJSON([]byte(client.zhome.deviceList))
-				// children, _ := jsonParsed.S("devices").Children()
 
-				// dev, _ := devJson.S("devices").Children()
-
-				// for _, child := range dev {
-				// 	dbNum := child.Path("Num").String()
-				// 	dbNum = strings.Replace(dbNum, "\"", "", -1)
-				// 	dbName := child.Path("Name").String()
-				// 	dbName = strings.Replace(dbName, "\"", "", -1)
-
-				// 	for _, val := range children {
-				// 		temp := val.Path("devNumber").String()
-				// 		temp = strings.Replace(temp, "\"", "", -1)
-				// 		if dbNum == temp {
-				// 			tempName := strings.Replace(dbName, "\"", "", -1)
-				// 			jsonParsed.Set(tempName, "devices", dbNum, "devName")
-				// 		}
-				// 	}
-				// }
-
-				// l, _ := jsonParsed.S("devices").Children()
-
-				// x := `{"devices":[`
-				// for _, e := range l {
-				// 	tempName := e.Path("devName").String()
-				// 	tempNum := e.Path("devNumber").String()
-				// 	x = fmt.Sprintf("%s{\"Num\":%s,\"Name\":%s},", x, tempNum, tempName)
-				// }
-				// x = strings.TrimSuffix(x, ",")
-				// x = fmt.Sprintf(`%s]}`, x)
-
-				//if admin {
 				UpdateDevList("value", devJson.String())
 
 				jsonParsed, _ := gabs.ParseJSON([]byte(client.zhome.deviceList))
@@ -117,7 +85,6 @@ func ReadCommand(line string, client *Client) {
 				client.zhome.deviceList = jsonParsed.String()
 				y := fmt.Sprintf("{\"Message\":%s}\n", client.zhome.deviceList)
 				client.zhome.BroadcastDevices(y)
-				//}
 			case "Rooms":
 				if admin {
 					UpdateDevList("rooms", devJson.String())

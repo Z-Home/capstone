@@ -28,7 +28,6 @@ import java.util.Map;
 public class RenameScreen extends Fragment{
 
     private HashMap<String, Device> deviceHashMap;
-    //private String changeText;
     private String num;
 
     public RenameScreen() {
@@ -47,25 +46,6 @@ public class RenameScreen extends Fragment{
         final ListView lightsListView = (ListView) rootView.findViewById(R.id.renameScreenListView);
 
         lightsListView.setAdapter(renameScreenAdapter);
-        final Button renameButton = (Button) rootView.findViewById(R.id.saveRenameChangesBtn);
-        renameButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                deviceHashMap = MainActivity.getHashMap();
-//                String[] stringArrayList = HashMapHelper.getAllDeviceNames();
-//                String commandList = "{\"Type\":\"DeviceList\",\"Json\":{\"devices\":[";
-//                String num = null;
-//                String name = null;
-//                for (int i = 0; i < stringArrayList.length; i++) {
-//                    //name = renameScreenAdapter.getChangedNameList();
-//                    commandList += "{Num\":\"" + num + "\",\"Name\":\"" + name;
-//                }
-//
-//                Toast.makeText(getActivity(), name, Toast.LENGTH_SHORT).show();
-//                JSONObject command;
-                //command = '{"Type":"DeviceList","Json":{"devices":[{"Num":"2","Name":"Motion Sensor"},{"Num":"3","Name":"Outlet Switch"},{"Num":"4","Name":"3way Dimmer"},{"Num":"5","Name":"Dimmer"},{"Num":"6","Name":"Thermostat"},{"Num":"7","Name":"Door Sensor"}]}}';
-            }
-        });
 
         lightsListView.setOnItemClickListener(new  AdapterView.OnItemClickListener() {
             @Override
@@ -121,7 +101,7 @@ public class RenameScreen extends Fragment{
         } catch (JSONException e) {
             e.printStackTrace();
         };
-        System.out.println(obj);
+
         socketCom.sendMessage(obj);
     }
 }
