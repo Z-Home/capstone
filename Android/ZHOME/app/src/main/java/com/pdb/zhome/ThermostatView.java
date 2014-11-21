@@ -27,10 +27,15 @@ public class ThermostatView extends Fragment{
         final View rootView = inflater.inflate(R.layout.control_thermostat, container, false);
         Bundle args = getArguments();
         devNum = args.getString("devNum");
-        String temp = HashMapHelper.getTemp(devNum);
-        TextView tempTextView = (TextView) rootView.findViewById(R.id.temperatureTxt);
 
-        tempTextView.setText(temp);
+        TextView tempTextView = (TextView) rootView.findViewById(R.id.temperatureControlTxt);
+
+        tempTextView.setText(convertTemp(HashMapHelper.getTemp(devNum)));
+        TextView setTempTextView = (TextView) rootView.findViewById(R.id.textView2);
+        if (HashMapHelper.getSetTemp(devNum).equals("off")){
+            setTempTextView.setText("off");
+        }else
+            setTempTextView.setText(convertTemp(HashMapHelper.getSetTemp(devNum)));
 //        ArrayList<String> stringArrayList = new ArrayList<String>(HashMapHelper.getDeviceNames("thermostat"));
 //
 //        //Sample Data only
@@ -43,6 +48,13 @@ public class ThermostatView extends Fragment{
 //        thermostatListView.setAdapter(thermostatScreen);
 
         return rootView;
+    }
+
+    public String convertTemp(String stringTemp){
+        Float floatTemp = Float.parseFloat(stringTemp);
+        floatTemp = (9 * floatTemp)/5 + 32;
+        Integer intTemp = Math.round(floatTemp);
+        return intTemp.toString();
     }
 
 }

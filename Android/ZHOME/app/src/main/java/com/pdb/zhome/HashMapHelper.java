@@ -68,10 +68,11 @@ public final class HashMapHelper {
 
     public static String getTemp(String devNum){
         try {
-            System.out.println(deviceHashMap.get(devNum).getValues().get("49"));
             JSONObject multilevelSensor = new JSONObject(deviceHashMap.get(devNum).getValues().get("49"));
+            System.out.println(multilevelSensor);
             try{
-                JSONObject sensor = multilevelSensor.getJSONObject("sensor");
+                JSONObject sensor = multilevelSensor.getJSONObject("sensors");
+                System.out.println(sensor);
                 return sensor.getString("Temperature");
             } catch (JSONException e){
 
@@ -81,6 +82,28 @@ public final class HashMapHelper {
 
         }
         return "Temp not available";
+    }
+
+    public static String getSetTemp(String devNum){
+        String mode = deviceHashMap.get(devNum).getValues().get("66");
+        if (mode.equals("0")){
+            return "off";
+        } else if (mode.equals("1")){
+            try {
+                JSONObject setTemp = new JSONObject(deviceHashMap.get(devNum).getValues().get("67"));
+                return setTemp.getString("heat");
+            } catch (JSONException e){
+
+            }
+        }else{
+            try {
+                JSONObject setTemp = new JSONObject(deviceHashMap.get(devNum).getValues().get("67"));
+                return setTemp.getString("cool");
+            } catch (JSONException e){
+
+            }
+        }
+        return "off";
     }
 
 }

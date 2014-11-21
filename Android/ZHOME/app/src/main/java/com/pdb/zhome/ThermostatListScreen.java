@@ -35,7 +35,7 @@ public class ThermostatListScreen extends Fragment{
 
         ListAdapter thermostatScreen = new ThermostatCustomAdapter(getActivity(), thermostatStringArray);
 
-        ListView thermostatListView = (ListView) rootView.findViewById(R.id.thermostatListView);
+        final ListView thermostatListView = (ListView) rootView.findViewById(R.id.thermostatListView);
 
         thermostatListView.setAdapter(thermostatScreen);
 
@@ -44,13 +44,13 @@ public class ThermostatListScreen extends Fragment{
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 deviceHashMap = MainActivity.getHashMap();
                 String thermostatPicked = String.valueOf(adapterView.getItemAtPosition(i));
+                System.out.println(thermostatPicked);
                 Fragment thermostatView = new ThermostatView();
                 FragmentManager fragmentManager = getFragmentManager();
                 Bundle args = new Bundle();
-                args.putString(thermostatPicked, "devNum");
+                args.putString("devNum", thermostatPicked);
                 thermostatView.setArguments(args);
                 fragmentManager.beginTransaction().replace(R.id.content_frame, thermostatView, "ThermostatView").addToBackStack(null).commit();
-
                 MainActivity.setCurrentFragment(thermostatView);
                 getActivity().getActionBar().setTitle(deviceHashMap.get(thermostatPicked).getDevName());
             }
