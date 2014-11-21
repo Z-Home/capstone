@@ -50,8 +50,9 @@ public class MainActivity extends FragmentActivity implements Communicator {
 
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
-    
-	@Override
+    private String currentRoomName = "";
+
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
@@ -299,5 +300,13 @@ public class MainActivity extends FragmentActivity implements Communicator {
         FragmentManager fragmentManager = getFragmentManager();
         RenameScreen renameScreen = (RenameScreen) fragmentManager.findFragmentByTag("Rename");
         renameScreen.changeText(data);
+    }
+
+    public String getCurrentRoomName(){
+        return currentRoomName;
+    }
+
+    public void setCurrentRoomName(String name){
+        currentRoomName = name;
     }
 }

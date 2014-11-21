@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -37,12 +38,24 @@ public class RoomsFragment extends Fragment {
 
         roomsListView.setAdapter(roomsListAdapter);
 
+        roomsListView.setOnItemClickListener(new  AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String room = String.valueOf(adapterView.getItemAtPosition(i));
+                MainActivity activity = (MainActivity)getActivity();
+                activity.setCurrentRoomName(room);
+                screen = new RoomDevicesScreen();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
+                getActivity().getActionBar().setTitle(room);
+                MainActivity.setCurrentFragment(screen);
+            }
+        });
 
         ImageButton addRoomBtn = (ImageButton) rootView.findViewById(R.id.addRoomBtn);
         addRoomBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 screen = new RoomAddFormScreen();
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();

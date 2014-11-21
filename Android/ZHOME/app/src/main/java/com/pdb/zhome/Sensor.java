@@ -13,6 +13,7 @@ public class Sensor implements Device {
     private String type;
     private String devNum;
     private String devName;
+    private HashMap<String, String> values;
 
     public Sensor(HashMap<String, String> map, String devNum, String devName) {
         setDevNum(devNum);
@@ -52,11 +53,12 @@ public class Sensor implements Device {
 //                System.out.println(map.get("49"));
 //            }
 //        }
+        values = map;
     }
 
     @Override
     public HashMap<String, String> getValues() {
-        return null;
+        return values;
     }
 
     @Override

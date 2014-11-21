@@ -1,5 +1,7 @@
 package com.pdb.zhome;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,9 @@ import android.widget.TextView;
 import com.miz.pdb.R;
 
 class roomsCustomAdapter extends ArrayAdapter<String> {
+
+    private Fragment screen;
+
     public roomsCustomAdapter(Context context, String[] values) {
         super(context, R.layout.grid_single_rooms, values);
     }
