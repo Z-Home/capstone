@@ -15,6 +15,7 @@ import com.pdb.zhome.Devices.Device;
 import com.pdb.zhome.Devices.Sensor;
 import com.pdb.zhome.Devices.Switch;
 import com.pdb.zhome.Devices.Thermostat;
+import com.pdb.zhome.Room.RoomType;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,6 +37,8 @@ import java.util.List;
  */
 public class SocketCom extends AsyncTask<Void, String, Void> {
 
+    private JSONArray roomsJsonArray;
+
     public static enum context{LOGIN, MAIN, SPLASH};
     private context currentContext = context.SPLASH;
     private Activity currentActivity = null;
@@ -50,7 +53,7 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
     private BufferedReader in;
     private static PrintWriter out;
     private HashMap<String,Device> deviceHashMap;
-    private HashMap<String, String[]> roomsHashMap;
+    private HashMap<String, Room> roomsHashMap;
     private boolean isConnected = false;
 
     private SocketCom(){}
@@ -220,6 +223,8 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
 
     private void createRooms(JSONArray roomsArray){
         roomsHashMap = MainActivity.getRoomsHashMap();
+        roomsJsonArray = MainActivity.getRoomsJsonArray();
+        roomsJsonArray = roomsArray;
 
         int i = 0;
         int length = roomsArray.length();
@@ -229,6 +234,8 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                 JSONObject room = roomsArray.getJSONObject(i);
                 //Get the room name from the JSONObject
                 String roomName = room.getString("name");
+                String roomTypeString = room.getString("type");
+                RoomType roomType = Room.getTypeGivenString(roomTypeString);
                 //Get the array of devices as a JSONArray
                 JSONArray devicesJsonArray = room.getJSONArray("devices");
                 //Get length of JSONArray
@@ -240,8 +247,9 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                 for(j = 0; j < numDevices; j++){
                     roomDevices[j] = devicesJsonArray.getString(j);
                 }
+                Room newRoom = new Room(roomName, roomDevices, roomType);
                 //Add to hash map
-                roomsHashMap.put(roomName, roomDevices);
+                roomsHashMap.put(roomName, newRoom);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

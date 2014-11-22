@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -17,6 +18,8 @@ import com.miz.pdb.R;
 import com.pdb.zhome.Activities.MainActivity;
 import com.pdb.zhome.Adapters.roomDevicesAdapter;
 import com.pdb.zhome.HashMapHelper;
+import com.pdb.zhome.Room;
+
 
 import java.util.ArrayList;
 
@@ -40,18 +43,44 @@ public class RoomDevicesScreen extends Fragment {
 
         MainActivity activity = (MainActivity)getActivity();
 
-        HashMap<String, String[]> rooms = MainActivity.getRoomsHashMap();
+        HashMap<String, Room> rooms = MainActivity.getRoomsHashMap();
         ArrayList<String> deviceArrayList = new ArrayList<String>(HashMapHelper.getDeviceNames("switch"));
 
         TextView roomNameTextView = (TextView) rootView.findViewById(R.id.roomNameTextView);
         String roomName = activity.getCurrentRoomName();
         roomNameTextView.setText(roomName);
 
-        String[] devices = rooms.get(roomName);
+        Room room = rooms.get(roomName);
+
+        String[] devices = room.getDevices();
 
         TextView numDevicesInRoomTextView = (TextView) rootView.findViewById(R.id.roomNumDevicesTextView);
         System.out.println("ROOM DEVICES: " + devices.length);
        // numDevicesInRoomTextView.setText(devices.length);
+
+        ImageView theImageView = (ImageView) rootView.findViewById(R.id.roomDevicesScreenImage);
+
+        int imageResource = 0;
+
+        if(room.getType() == Room.RoomType.BATHROOM){
+            imageResource = R.drawable.bathroom;
+        }else if(room.getType() == Room.RoomType.BEDROOM){
+            imageResource = R.drawable.bedroom;
+        }else if(room.getType() == Room.RoomType.DINING){
+            imageResource = R.drawable.dining;
+        }else if(room.getType() == Room.RoomType.KITCHEN){
+            imageResource = R.drawable.kitchen;
+        }else if(room.getType() == Room.RoomType.LIVINGROOM){
+            imageResource = R.drawable.livingroom;
+        }else if(room.getType() == Room.RoomType.OFFICE){
+            imageResource = R.drawable.office;
+        }else if(room.getType() == Room.RoomType.OUTSIDE){
+            imageResource = R.drawable.outside;
+        }else{
+            imageResource = R.drawable.rooms;
+        }
+
+        theImageView.setImageResource(imageResource);
 
         ListAdapter roomsScreenAdapter = new roomDevicesAdapter(activity, devices);
 

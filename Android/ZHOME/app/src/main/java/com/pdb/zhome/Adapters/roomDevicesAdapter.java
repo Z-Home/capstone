@@ -35,7 +35,7 @@ public class roomDevicesAdapter extends ArrayAdapter<String> {
         socketCom = SocketCom.getInstance();
         LayoutInflater theInflater = LayoutInflater.from(getContext());
 
-        View theView = theInflater.inflate(R.layout.row_layout_lights, parent, false);;
+        View theView = theInflater.inflate(R.layout.row_layout_lights, parent, false);
 
         final String rowItem = getItem(position);
         System.out.println("ROW ITEM: " + rowItem);

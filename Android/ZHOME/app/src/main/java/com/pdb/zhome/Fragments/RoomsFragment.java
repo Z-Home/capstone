@@ -16,6 +16,7 @@ import java.util.HashMap;
 import com.miz.pdb.R;
 import com.pdb.zhome.Activities.MainActivity;
 import com.pdb.zhome.Adapters.roomsCustomAdapter;
+import com.pdb.zhome.Room;
 
 public class RoomsFragment extends Fragment {
 
@@ -29,7 +30,7 @@ public class RoomsFragment extends Fragment {
 
 		View rootView = inflater.inflate(R.layout.fragment_rooms, container, false);
 
-        final HashMap<String, String[]> roomsHashMap = MainActivity.getRoomsHashMap();
+        HashMap<String, Room> roomsHashMap = MainActivity.getRoomsHashMap();
 
         String[] roomsListArray = roomsHashMap.keySet().toArray(new String[roomsHashMap.size()]);
 

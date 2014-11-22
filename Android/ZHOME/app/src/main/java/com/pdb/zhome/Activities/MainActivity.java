@@ -28,6 +28,9 @@ import com.pdb.zhome.Fragments.ScenariosFragment;
 import com.pdb.zhome.SocketCom;
 import com.pdb.zhome.Fragments.SummaryFragment;
 import com.pdb.zhome.Fragments.TestFragment;
+import com.pdb.zhome.Room;
+
+import org.json.JSONArray;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -55,7 +58,8 @@ public class MainActivity extends FragmentActivity implements Communicator {
     private CharSequence mTitle;
 
     public static HashMap<String, Device> deviceHashMap = new HashMap<String, Device>();
-    public static HashMap<String, String[]> roomsHashMap = new HashMap<String, String[]>();
+    public static HashMap<String, Room> roomsHashMap = new HashMap<String, Room>();
+    public static JSONArray roomsJsonArray = new JSONArray();
 
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
@@ -282,7 +286,7 @@ public class MainActivity extends FragmentActivity implements Communicator {
         return deviceHashMap;
     }
 
-    public static HashMap<String,String[]> getRoomsHashMap(){
+    public static HashMap<String, Room> getRoomsHashMap(){
         return roomsHashMap;
     }
 
@@ -318,4 +322,6 @@ public class MainActivity extends FragmentActivity implements Communicator {
     public void setCurrentRoomName(String name){
         currentRoomName = name;
     }
+
+    public static JSONArray getRoomsJsonArray(){ return roomsJsonArray;}
 }
