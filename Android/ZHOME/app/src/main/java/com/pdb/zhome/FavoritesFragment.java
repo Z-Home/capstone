@@ -2,6 +2,7 @@ package com.pdb.zhome;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,8 @@ import com.miz.pdb.R;
 public class FavoritesFragment extends Fragment {
 
     private Fragment screen;
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
 
 	public FavoritesFragment() {
 	}
@@ -36,6 +39,10 @@ public class FavoritesFragment extends Fragment {
                 "Outdoor Light 2",
                 "Coffee Maker Power"
         };
+
+        //We can get the favorites json object from shared preferences
+        //then send it to the array adapter where we check for the device's
+        //command class and set the row layout accordingly
 
         ImageButton addFavoritesBtn = (ImageButton) rootView.findViewById(R.id.addFavoritesBtn);
         addFavoritesBtn.setOnClickListener(new View.OnClickListener() {

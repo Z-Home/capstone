@@ -36,9 +36,9 @@ public class FavoritesAddScreen extends Fragment {
 
         ListAdapter favAddScreenAdapter = new favoritesAddAdapter(getActivity(), deviceNames);
 
-        ListView lightsListView = (ListView) rootView.findViewById(R.id.favoritesAddListView);
+        ListView favoritesAddListView = (ListView) rootView.findViewById(R.id.favoritesAddListView);
 
-        lightsListView.setAdapter(favAddScreenAdapter);
+        favoritesAddListView.setAdapter(favAddScreenAdapter);
 
         return rootView;
     }
