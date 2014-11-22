@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Fragments;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -10,11 +10,12 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
-import android.widget.Toast;
 
 import java.util.HashMap;
 
 import com.miz.pdb.R;
+import com.pdb.zhome.Activities.MainActivity;
+import com.pdb.zhome.Adapters.roomsCustomAdapter;
 
 public class RoomsFragment extends Fragment {
 

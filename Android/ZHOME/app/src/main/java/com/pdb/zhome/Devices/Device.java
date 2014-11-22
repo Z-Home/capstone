@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Devices;
 
 import org.json.JSONObject;
 

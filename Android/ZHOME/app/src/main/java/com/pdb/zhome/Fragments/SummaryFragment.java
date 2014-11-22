@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Fragments;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -10,6 +10,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.miz.pdb.R;
+import com.pdb.zhome.Activities.MainActivity;
+import com.pdb.zhome.HashMapHelper;
 
 import java.util.ArrayList;
 

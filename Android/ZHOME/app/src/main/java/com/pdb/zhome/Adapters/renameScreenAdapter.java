@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Adapters;
 
 import android.content.Context;
 import android.text.Editable;
@@ -7,19 +7,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.miz.pdb.R;
-
-import org.json.JSONObject;
+import com.pdb.zhome.Devices.Device;
+import com.pdb.zhome.HashMapHelper;
+import com.pdb.zhome.Activities.MainActivity;
+import com.pdb.zhome.SocketCom;
 
 import java.util.HashMap;
 
-class renameScreenAdapter extends ArrayAdapter<String> {
+public class renameScreenAdapter extends ArrayAdapter<String> {
 
     private String[] changedNameList;
     private HashMap<String, Device> deviceHashMap;

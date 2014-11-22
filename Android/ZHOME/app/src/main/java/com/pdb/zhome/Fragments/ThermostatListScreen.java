@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Fragments;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -9,9 +9,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.miz.pdb.R;
+import com.pdb.zhome.Activities.MainActivity;
+import com.pdb.zhome.Adapters.ThermostatCustomAdapter;
+import com.pdb.zhome.Devices.Device;
+import com.pdb.zhome.HashMapHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;

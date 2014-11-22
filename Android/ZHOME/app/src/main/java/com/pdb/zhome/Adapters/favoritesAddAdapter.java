@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Adapters;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.miz.pdb.R;
+import com.pdb.zhome.Devices.Device;
+import com.pdb.zhome.HashMapHelper;
+import com.pdb.zhome.Activities.MainActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,7 +21,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-class favoritesAddAdapter extends ArrayAdapter<String> {
+public class favoritesAddAdapter extends ArrayAdapter<String> {
 
     private HashMap<String, Device> deviceHashMap;
     private SharedPreferences preferences;

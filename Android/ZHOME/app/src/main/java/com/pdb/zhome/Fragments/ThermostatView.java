@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.miz.pdb.R;
+import com.pdb.zhome.HashMapHelper;
 
 import java.util.ArrayList;
 

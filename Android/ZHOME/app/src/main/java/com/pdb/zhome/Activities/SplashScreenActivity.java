@@ -1,13 +1,13 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Activities;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+
 import com.miz.pdb.R;
+import com.pdb.zhome.SocketCom;
+
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 import android.view.Window;

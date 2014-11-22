@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Fragments;
 
 import android.app.Fragment;
 import android.content.Context;

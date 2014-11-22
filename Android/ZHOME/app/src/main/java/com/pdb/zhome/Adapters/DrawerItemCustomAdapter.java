@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.miz.pdb.R;
+import com.pdb.zhome.Fragments.ObjectDrawerItem;
 
 public class DrawerItemCustomAdapter extends ArrayAdapter<ObjectDrawerItem> {
 

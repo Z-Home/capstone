@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Devices;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -8,61 +8,52 @@ import java.util.HashMap;
 /**
  * Created by Bryan on 10/13/2014.
  */
-public class Switch implements Device {
+public class Thermostat implements Device {
 
-    private HashMap<String, String> valuesHashMap;
     private String devNum;
     private String type;
     private String devName;
+    private HashMap<String, String> values;
 
-    public Switch(HashMap<String, String> map, String devNum, String devName) {
-        this.type = "switch";
-        setValues(map);
+    public Thermostat(HashMap<String, String> map, String devNum, String devName) {
+        this.type = "thermostat";
         setDevNum(devNum);
         setDevName(devName);
-    }
-
-    @Override
-    public String getType(){return this.type;}
-
-    @Override
-    public String getDevNum() {return this.devNum;}
-
-    public void setDevName(String devName) {
-        this.devName = devName;
-    }
-
-    @Override
-    public String getDevName(){
-        return this.devName;
+        setValues(map);
     }
 
     public void setDevNum(String devNum) {
         this.devNum = devNum;
     }
 
-    @Override
-    public void setValues(HashMap<String, String> map) {
-        this.valuesHashMap = map;
+    public void setDevName(String devName) {
+        this.devName = devName;
     }
 
     @Override
+    public void setValues(HashMap<String, String> map) {
+        values = map;
+    }
+
+    @Override
+    public String getType(){return this.type;}
+
+    @Override
+    public String getDevName() {
+        return this.devName;
+    }
+
+    @Override
+    public String getDevNum() {return this.devNum;}
+
+    @Override
     public HashMap<String, String> getValues() {
-        return this.valuesHashMap;
+        return values;
     }
 
     @Override
     public void updateValues(String cc, String value) {
-        valuesHashMap.put(cc, value);
-    }
 
-    @Override
-    public String[] formatUIinfo(String cc, String value){
-        updateValues(cc, value);
-
-        String[] values = {this.devNum, cc, value};
-
-        return values;
     }
 
     @Override
@@ -71,8 +62,8 @@ public class Switch implements Device {
         jsonToSend = new JSONObject();
         json = new JSONObject();
 
-        if(cc.equals("38")){
-            value = value + ",255";
+        if(cc.equals("66")){
+            cc = "64";
         }
 
         try {
@@ -87,5 +78,10 @@ public class Switch implements Device {
         }
 
         return jsonToSend;
+    }
+
+    @Override
+    public String[] formatUIinfo(String cc, String value) {
+        return null;
     }
 }

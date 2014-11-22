@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,18 +11,21 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.miz.pdb.R;
+import com.pdb.zhome.Devices.Device;
+import com.pdb.zhome.HashMapHelper;
+import com.pdb.zhome.Activities.MainActivity;
+import com.pdb.zhome.SocketCom;
 
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.util.HashMap;
 
-class lightsScreenAdapter extends ArrayAdapter<String> {
+public class roomDevicesAdapter extends ArrayAdapter<String> {
 
     private HashMap<String, Device> deviceHashMap;
     private SocketCom socketCom;
     private int lightsOn;
-    public lightsScreenAdapter(Context context, String[] values) {
+    public roomDevicesAdapter(Context context, String[] values) {
         super(context, R.layout.row_layout_lights, values);
     }
 
@@ -32,11 +35,13 @@ class lightsScreenAdapter extends ArrayAdapter<String> {
         socketCom = SocketCom.getInstance();
         LayoutInflater theInflater = LayoutInflater.from(getContext());
 
-        View theView;
+        View theView = theInflater.inflate(R.layout.row_layout_lights, parent, false);;
 
         final String rowItem = getItem(position);
+        System.out.println("ROW ITEM: " + rowItem);
 
         String status = HashMapHelper.getStatus(rowItem);
+
 
         if (deviceHashMap.get(rowItem).getValues().keySet().contains("37")){
             // LIGHT SWITCH
@@ -84,7 +89,7 @@ class lightsScreenAdapter extends ArrayAdapter<String> {
 
             });
 
-        }else {
+        }else if(deviceHashMap.get(rowItem).getValues().keySet().contains("38")){
             // DIMMER
 
             // Set the view to row layout for lights
@@ -128,6 +133,28 @@ class lightsScreenAdapter extends ArrayAdapter<String> {
                 }
             });
 
+        }else if(deviceHashMap.get(rowItem).getValues().keySet().contains("66")){
+            theView = theInflater.inflate(R.layout.row_layout_thermostat, parent, false);
+
+            TextView theTextView = (TextView) theView.findViewById(R.id.thermostatScreenText);
+
+            theTextView.setText(rowItem);
+
+            ImageView theImageView = (ImageView) theView.findViewById(R.id.thermostatScreenImageView);
+
+            theImageView.setImageResource(R.drawable.thermostat);
+
+        }else if(deviceHashMap.get(rowItem).getValues().keySet().contains("48")){
+            theView = theInflater.inflate(R.layout.row_layout_thermostat, parent, false);
+
+            TextView theTextView = (TextView) theView.findViewById(R.id.thermostatScreenText);
+
+            theTextView.setText(rowItem);
+
+            ImageView theImageView = (ImageView) theView.findViewById(R.id.thermostatScreenImageView);
+
+            theImageView.setImageResource(R.drawable.thermostat);
+            
         }
 
         return theView;

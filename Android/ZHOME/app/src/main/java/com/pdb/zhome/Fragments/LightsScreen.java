@@ -1,21 +1,16 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Fragments;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.miz.pdb.R;
-
-import org.w3c.dom.Text;
+import com.pdb.zhome.HashMapHelper;
 
 import java.util.ArrayList;
 
@@ -41,7 +36,7 @@ public class LightsScreen extends Fragment{
 
         String[] lightsListArray = deviceArrayList.toArray(new String[deviceArrayList.size()]);
 
-        ListAdapter lightsScreenAdapter = new lightsScreenAdapter(getActivity(), lightsListArray);
+        ListAdapter lightsScreenAdapter = new com.pdb.zhome.Adapters.lightsScreenAdapter(getActivity(), lightsListArray);
 
         ListView lightsListView = (ListView) rootView.findViewById(R.id.lightsListView);
 

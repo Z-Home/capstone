@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Activities;
 
 import android.app.FragmentTransaction;
 import android.content.SharedPreferences;
@@ -17,8 +17,17 @@ import android.widget.ListView;
 import android.content.Intent;
 
 import com.miz.pdb.R;
-
-import org.json.JSONException;
+import com.pdb.zhome.Adapters.DrawerItemCustomAdapter;
+import com.pdb.zhome.Communicator;
+import com.pdb.zhome.Devices.Device;
+import com.pdb.zhome.Fragments.FavoritesFragment;
+import com.pdb.zhome.Fragments.ObjectDrawerItem;
+import com.pdb.zhome.Fragments.RenameScreen;
+import com.pdb.zhome.Fragments.RoomsFragment;
+import com.pdb.zhome.Fragments.ScenariosFragment;
+import com.pdb.zhome.SocketCom;
+import com.pdb.zhome.Fragments.SummaryFragment;
+import com.pdb.zhome.Fragments.TestFragment;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -78,7 +87,7 @@ public class MainActivity extends FragmentActivity implements Communicator {
         drawerItem[4] = new ObjectDrawerItem(R.drawable.ic_launcher, "Test");
         
         // Pass the folderData to our ListView adapter
-        com.pdb.zhome.DrawerItemCustomAdapter adapter = new com.pdb.zhome.DrawerItemCustomAdapter(this, R.layout.listview_item_row, drawerItem);
+        DrawerItemCustomAdapter adapter = new DrawerItemCustomAdapter(this, R.layout.listview_item_row, drawerItem);
         
         // Set the adapter for the list view
         mDrawerList.setAdapter(adapter);
@@ -197,7 +206,7 @@ public class MainActivity extends FragmentActivity implements Communicator {
         switch (position) {
         case 0:
             if (favoritesFragment==null)
-                favoritesFragment = new com.pdb.zhome.FavoritesFragment();
+                favoritesFragment = new FavoritesFragment();
 
             currentFragment = favoritesFragment;
             break;

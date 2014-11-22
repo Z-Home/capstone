@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,8 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.miz.pdb.R;
+import com.pdb.zhome.HashMapHelper;
 
-class ThermostatCustomAdapter extends ArrayAdapter<String> {
+public class ThermostatCustomAdapter extends ArrayAdapter<String> {
     public ThermostatCustomAdapter(Context context, String[] values) {
         super(context, R.layout.row_layout_thermostat, values);
     }

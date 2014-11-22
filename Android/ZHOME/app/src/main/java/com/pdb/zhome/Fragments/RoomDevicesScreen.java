@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Fragments;
 
 import android.app.FragmentManager;
 import android.os.Bundle;
@@ -10,10 +10,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.app.Fragment;
-import android.widget.GridView;
+
 import java.util.HashMap;
 
 import com.miz.pdb.R;
+import com.pdb.zhome.Activities.MainActivity;
+import com.pdb.zhome.Adapters.roomDevicesAdapter;
+import com.pdb.zhome.HashMapHelper;
 
 import java.util.ArrayList;
 

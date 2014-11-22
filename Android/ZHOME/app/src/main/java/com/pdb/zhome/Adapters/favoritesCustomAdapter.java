@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.miz.pdb.R;
 
-class favoritesCustomAdapter extends ArrayAdapter<String> {
+public class favoritesCustomAdapter extends ArrayAdapter<String> {
     public favoritesCustomAdapter(Context context, String[] values) {
         super(context, R.layout.row_layout_favorites, values);
     }

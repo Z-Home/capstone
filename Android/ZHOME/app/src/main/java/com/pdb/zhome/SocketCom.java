@@ -8,6 +8,14 @@ import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.app.Activity;
 
+import com.pdb.zhome.Activities.LoginActivity;
+import com.pdb.zhome.Activities.MainActivity;
+import com.pdb.zhome.Activities.SplashScreenActivity;
+import com.pdb.zhome.Devices.Device;
+import com.pdb.zhome.Devices.Sensor;
+import com.pdb.zhome.Devices.Switch;
+import com.pdb.zhome.Devices.Thermostat;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Fragments;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.miz.pdb.R;
+import com.pdb.zhome.Adapters.favoritesCustomAdapter;
 
 public class FavoritesFragment extends Fragment {
 

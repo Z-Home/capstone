@@ -18,19 +18,19 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.Miztheme" >
         <activity
-            android:name="com.pdb.zhome.MainActivity"
+            android:name="com.pdb.zhome.Activities.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.pdb.zhome.LoginActivity"
+            android:name="com.pdb.zhome.Activities.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
 
         </activity>
         <activity
-            android:name="com.pdb.zhome.SplashScreenActivity"
+            android:name="com.pdb.zhome.Activities.SplashScreenActivity"
             android:screenOrientation="portrait"
             android:label="Z-Home" >
             <intent-filter>

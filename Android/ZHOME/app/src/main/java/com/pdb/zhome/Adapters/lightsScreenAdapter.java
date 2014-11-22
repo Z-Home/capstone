@@ -1,31 +1,31 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Adapters;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.miz.pdb.R;
+import com.pdb.zhome.Devices.Device;
+import com.pdb.zhome.HashMapHelper;
+import com.pdb.zhome.Activities.MainActivity;
+import com.pdb.zhome.SocketCom;
 
 import org.json.JSONObject;
 
 import java.util.HashMap;
 
-class roomDevicesAdapter extends ArrayAdapter<String> {
+public class lightsScreenAdapter extends ArrayAdapter<String> {
 
     private HashMap<String, Device> deviceHashMap;
     private SocketCom socketCom;
     private int lightsOn;
-    public roomDevicesAdapter(Context context, String[] values) {
+    public lightsScreenAdapter(Context context, String[] values) {
         super(context, R.layout.row_layout_lights, values);
     }
 
@@ -35,13 +35,11 @@ class roomDevicesAdapter extends ArrayAdapter<String> {
         socketCom = SocketCom.getInstance();
         LayoutInflater theInflater = LayoutInflater.from(getContext());
 
-        View theView = theInflater.inflate(R.layout.row_layout_lights, parent, false);;
+        View theView;
 
         final String rowItem = getItem(position);
-        System.out.println("ROW ITEM: " + rowItem);
 
         String status = HashMapHelper.getStatus(rowItem);
-
 
         if (deviceHashMap.get(rowItem).getValues().keySet().contains("37")){
             // LIGHT SWITCH
@@ -89,7 +87,7 @@ class roomDevicesAdapter extends ArrayAdapter<String> {
 
             });
 
-        }else if(deviceHashMap.get(rowItem).getValues().keySet().contains("38")){
+        }else {
             // DIMMER
 
             // Set the view to row layout for lights
@@ -133,28 +131,6 @@ class roomDevicesAdapter extends ArrayAdapter<String> {
                 }
             });
 
-        }else if(deviceHashMap.get(rowItem).getValues().keySet().contains("66")){
-            theView = theInflater.inflate(R.layout.row_layout_thermostat, parent, false);
-
-            TextView theTextView = (TextView) theView.findViewById(R.id.thermostatScreenText);
-
-            theTextView.setText(rowItem);
-
-            ImageView theImageView = (ImageView) theView.findViewById(R.id.thermostatScreenImageView);
-
-            theImageView.setImageResource(R.drawable.thermostat);
-
-        }else if(deviceHashMap.get(rowItem).getValues().keySet().contains("48")){
-            theView = theInflater.inflate(R.layout.row_layout_thermostat, parent, false);
-
-            TextView theTextView = (TextView) theView.findViewById(R.id.thermostatScreenText);
-
-            theTextView.setText(rowItem);
-
-            ImageView theImageView = (ImageView) theView.findViewById(R.id.thermostatScreenImageView);
-
-            theImageView.setImageResource(R.drawable.thermostat);
-            
         }
 
         return theView;

@@ -1,5 +1,8 @@
 package com.pdb.zhome;
 
+import com.pdb.zhome.Activities.MainActivity;
+import com.pdb.zhome.Devices.Device;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 

@@ -1,4 +1,4 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Adapters;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.miz.pdb.R;
 
-class roomsCustomAdapter extends ArrayAdapter<String> {
+public class roomsCustomAdapter extends ArrayAdapter<String> {
 
     private Fragment screen;
 

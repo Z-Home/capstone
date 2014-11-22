@@ -1,9 +1,8 @@
-package com.pdb.zhome;
+package com.pdb.zhome.Devices;
 
 import org.json.JSONObject;
 
 import java.util.HashMap;
-import java.util.Iterator;
 
 /**
  * Created by Bryan on 10/13/2014.
