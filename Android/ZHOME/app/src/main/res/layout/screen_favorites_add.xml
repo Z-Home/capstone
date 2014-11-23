@@ -6,6 +6,9 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/favoritesListView">
+        android:layout_alignParentTop="true"
+        android:paddingTop="20dp"
+        android:id="@+id/favoritesAddListView">
     </ListView>
-</RelativeLayout><!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/fragment_favorites.xml -->
+
+</RelativeLayout>
