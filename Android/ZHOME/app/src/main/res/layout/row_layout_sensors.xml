@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingRight="10dp"
+    android:paddingEnd="10dp"
+    android:paddingLeft="5dp"
+    android:paddingStart="5dp">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/sensorDeviceImageView"
+        android:src="@drawable/sensors"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_toEndOf="@+id/sensorDeviceImageView"
+        android:layout_toRightOf="@+id/sensorDeviceImageView"
+        android:layout_toStartOf="@+id/sensorDeviceStatusText"
+        android:layout_toLeftOf="@+id/sensorDeviceStatusText"
+        android:id="@+id/sensorDeviceNameText"
+        android:textSize="15sp"
+        android:text="Sensor name"/>
+
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/sensorDeviceStatusText"
+        android:gravity="center"
+        android:text="40%"
+        />
+
+</RelativeLayout>
+
