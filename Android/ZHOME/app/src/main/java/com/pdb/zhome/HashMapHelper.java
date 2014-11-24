@@ -14,6 +14,7 @@ import java.util.HashMap;
  */
 public final class HashMapHelper {
 
+    private static SocketCom socketCom = SocketCom.getInstance();
     private static HashMap<String, Device> deviceHashMap = MainActivity.getHashMap();
 
     public static ArrayList<String> getDeviceNames(String type){
@@ -72,10 +73,8 @@ public final class HashMapHelper {
     public static String getTemp(String devNum){
         try {
             JSONObject multilevelSensor = new JSONObject(deviceHashMap.get(devNum).getValues().get("49"));
-            System.out.println(multilevelSensor);
             try{
                 JSONObject sensor = multilevelSensor.getJSONObject("sensors");
-                System.out.println(sensor);
                 return sensor.getString("Temperature");
             } catch (JSONException e){
 
@@ -94,6 +93,7 @@ public final class HashMapHelper {
         } else if (mode.equals("1")){
             try {
                 JSONObject setTemp = new JSONObject(deviceHashMap.get(devNum).getValues().get("67"));
+                System.out.println(setTemp.getString("heat"));
                 return setTemp.getString("heat");
             } catch (JSONException e){
 
@@ -101,12 +101,23 @@ public final class HashMapHelper {
         }else{
             try {
                 JSONObject setTemp = new JSONObject(deviceHashMap.get(devNum).getValues().get("67"));
+                System.out.println(setTemp.getString("cool"));
                 return setTemp.getString("cool");
             } catch (JSONException e){
 
             }
         }
         return "off";
+    }
+
+    public static String returnThermostatMode(String devNum){
+        String mode = deviceHashMap.get(devNum).getValues().get("66");
+        return mode;
+    }
+
+    public static void setThermostatMode(String devNum, String mode){
+        JSONObject command = deviceHashMap.get(devNum).command("64", mode);
+        socketCom.sendMessage(command);
     }
 
 }

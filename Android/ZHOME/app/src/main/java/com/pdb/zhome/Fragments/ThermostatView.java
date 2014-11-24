@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,46 @@ public class ThermostatView extends Fragment{
             setTempTextView.setText("off");
         }else
             setTempTextView.setText(convertTemp(HashMapHelper.getSetTemp(devNum)));
+
+        RadioButton heatRadioButton = (RadioButton) rootView.findViewById(R.id.heatThermostatRadioBtn);
+        RadioButton coolRadioButton = (RadioButton) rootView.findViewById(R.id.coolThermostatRadioBtn);
+        RadioButton offRadioButton = (RadioButton) rootView.findViewById(R.id.offThermostatRadioBtn);
+
+        String mode = HashMapHelper.returnThermostatMode(devNum);
+        if (mode.equals("0")){
+            heatRadioButton.setChecked(false);
+            coolRadioButton.setChecked(false);
+            offRadioButton.setChecked(true);
+        }else if (mode.equals("1")){
+            heatRadioButton.setChecked(true);
+            coolRadioButton.setChecked(false);
+            offRadioButton.setChecked(false);
+        }else{
+            heatRadioButton.setChecked(false);
+            coolRadioButton.setChecked(true);
+            offRadioButton.setChecked(false);
+        }
+
+        heatRadioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HashMapHelper.setThermostatMode(devNum, "1");
+            }
+        });
+
+        coolRadioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HashMapHelper.setThermostatMode(devNum, "2");
+            }
+        });
+
+        offRadioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HashMapHelper.setThermostatMode(devNum, "0");
+            }
+        });
 //        ArrayList<String> stringArrayList = new ArrayList<String>(HashMapHelper.getDeviceNames("thermostat"));
 //
 //        //Sample Data only
