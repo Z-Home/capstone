@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.miz.pdb.R;
+import com.pdb.zhome.Fragments.ThermostatView;
 import com.pdb.zhome.HashMapHelper;
 
 public class ThermostatCustomAdapter extends ArrayAdapter<String> {
@@ -31,6 +32,14 @@ public class ThermostatCustomAdapter extends ArrayAdapter<String> {
         ImageView theImageView = (ImageView) theView.findViewById(R.id.thermostatScreenImageView);
 
         theImageView.setImageResource(R.drawable.thermostat);
+
+        TextView tempTextView = (TextView) theView.findViewById(R.id.temperatureTxt);
+
+        Float floatTemp = Float.parseFloat(HashMapHelper.getTemp(item));
+        floatTemp = (9 * floatTemp)/5 + 32;
+        Integer intTemp = Math.round(floatTemp);
+
+        tempTextView.setText(intTemp.toString());
 
         return theView;
     }

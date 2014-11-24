@@ -120,4 +120,34 @@ public final class HashMapHelper {
         socketCom.sendMessage(command);
     }
 
+    public static void changeTemp(String devNum, String upOrDown){
+        String mode = deviceHashMap.get(devNum).getValues().get("66");
+        String currentSetTemp = "";
+        if (mode.equals("0")){
+            return;
+        } else if (mode.equals("1")){
+            try {
+                JSONObject setTemp = new JSONObject(deviceHashMap.get(devNum).getValues().get("67"));
+                currentSetTemp = setTemp.getString("heat");
+            } catch (JSONException e){
+
+            }
+        }else{
+            try {
+                JSONObject setTemp = new JSONObject(deviceHashMap.get(devNum).getValues().get("67"));
+                currentSetTemp = setTemp.getString("cool");
+            } catch (JSONException e){
+
+            }
+        }
+        System.out.println("Current temp is: " + currentSetTemp);
+        Float oldCelsiusFloatTemp = Float.parseFloat(currentSetTemp);
+        if (upOrDown.equals("up"))
+            oldCelsiusFloatTemp++;
+        else
+            oldCelsiusFloatTemp--;
+        String changeTemp = mode + "," + oldCelsiusFloatTemp;
+        JSONObject command = deviceHashMap.get(devNum).command("67", changeTemp);
+        socketCom.sendMessage(command);
+    }
 }
