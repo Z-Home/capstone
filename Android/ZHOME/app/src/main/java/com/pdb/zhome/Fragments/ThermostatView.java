@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RadioButton;
@@ -78,16 +79,23 @@ public class ThermostatView extends Fragment{
                 HashMapHelper.setThermostatMode(devNum, "0");
             }
         });
-//        ArrayList<String> stringArrayList = new ArrayList<String>(HashMapHelper.getDeviceNames("thermostat"));
-//
-//        //Sample Data only
-//        String[] thermostatStringArray = stringArrayList.toArray(new String[stringArrayList.size()]);
-//
-//        ListAdapter thermostatScreen = new ThermostatCustomAdapter(getActivity(), thermostatStringArray);
-//
-//        ListView thermostatListView = (ListView) rootView.findViewById(R.id.thermostatListView);
-//
-//        thermostatListView.setAdapter(thermostatScreen);
+
+        Button turnUpThermostat = (Button) rootView.findViewById(R.id.thermostatUp);
+        Button turnDownThermostat = (Button) rootView.findViewById(R.id.thermostatDown);
+
+        turnUpThermostat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HashMapHelper.changeTemp(devNum, "up");
+            }
+        });
+
+        turnDownThermostat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HashMapHelper.changeTemp(devNum, "down");
+            }
+        });
 
         return rootView;
     }
