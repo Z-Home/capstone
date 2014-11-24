@@ -13,16 +13,19 @@ import com.pdb.zhome.Devices.Device;
 import com.pdb.zhome.HashMapHelper;
 import com.pdb.zhome.SocketCom;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class sensorsScreenAdapter extends ArrayAdapter<String> {
 
     private HashMap<String, Device> deviceHashMap;
+    private HashMap<String, String> hm;
     private SocketCom socketCom;
     private int lightsOn;
 
-    public sensorsScreenAdapter(Context context, String[] values) {
+    public sensorsScreenAdapter(Context context, ArrayList<String> values, HashMap<String, String> hm) {
         super(context, R.layout.row_layout_sensors, values);
+        this.hm = hm;
     }
 
     @Override
@@ -35,7 +38,10 @@ public class sensorsScreenAdapter extends ArrayAdapter<String> {
 
         //Set the device name
         TextView theTextView = (TextView) theView.findViewById(R.id.sensorDeviceNameText);
-        //theTextView.setText(deviceHashMap.get(rowItem).getDevName());
+        theTextView.setText(rowItem);
+
+        TextView textView = (TextView) theView.findViewById(R.id.sensorDeviceStatusText);
+        textView.setText(hm.get(rowItem));
 
         //Set the text status of the sensor
         //String status = HashMapHelper.getStatus(rowItem);

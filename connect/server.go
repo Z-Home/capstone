@@ -35,18 +35,23 @@ type Devices struct {
 	level          map[string]string
 }
 
+//Broadcast places data into the client.outgoing channel
 func (zHome *ZHome) Broadcast(data string) {
 	for _, client := range zHome.clients {
 		client.outgoing <- data
 	}
 }
 
+//BroadcastDevices places data into the client.outgingDevices channel
 func (zHome *ZHome) BroadcastDevices(data string) {
 	for _, client := range zHome.clients {
 		client.outgoingDevices <- data
 	}
 }
 
+//Join sends all incoming communication to Auth until the user is authtenticated.
+//When authenticated the user will recive a device list, a list of the rooms, and their admin status
+//Join will create a go routine that listens for a dead connection
 func (zHome *ZHome) Join(connection net.Conn) {
 	client := NewClient(connection)
 	client.zhome = zHome
@@ -74,6 +79,8 @@ func (zHome *ZHome) Join(connection net.Conn) {
 	}()
 }
 
+//Auth listens for data coming into client.authChan
+//If the user is authenticated true is put into the join channel
 func (zHome *ZHome) Auth(client *Client, joined chan bool) {
 	type Cred struct {
 		User string
@@ -107,6 +114,7 @@ func (zHome *ZHome) Auth(client *Client, joined chan bool) {
 	}()
 }
 
+//Listen runs a go rutine that listens for data to be placed into zHome.incoming, zHome.joins, and zHome.dead channels
 func (zHome *ZHome) Listen() {
 	go func() {
 		for {
@@ -122,19 +130,23 @@ func (zHome *ZHome) Listen() {
 	}()
 }
 
+//NewConn puts a new connection into the zHome.joins channel
 func (zHome *ZHome) NewConn(con net.Conn) {
 	zHome.joins <- con
 }
 
+//NewIncoming puts a string into the zHome.incoming channel
 func (zHome *ZHome) NewIncoming(data string) {
 	zHome.incoming <- data
 }
 
+//dialTimeout closes a network connection after 2 seconds for a get request
 func dialTimeout(network, addr string) (net.Conn, error) {
 	var timeout = time.Duration(2 * time.Second)
 	return net.DialTimeout(network, addr, timeout)
 }
 
+//Ticker sends a get request to the ZWave sever to force status updates every 5 seconds and then gets and proccess the json
 func (zHome *ZHome) Ticker() {
 	ticker := time.NewTicker(5 * time.Second)
 	quit := make(chan struct{})
@@ -206,6 +218,8 @@ func (zHome *ZHome) Ticker() {
 									sensorType = strings.Replace(sensorType, "\"", "", -1)
 
 									sensorValue := v.Path("val.value").String()
+									s := v.Path("scaleString.value").Data().(string)
+									sensorValue = fmt.Sprintf("%s%s", sensorValue, s)
 
 									q[sensorType] = sensorValue
 								}
@@ -286,6 +300,7 @@ func (zHome *ZHome) Ticker() {
 	}
 }
 
+//GetDevices gets the device list from the ZWave server and proccesses the json on startup
 func (zHome *ZHome) GetDevices() {
 	response, _ := http.Get(fmt.Sprintf("http://%s:8083/ZWaveAPI/Data/0", IP_ADDRESS))
 	contents, _ := ioutil.ReadAll(response.Body)
@@ -333,6 +348,8 @@ func (zHome *ZHome) GetDevices() {
 						sensorType = strings.Replace(sensorType, "\"", "", -1)
 
 						sensorValue := v.Path("val.value").String()
+						s := v.Path("scaleString.value").Data().(string)
+						sensorValue = fmt.Sprintf("%s%s", sensorValue, s)
 
 						x := fmt.Sprintf(`"%s":"%s"`, sensorType, sensorValue)
 
@@ -386,7 +403,6 @@ func (zHome *ZHome) GetDevices() {
 	jsonObj, _ := gabs.Consume(map[string]interface{}{})
 	for _, value := range zHome.devices {
 		for key, val := range value.level {
-			//jsonObj.Set(value.deviceType, "devices", value.deviceNum, "type")
 			jsonObj.Set(val, "devices", value.deviceNum, "commandClasses", key)
 		}
 		jsonObj.Set("", "devices", value.deviceNum, "devName")
@@ -396,13 +412,16 @@ func (zHome *ZHome) GetDevices() {
 	list := jsonObj.String()
 
 	zHome.deviceList = DeviceName(list)
-	//zHome.deviceList = zHome.deviceList
 
 	fmt.Println("Got Devices")
 	go zHome.Ticker()
 
 }
 
+//NewZHome is called on startup.
+//It starts the database.
+//Calls GetDevices()
+//And Calls Listen()
 func NewZHome() *ZHome {
 
 	StartDB()

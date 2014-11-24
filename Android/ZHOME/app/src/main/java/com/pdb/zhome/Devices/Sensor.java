@@ -62,7 +62,7 @@ public class Sensor implements Device {
 
     @Override
     public void updateValues(String cc, String value) {
-
+        values.put(cc, value);
     }
 
     @Override
@@ -72,6 +72,7 @@ public class Sensor implements Device {
 
     @Override
     public String[] formatUIinfo(String cc, String value) {
+        updateValues(cc, value);
         return null;
     }
 }
