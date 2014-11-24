@@ -43,7 +43,10 @@ public final class HashMapHelper {
             if (status ==null)
                 status = device.getValues().get("38");
         }
-        else
+        else if(device.getType().equals("sensor")){
+            status = device.getValues().toString();
+            System.out.println(status);
+        }else
             status = null;
         return status;
     }

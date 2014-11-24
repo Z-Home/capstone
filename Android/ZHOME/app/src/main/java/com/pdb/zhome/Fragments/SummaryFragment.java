@@ -56,7 +56,7 @@ public class SummaryFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                screen = new LightsScreen();
+                screen = new SensorsScreen();
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
                 MainActivity.setCurrentFragment(screen);

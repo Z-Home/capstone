@@ -88,7 +88,7 @@ public class MainActivity extends FragmentActivity implements Communicator {
         drawerItem[1] = new ObjectDrawerItem(R.drawable.rooms, "Rooms");
         drawerItem[2] = new ObjectDrawerItem(R.drawable.scenarios, "Scenarios");
         drawerItem[3] = new ObjectDrawerItem(R.drawable.summary, "Summary");
-        drawerItem[4] = new ObjectDrawerItem(R.drawable.ic_launcher, "Test");
+        drawerItem[4] = new ObjectDrawerItem(R.drawable.logout, "Logout");
         
         // Pass the folderData to our ListView adapter
         DrawerItemCustomAdapter adapter = new DrawerItemCustomAdapter(this, R.layout.listview_item_row, drawerItem);
@@ -234,9 +234,7 @@ public class MainActivity extends FragmentActivity implements Communicator {
             break;
         case 4:
             if (testFragment==null)
-                testFragment = new TestFragment();
-
-            currentFragment = testFragment;
+                logout();
             break;
 
             default:
