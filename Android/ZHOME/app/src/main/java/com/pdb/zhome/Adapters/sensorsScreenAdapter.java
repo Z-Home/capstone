@@ -43,9 +43,6 @@ public class sensorsScreenAdapter extends ArrayAdapter<String> {
         TextView textView = (TextView) theView.findViewById(R.id.sensorDeviceStatusText);
         textView.setText(hm.get(rowItem));
 
-        //Set the text status of the sensor
-        //String status = HashMapHelper.getStatus(rowItem);
-
         //Set the image view of the sensor
         ImageView theImageView = (ImageView) theView.findViewById(R.id.sensorDeviceImageView);
         theImageView.setImageResource(R.drawable.sensors);

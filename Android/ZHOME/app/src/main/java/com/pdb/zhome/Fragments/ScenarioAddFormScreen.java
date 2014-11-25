@@ -1,0 +1,56 @@
+package com.pdb.zhome.Fragments;
+
+import android.app.Fragment;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.miz.pdb.R;
+import com.pdb.zhome.Activities.MainActivity;
+import com.pdb.zhome.Room;
+import com.pdb.zhome.SocketCom;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+
+/**
+ * Created by Vegie on 11/18/14.
+ */
+
+public class ScenarioAddFormScreen extends Fragment {
+
+    public ScenarioAddFormScreen() {
+    }
+
+    View rootView;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        rootView = inflater.inflate(R.layout.form_scenario_add, container, false);
+
+
+        Button addButton = (Button) rootView.findViewById(R.id.addScenarioFormBtn);
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "This doesn't do anything yet", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return rootView;
+    }
+}

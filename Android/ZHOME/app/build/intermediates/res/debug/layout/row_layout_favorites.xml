@@ -1,24 +1,33 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
-
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingRight="10dp"
+    android:paddingEnd="10dp"
+    android:paddingLeft="5dp"
+    android:paddingStart="5dp">
 
     <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_margin="5dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
         android:id="@+id/favoritesImageView"
-        />
+        android:src="@drawable/security"/>
 
     <TextView
-        android:id="@+id/favoritesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_toEndOf="@+id/favoritesImageView"
+        android:layout_toRightOf="@+id/favoritesImageView"
+        android:id="@+id/favoritesTextView"
         android:textSize="15sp"
-        android:padding="10dp"
-        />
-</LinearLayout>
+        android:text="Dimmer 1"/>
+</RelativeLayout>
 
 <!-- From: file:/Users/Vegie/Desktop/capstone/Android/ZHOME/app/src/main/res/layout/row_layout_favorites.xml -->

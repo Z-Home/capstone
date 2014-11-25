@@ -3,47 +3,44 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/scenariosFragment"
+    android:id="@+id/scenariosSetupScreen"
     >
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/scenariosListView">
-    </ListView>
 
     <ImageView
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:baselineAlignBottom="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="10dp"
-        android:src="@drawable/gold_circle"
-
-        />
+        android:src="@drawable/gold_circle" />
     <ImageButton
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:baselineAlignBottom="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="10dp"
         android:src="@drawable/add"
         android:background="@android:color/transparent"
-        android:id="@+id/addScenarioBtn"
+        android:id="@+id/addDevicesToScenariosBtn"
         />
 
     <Button
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:baselineAlignBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:background="#F1B82D"
+        android:padding="10dp"
         android:layout_margin="10dp"
-        android:src="@drawable/add"
-        android:background="@android:color/transparent"
-        android:id="@+id/testBtn"
-        android:text="Scenario Setup View"
-        />
+        android:text="Save Settings"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scenariosSetupListView"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/addDevicesToScenariosBtn">
+    </ListView>
 </RelativeLayout>

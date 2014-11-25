@@ -9,12 +9,18 @@
     android:paddingLeft="5dp"
     android:paddingStart="5dp">
 
-    <ImageView
+    <ImageButton
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_centerVertical="true"
-        android:id="@+id/dimmerScreenImageView"
-        android:src="@drawable/dimmer"/>
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/scenarioActivateBtn"
+        android:background="@android:color/transparent"
+        android:src="@drawable/power"
+        android:scaleType="fitXY"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,28 +28,12 @@
         android:layout_centerVertical="true"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:layout_toEndOf="@+id/dimmerScreenImageView"
-        android:layout_toRightOf="@+id/dimmerScreenImageView"
-        android:layout_toStartOf="@+id/dimmerSeekBar"
-        android:layout_toLeftOf="@+id/dimmerSeekBar"
-        android:id="@+id/dimmerScreenText"
+        android:layout_toEndOf="@+id/scenarioActivateBtn"
+        android:layout_toRightOf="@+id/scenarioActivateBtn"
+        android:id="@+id/scenariosNameText"
         android:textSize="15sp"
-        android:text="Dimmer 1"/>
+        android:text="Scenario Name"/>
 
-    <SeekBar
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginStart="5dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:id="@+id/dimmerSeekBar"
-        android:max="99"
-        android:fadingEdge="vertical"
-        android:progressDrawable="@drawable/progress_secondary_miztheme"
-        android:thumb="@drawable/ab_stacked_solid_miztheme"
-        />
 
 </RelativeLayout>
 
