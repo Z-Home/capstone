@@ -16,6 +16,7 @@ import com.pdb.zhome.Adapters.scenarioSetupAdapter;
 import com.pdb.zhome.Devices.Device;
 import com.pdb.zhome.HashMapHelper;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -32,8 +33,10 @@ public class ScenarioSetupScreen extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.screen_scenarios_setup, container, false);
 
-        String[] deviceNames = HashMapHelper.getAllDeviceNames();
-        deviceHashMap = MainActivity.getHashMap();
+        Bundle bundle = getArguments();
+        ArrayList<String> selectedDevices = new ArrayList<String>(bundle.getStringArrayList("device_list"));
+        String scenarioName = bundle.getString("scenario_name");
+        String[] deviceNames = selectedDevices.toArray(new String[selectedDevices.size()]);
 
         final ListAdapter scenariosSetupAdapter = new scenarioSetupAdapter(getActivity(), deviceNames);
 

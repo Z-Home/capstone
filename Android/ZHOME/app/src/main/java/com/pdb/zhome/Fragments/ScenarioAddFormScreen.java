@@ -59,7 +59,7 @@ public class ScenarioAddFormScreen extends Fragment {
                     args.putString("scenario_name", editText.getText().toString());
                     frg.setArguments(args);
                     fragmentManager.beginTransaction().replace(R.id.content_frame, frg, "scenario_add_devices").addToBackStack(null).commit();
-                    getActivity().getActionBar().setTitle("Add Devices to Scenario");
+                    getActivity().getActionBar().setTitle("Add Devices to " + editText.getText().toString());
                     MainActivity.setCurrentFragment(frg);
                 }
             }

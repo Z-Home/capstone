@@ -38,8 +38,6 @@ public class scenarioSetupAdapter extends ArrayAdapter<String> {
 
         final String rowItem = getItem(position);
 
-        String status = HashMapHelper.getStatus(rowItem);
-
         if (deviceHashMap.get(rowItem).getValues().keySet().contains("37")){
             // LIGHT SWITCH
 
@@ -56,31 +54,24 @@ public class scenarioSetupAdapter extends ArrayAdapter<String> {
 
             final ImageButton powerBtn = (ImageButton) theView.findViewById(R.id.powerBtn);
 
-            if (status.equals("0") || status.equals("false")){
-                powerBtn.setImageResource(R.drawable.power_red);
-            }
-            else {
-                powerBtn.setImageResource(R.drawable.power_green);
-            }
+            powerBtn.setImageResource(R.drawable.power_red);
+            powerBtn.setTag("off");
 
             powerBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     JSONObject command;
-
                     deviceHashMap = MainActivity.getHashMap();
-                    String status = HashMapHelper.getStatus(rowItem);
 
-                    if (status.equals("0") || status.equals("false")){
-
-                        command = deviceHashMap.get(rowItem).command("37", "1");
-                        socketCom.sendMessage(command);
+                    if (powerBtn.getTag().equals("off")){
+                        //command = deviceHashMap.get(rowItem).command("37", "1");
                         powerBtn.setImageResource(R.drawable.power_green);
+                        powerBtn.setTag("on");
                     }
                     else {
-                        command = deviceHashMap.get(rowItem).command("37", "0");
-                        socketCom.sendMessage(command);
+                        //command = deviceHashMap.get(rowItem).command("37", "0");
                         powerBtn.setImageResource(R.drawable.power_red);
+                        powerBtn.setTag("off");
                     }
                 }
 
@@ -101,7 +92,7 @@ public class scenarioSetupAdapter extends ArrayAdapter<String> {
             SeekBar dimmerSlider = (SeekBar) theView.findViewById(R.id.dimmerSeekBar);
 
             // Convert status to integer
-            dimmerSlider.setProgress(Integer.parseInt(status));
+            //dimmerSlider.setProgress(Integer.parseInt(status));
 
             dimmerSlider.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
@@ -121,36 +112,33 @@ public class scenarioSetupAdapter extends ArrayAdapter<String> {
 
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {
-                    JSONObject command;
+                    //JSONObject command;
 
-                    command = deviceHashMap.get(rowItem).command("38", progressChanged.toString());
-
-                    socketCom.sendMessage(command);
-
+                    //command = deviceHashMap.get(rowItem).command("38", progressChanged.toString());
                 }
             });
 
         }else if (deviceHashMap.get(rowItem).getValues().keySet().contains("66")){
             //THERMOSTAT
 
-            theView = theInflater.inflate(R.layout.row_layout_thermostat, parent, false);
-
-            TextView theTextView = (TextView) theView.findViewById(R.id.thermostatScreenText);
-
-            theTextView.setText(HashMapHelper.getName(rowItem));
-
-            ImageView theImageView = (ImageView) theView.findViewById(R.id.thermostatScreenImageView);
-
-            theImageView.setImageResource(R.drawable.thermostat);
-
-            TextView tempTextView = (TextView) theView.findViewById(R.id.temperatureTxt);
-
-
-            Float floatTemp = Float.parseFloat(HashMapHelper.getTemp(rowItem).replace("°C", ""));
-            floatTemp = (9 * floatTemp)/5 + 32;
-            Integer intTemp = Math.round(floatTemp);
-
-            tempTextView.setText(intTemp.toString());
+//            theView = theInflater.inflate(R.layout.row_layout_thermostat, parent, false);
+//
+//            TextView theTextView = (TextView) theView.findViewById(R.id.thermostatScreenText);
+//
+//            theTextView.setText(HashMapHelper.getName(rowItem));
+//
+//            ImageView theImageView = (ImageView) theView.findViewById(R.id.thermostatScreenImageView);
+//
+//            theImageView.setImageResource(R.drawable.thermostat);
+//
+//            TextView tempTextView = (TextView) theView.findViewById(R.id.temperatureTxt);
+//
+//
+//            Float floatTemp = Float.parseFloat(HashMapHelper.getTemp(rowItem).replace("°C", ""));
+//            floatTemp = (9 * floatTemp)/5 + 32;
+//            Integer intTemp = Math.round(floatTemp);
+//
+//            tempTextView.setText(intTemp.toString());
 
         }else{
 

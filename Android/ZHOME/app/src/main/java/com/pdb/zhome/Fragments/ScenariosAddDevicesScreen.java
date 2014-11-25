@@ -41,9 +41,19 @@ public class ScenariosAddDevicesScreen extends Fragment {
         final String scenarioName = bundle.getString("scenario_name");
 
         String[] deviceNames = HashMapHelper.getAllDeviceNames();
+        ArrayList<String> deviceList = new ArrayList<String>();
+        deviceHashMap = MainActivity.getHashMap();
+        for (int i = 0; i< deviceNames.length; i++){
+            if (deviceHashMap.get(deviceNames[i]).getType().equals("sensor")){
+
+            } else
+                deviceList.add(deviceNames[i]);
+        }
+
+        String[] noSensors = deviceList.toArray(new String[deviceList.size()]);
         deviceHashMap = MainActivity.getHashMap();
 
-        final ListAdapter scenarioAddDevicesAdapter = new scenarioAddDevicesAdapter(getActivity(), deviceNames, getFragmentManager());
+        final ListAdapter scenarioAddDevicesAdapter = new scenarioAddDevicesAdapter(getActivity(), noSensors, getFragmentManager());
 
         final ListView scenarioAddDevicesListView = (ListView) rootView.findViewById(R.id.roomAddDevicesListView);
 
@@ -56,12 +66,12 @@ public class ScenariosAddDevicesScreen extends Fragment {
             public void onClick(View v) {
                 Fragment scenarioSetupScreen = new ScenarioSetupScreen();
                 FragmentManager fragmentManager = getFragmentManager();
-                Bundle args = new Bundle();
+                Bundle args = new Bundle(2);
                 args.putString("scenario_name", scenarioName);
                 args.putStringArrayList("device_list", selectedDevices);
+                scenarioSetupScreen.setArguments(args);
                 fragmentManager.beginTransaction().replace(R.id.content_frame, scenarioSetupScreen).addToBackStack(null).commit();
-                getActivity().getActionBar().setTitle("Add Devices");
-                MainActivity.setCurrentFragment(scenarioSetupScreen);
+                getActivity().getActionBar().setTitle("Set Device Statuses in " + scenarioName);
             }
         });
 

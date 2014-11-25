@@ -47,7 +47,6 @@ public class ThermostatListScreen extends Fragment{
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 deviceHashMap = MainActivity.getHashMap();
                 String thermostatPicked = String.valueOf(adapterView.getItemAtPosition(i));
-                System.out.println(thermostatPicked);
                 Fragment thermostatView = new ThermostatView();
                 FragmentManager fragmentManager = getFragmentManager();
                 Bundle args = new Bundle();

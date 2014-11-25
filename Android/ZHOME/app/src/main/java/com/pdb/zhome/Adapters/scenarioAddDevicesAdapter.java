@@ -26,7 +26,6 @@ public class scenarioAddDevicesAdapter extends ArrayAdapter<String> {
     private HashMap<String, Device> deviceHashMap;
     private SocketCom socketCom;
     private String changedName;
-    //private ArrayList<String> selectedDevices = new ArrayList<String>();
     private FragmentManager fragmentManager;
 
     public scenarioAddDevicesAdapter(Context context, String[] values, FragmentManager fragmentManager) {
@@ -78,7 +77,7 @@ public class scenarioAddDevicesAdapter extends ArrayAdapter<String> {
                     deviceAddBtn.setImageResource(R.drawable.favorites_false);
                 }
                 else {
-                    frg.removeFromSelectedDevices(item);
+                    frg.addToSelectedDevices(item);
                     deviceAddBtn.setImageResource(R.drawable.favorites_true);
                 }
             }
