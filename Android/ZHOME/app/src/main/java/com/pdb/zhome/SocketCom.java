@@ -147,6 +147,10 @@ public class SocketCom extends AsyncTask<Void, String, Void> {
                             JSONArray rooms = fromServerJson.getJSONObject("Message").getJSONArray("rooms");
                             createRooms(rooms);
                             System.out.println(rooms);
+                        case 6:
+                            JSONArray newRooms = fromServerJson.getJSONObject("Message").getJSONArray("rooms");
+                            createRooms(newRooms);
+                            publishProgress("update");
                         default:
                             System.out.println("DEFAULT");
                             break;

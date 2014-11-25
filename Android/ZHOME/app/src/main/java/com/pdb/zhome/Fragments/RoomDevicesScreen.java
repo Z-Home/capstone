@@ -64,7 +64,11 @@ public class RoomDevicesScreen extends Fragment {
         addDevicesToRoomBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("name", roomName);
+
                 Fragment addDevicesScreen = new RoomAddDevicesScreen();
+                addDevicesScreen.setArguments(bundle);
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.content_frame, addDevicesScreen).addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Add Devices " + roomName);

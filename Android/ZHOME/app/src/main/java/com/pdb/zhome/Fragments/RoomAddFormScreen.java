@@ -1,6 +1,7 @@
 package com.pdb.zhome.Fragments;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -100,7 +101,8 @@ public class RoomAddFormScreen extends Fragment {
                 System.out.println(finalJson.toString());
                 SocketCom.sendMessage(finalJson);
 
-
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.popBackStack();
 
             }
         });

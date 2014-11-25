@@ -40,11 +40,13 @@ public class RoomAddDevicesScreen extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.screen_room_add_devices, container, false);
 
+        Bundle bundle = getArguments();
+        String room = bundle.getString("name");
 
         String[] deviceNames = HashMapHelper.getAllDeviceNames();
         deviceHashMap = MainActivity.getHashMap();
 
-        final ListAdapter roomAddDevicesAdapter = new roomAddDevicesAdapter(getActivity(), deviceNames);
+        final ListAdapter roomAddDevicesAdapter = new roomAddDevicesAdapter(getActivity(), deviceNames, room, getFragmentManager());
 
         final ListView roomAddDevicesListView = (ListView) rootView.findViewById(R.id.roomAddDevicesListView);
 
