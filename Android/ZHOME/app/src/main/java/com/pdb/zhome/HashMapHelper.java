@@ -89,11 +89,8 @@ public final class HashMapHelper {
         return "Temp not available";
     }
 
-    public static String getSetTemp(String devNum){
-        String mode = deviceHashMap.get(devNum).getValues().get("66");
-        if (mode.equals("0")){
-            return "off";
-        } else if (mode.equals("1")){
+    public static String getSetTemp(String devNum, String heatOrCool){
+        if (heatOrCool.equals("1")){
             try {
                 JSONObject setTemp = new JSONObject(deviceHashMap.get(devNum).getValues().get("67"));
                 System.out.println(setTemp.getString("heat"));
@@ -110,7 +107,7 @@ public final class HashMapHelper {
 
             }
         }
-        return "off";
+        return "ERR";
     }
 
     public static String returnThermostatMode(String devNum){
@@ -123,12 +120,9 @@ public final class HashMapHelper {
         socketCom.sendMessage(command);
     }
 
-    public static void changeTemp(String devNum, String upOrDown){
-        String mode = deviceHashMap.get(devNum).getValues().get("66");
+    public static void changeTemp(String devNum, String upOrDown, String heatOrCool){
         String currentSetTemp = "";
-        if (mode.equals("0")){
-            return;
-        } else if (mode.equals("1")){
+        if (heatOrCool.equals("1")){
             try {
                 JSONObject setTemp = new JSONObject(deviceHashMap.get(devNum).getValues().get("67"));
                 currentSetTemp = setTemp.getString("heat");
@@ -149,7 +143,7 @@ public final class HashMapHelper {
             oldCelsiusFloatTemp++;
         else
             oldCelsiusFloatTemp--;
-        String changeTemp = mode + "," + oldCelsiusFloatTemp;
+        String changeTemp = heatOrCool + "," + oldCelsiusFloatTemp;
         JSONObject command = deviceHashMap.get(devNum).command("67", changeTemp);
         socketCom.sendMessage(command);
     }

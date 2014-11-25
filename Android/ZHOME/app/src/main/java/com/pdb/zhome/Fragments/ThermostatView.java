@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RadioButton;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.miz.pdb.R;
+import com.pdb.zhome.Devices.Switch;
 import com.pdb.zhome.HashMapHelper;
 
 import java.util.ArrayList;
@@ -34,11 +36,6 @@ public class ThermostatView extends Fragment{
         TextView tempTextView = (TextView) rootView.findViewById(R.id.temperatureControlTxt);
 
         tempTextView.setText(convertTemp(HashMapHelper.getTemp(devNum)));
-        TextView setTempTextView = (TextView) rootView.findViewById(R.id.thermostatSetToText);
-        if (HashMapHelper.getSetTemp(devNum).equals("off")){
-            setTempTextView.setText("off");
-        }else
-            setTempTextView.setText(convertTemp(HashMapHelper.getSetTemp(devNum)));
 
         RadioButton heatRadioButton = (RadioButton) rootView.findViewById(R.id.heatThermostatRadioBtn);
         RadioButton coolRadioButton = (RadioButton) rootView.findViewById(R.id.coolThermostatRadioBtn);
@@ -80,20 +77,48 @@ public class ThermostatView extends Fragment{
             }
         });
 
+        final android.widget.Switch heatCoolSwitch = (android.widget.Switch) rootView.findViewById(R.id.thermostatSwitch);
+
+        heatCoolSwitch.setChecked(true);
+
+        final TextView setTempTextView = (TextView) rootView.findViewById(R.id.thermostatSetToText);
+        setTempTextView.setText(convertTemp(HashMapHelper.getSetTemp(devNum, "1")));
+
+        heatCoolSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    setTempTextView.setText((convertTemp(HashMapHelper.getSetTemp(devNum, "1"))));
+                } else
+                    setTempTextView.setText((convertTemp(HashMapHelper.getSetTemp(devNum, "2"))));
+            }
+        });
+
+
         Button turnUpThermostat = (Button) rootView.findViewById(R.id.thermostatUp);
         Button turnDownThermostat = (Button) rootView.findViewById(R.id.thermostatDown);
 
         turnUpThermostat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HashMapHelper.changeTemp(devNum, "up");
+                String heatOrCool = "";
+                if (heatCoolSwitch.isChecked()){
+                    heatOrCool = "1";
+                }else
+                    heatOrCool =  "2";
+                HashMapHelper.changeTemp(devNum, "up", heatOrCool);
             }
         });
 
         turnDownThermostat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HashMapHelper.changeTemp(devNum, "down");
+                String heatOrCool = "";
+                if (heatCoolSwitch.isChecked()){
+                    heatOrCool = "1";
+                }else
+                    heatOrCool =  "2";
+                HashMapHelper.changeTemp(devNum, "down", heatOrCool);
             }
         });
 
