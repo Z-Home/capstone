@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -47,7 +48,7 @@ public class RoomDevicesScreen extends Fragment {
         ArrayList<String> deviceArrayList = new ArrayList<String>(HashMapHelper.getDeviceNames("switch"));
 
         TextView roomNameTextView = (TextView) rootView.findViewById(R.id.roomNameTextView);
-        String roomName = activity.getCurrentRoomName();
+        final String roomName = activity.getCurrentRoomName();
         roomNameTextView.setText(roomName);
 
         Room room = rooms.get(roomName);
@@ -57,6 +58,20 @@ public class RoomDevicesScreen extends Fragment {
         TextView numDevicesInRoomTextView = (TextView) rootView.findViewById(R.id.roomNumDevicesTextView);
         System.out.println("ROOM DEVICES: " + devices.length);
        // numDevicesInRoomTextView.setText(devices.length);
+
+        //Add devices to room
+        ImageButton addDevicesToRoomBtn = (ImageButton) rootView.findViewById(R.id.addDevicesToRoomBtn);
+        addDevicesToRoomBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment addDevicesScreen = new RoomAddDevicesScreen();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, addDevicesScreen).addToBackStack(null).commit();
+                getActivity().getActionBar().setTitle("Add Devices " + roomName);
+                MainActivity.setCurrentFragment(addDevicesScreen);
+            }
+        });
+
 
         ImageView theImageView = (ImageView) rootView.findViewById(R.id.roomDevicesScreenImage);
 

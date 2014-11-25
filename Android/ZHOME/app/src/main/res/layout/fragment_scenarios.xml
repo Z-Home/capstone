@@ -1,143 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/summaryLayout">
-
-    <LinearLayout
-        android:layout_height="100dp"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scenariosFragment"
+    >
+    <ListView
         android:layout_width="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:src="@drawable/lights"
-            android:id="@+id/lightsBtn"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:onClick="lightBtnClick" />
-
-        <ImageButton
-            android:src="@drawable/sensors"
-            android:id="@+id/sensorsBtn"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:onClick="sensorBtnClick" />
-
-        <ImageButton
-            android:src="@drawable/security"
-            android:id="@+id/securityBtn"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:onClick="securityBtnClick" />
-    </LinearLayout>
-    <LinearLayout
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:orientation="horizontal">
+        android:id="@+id/scenariosListView">
+    </ListView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="  Lights  " />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Sensors" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Security" />
-    </LinearLayout>
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:baselineAlignBottom="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/gold_circle"
 
-    <LinearLayout
-        android:layout_height="100dp"
-        android:layout_width="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:src="@drawable/outlets"
-            android:id="@+id/outletBtn"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:onClick="outletBtnClick" />
-
-        <ImageButton
-            android:src="@drawable/thermostat"
-            android:id="@+id/thermostatBtn"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:onClick="thermostatBtnClick" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="    Outlets    " />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Thermostat" />
-
-    </LinearLayout>
-</TableLayout>
+        />
+    <ImageButton
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:baselineAlignBottom="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/add"
+        android:background="@android:color/transparent"
+        android:id="@+id/addScenariosBtn"
+        />
+</RelativeLayout>

@@ -34,7 +34,7 @@ public class ThermostatView extends Fragment{
         TextView tempTextView = (TextView) rootView.findViewById(R.id.temperatureControlTxt);
 
         tempTextView.setText(convertTemp(HashMapHelper.getTemp(devNum)));
-        TextView setTempTextView = (TextView) rootView.findViewById(R.id.textView2);
+        TextView setTempTextView = (TextView) rootView.findViewById(R.id.thermostatSetToText);
         if (HashMapHelper.getSetTemp(devNum).equals("off")){
             setTempTextView.setText("off");
         }else

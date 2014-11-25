@@ -1,22 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/lightsScreen"
+    android:id="@+id/roomDevicesScreen"
     >
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/gold_circle"
+
+        />
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/add"
+        android:background="@android:color/transparent"
+        android:id="@+id/addDevicesToRoomBtn"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:id="@+id/topRoomDeviceScreen">
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="150dp"
             android:id="@+id/roomDevicesScreenImage"
-            android:src="@drawable/rooms" />
+            android:src="@drawable/kitchen" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -76,6 +99,7 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/topRoomDeviceScreen"
         android:id="@+id/roomListView">
     </ListView>
-</LinearLayout>
+</RelativeLayout>
