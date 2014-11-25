@@ -7,7 +7,9 @@
     android:paddingRight="10dp"
     android:paddingEnd="10dp"
     android:paddingLeft="5dp"
-    android:paddingStart="5dp">
+    android:paddingStart="5dp"
+    android:descendantFocusability="blocksDescendants">
+
 
     <ImageButton
         android:layout_width="40dp"
