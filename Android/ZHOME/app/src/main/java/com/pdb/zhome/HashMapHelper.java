@@ -16,6 +16,7 @@ public final class HashMapHelper {
 
     private static SocketCom socketCom = SocketCom.getInstance();
     private static HashMap<String, Device> deviceHashMap = MainActivity.getHashMap();
+    private static String[] allDeviceIds;
 
     public static ArrayList<String> getDeviceNames(String type){
         ArrayList<String> deviceArrayList = new ArrayList<String>();
@@ -33,6 +34,10 @@ public final class HashMapHelper {
 
         return deviceHashMap.keySet().toArray(new String[deviceHashMap.size()]);
 
+    }
+
+    public static String[] getAllDeviceIds() {
+        return allDeviceIds;
     }
 
     public static String getStatus(String name){

@@ -27,6 +27,8 @@ public class FavoritesAddScreen extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.screen_favorites_add, container, false);
 
+        String[] deviceIds = HashMapHelper.getAllDeviceIds();
+
         String[] deviceNames = HashMapHelper.getAllDeviceNames();
 
         ListAdapter favAddScreenAdapter = new favoritesAddAdapter(getActivity(), deviceNames);

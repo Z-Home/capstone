@@ -27,7 +27,7 @@ public class favoritesAddAdapter extends ArrayAdapter<String> {
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
     JSONObject jo = new JSONObject();
-    JSONArray ja = new JSONArray();
+    JSONArray favoritesJsonArray = new JSONArray();
     JSONObject mainObj = new JSONObject();
     JSONObject favoritesJo = new JSONObject();
 
@@ -59,18 +59,38 @@ public class favoritesAddAdapter extends ArrayAdapter<String> {
         ImageView theImageView = (ImageView) theView.findViewById(R.id.favoritesAddListImageView);
 
         // Get JSON from shared preferences
-        String strJson = preferences.getString("favorites", "favorites");
-        if(strJson != null) try {
-            favoritesJo = new JSONObject(strJson);
-        } catch (JSONException e) {
-            e.printStackTrace();
+        String strJson;
+        if(preferences.getString("favorites", null) != null){
+            strJson = preferences.getString("favorites", null);
+            System.out.println("IN FAVORITES ADD: " + strJson);
+            System.out.println(strJson);
+            try {
+                favoritesJsonArray = new JSONArray(strJson);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }else{
+            favoritesJsonArray = new JSONArray();
+            strJson = favoritesJsonArray.toString();
+            System.out.println(strJson);
+            editor.putString("favorites", strJson);
+            editor.commit();
         }
 
         final ImageButton favBtn = (ImageButton) theView.findViewById(R.id.favoritesIconBtn);
         //Check the whether devices are in set as favorites or not
         //and set the icon based on that check
         try {
-            if(favoritesJo.getString(deviceHashMap.get(rowItem).getDevNum()) != null) {
+            int i = 0;
+            boolean isDeviceInFavorites = false;
+            for(i = 0; i < favoritesJsonArray.length(); i++){
+                System.out.println("ROW ITEM: " + rowItem + ", FAVORITES ARRAY: " + favoritesJsonArray.getString(i));
+                if(favoritesJsonArray.getString(i).equals(rowItem)){
+                    isDeviceInFavorites = true;
+                }
+            }
+            System.out.println("IN FAVORITES? " + isDeviceInFavorites);
+            if(isDeviceInFavorites) {
                 favBtn.setImageResource(R.drawable.favorites_true);
             }else{
                 favBtn.setImageResource(R.drawable.favorites_false);
@@ -82,38 +102,36 @@ public class favoritesAddAdapter extends ArrayAdapter<String> {
         favBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 try {
-                    if(favoritesJo.getString(deviceHashMap.get(rowItem).getDevNum()) != null)
-
-                    try {
-
-                        jo.put(deviceHashMap.get(rowItem).getDevNum(), deviceHashMap.get(rowItem).getDevName());
-
-                    } catch (JSONException e) {throw new RuntimeException(e);}
+                    int i = 0;
+                    boolean isDeviceInFavorites = false;
+                    for(i = 0; i < favoritesJsonArray.length(); i++){
+                        if(favoritesJsonArray.getString(i).equals(rowItem)){
+                            isDeviceInFavorites = true;
+                        }
+                    }
+                    //If already in favorites, remove from favorites and change the image resource
+                    if(isDeviceInFavorites){
+                        for(i = 0; i < favoritesJsonArray.length(); i++){
+                            if(rowItem.equals(favoritesJsonArray.getString(i))){
+                                favoritesJsonArray.remove(i);
+                            }
+                        }
+                        favBtn.setImageResource(R.drawable.favorites_false);
+                    //Else add to favorites and change the image resource
+                    }else{
+                        favoritesJsonArray.put(rowItem);
+                        favBtn.setImageResource(R.drawable.favorites_true);
+                    }
+                    System.out.println("FAVORITES: " + favoritesJsonArray.toString());
+                    editor.putString("favorites", favoritesJsonArray.toString());
+                    editor.commit();
+                    System.out.println("FAVORITES IN PREFERENCES: " + preferences.getString("favorites", null));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-                //put into array
-                ja.put(jo);
-
-                //put into main object
-                try {
-                    mainObj.put("favorites", ja);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-
-                favBtn.setImageResource(R.drawable.favorites_false);
-
             }
         });
-
-        //store json data as string in preferences
-        editor.putString("favorites", mainObj.toString());
-        editor.commit();
 
         if (type.equals("switch")) {
             theImageView.setImageResource(R.drawable.lights);

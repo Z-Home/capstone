@@ -18,6 +18,7 @@ import java.util.HashMap;
 import com.miz.pdb.R;
 import com.pdb.zhome.Activities.MainActivity;
 import com.pdb.zhome.Adapters.roomDevicesAdapter;
+import com.pdb.zhome.Devices.Device;
 import com.pdb.zhome.HashMapHelper;
 import com.pdb.zhome.Room;
 
@@ -109,11 +110,17 @@ public class RoomDevicesScreen extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(MainActivity.getHashMap().get(String.valueOf(adapterView.getItemAtPosition(i))).getValues().keySet().contains("66")) {
+                    HashMap<String, Device> deviceHashMap = MainActivity.getHashMap();
                     String thermostatPicked = String.valueOf(adapterView.getItemAtPosition(i));
+                    System.out.println(thermostatPicked);
                     Fragment thermostatView = new ThermostatView();
                     FragmentManager fragmentManager = getFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.content_frame, thermostatView).addToBackStack(null).commit();
-                    getActivity().getActionBar().setTitle(thermostatPicked);
+                    Bundle args = new Bundle();
+                    args.putString("devNum", thermostatPicked);
+                    thermostatView.setArguments(args);
+                    fragmentManager.beginTransaction().replace(R.id.content_frame, thermostatView, "ThermostatView").addToBackStack(null).commit();
+                    MainActivity.setCurrentFragment(thermostatView);
+                    getActivity().getActionBar().setTitle(deviceHashMap.get(thermostatPicked).getDevName());
                 }
 
             }

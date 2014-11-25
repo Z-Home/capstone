@@ -11,28 +11,34 @@
         android:id="@+id/favoritesListView">
     </ListView>
 
-    <ImageView
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:baselineAlignBottom="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="10dp"
-        android:src="@drawable/gold_circle"
+    <!--<ImageView-->
+        <!--android:layout_width="75dp"-->
+        <!--android:layout_height="75dp"-->
+        <!--android:baselineAlignBottom="true"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:src="@drawable/gold_circle"-->
 
-        />
+        <!--/>-->
     <ImageButton
+        android:src="@drawable/rename"
+        android:id="@+id/addFavoritesBtn"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:layout_weight="1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:baselineAlignBottom="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="10dp"
-        android:src="@drawable/add"
-        android:background="@android:color/transparent"
-        android:id="@+id/addFavoritesBtn"
-        />
+        android:layout_margin="10dp"/>
+
 
 </RelativeLayout>
