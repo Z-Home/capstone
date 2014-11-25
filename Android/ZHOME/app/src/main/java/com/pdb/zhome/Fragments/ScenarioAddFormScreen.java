@@ -1,6 +1,7 @@
 package com.pdb.zhome.Fragments;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -41,13 +42,26 @@ public class ScenarioAddFormScreen extends Fragment {
 
         rootView = inflater.inflate(R.layout.form_scenario_add, container, false);
 
+        final EditText editText = (EditText) rootView.findViewById(R.id.scenarioNameText);
 
         Button addButton = (Button) rootView.findViewById(R.id.addScenarioFormBtn);
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "This doesn't do anything yet", Toast.LENGTH_SHORT).show();
+                if (editText.getText().length() == 0) {
+                    Toast.makeText(getActivity(), "Please give the Scenario a name", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Fragment frg = new ScenariosAddDevicesScreen();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    Bundle args = new Bundle();
+                    args.putString("scenario_name", editText.getText().toString());
+                    frg.setArguments(args);
+                    fragmentManager.beginTransaction().replace(R.id.content_frame, frg, "scenario_add_devices").addToBackStack(null).commit();
+                    getActivity().getActionBar().setTitle("Add Devices to Scenario");
+                    MainActivity.setCurrentFragment(frg);
+                }
             }
         });
 

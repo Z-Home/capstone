@@ -1,5 +1,7 @@
 package com.pdb.zhome.Adapters;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +14,11 @@ import android.widget.TextView;
 import com.miz.pdb.R;
 import com.pdb.zhome.Activities.MainActivity;
 import com.pdb.zhome.Devices.Device;
+import com.pdb.zhome.Fragments.ScenariosAddDevicesScreen;
 import com.pdb.zhome.HashMapHelper;
 import com.pdb.zhome.SocketCom;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class scenarioAddDevicesAdapter extends ArrayAdapter<String> {
@@ -22,8 +26,12 @@ public class scenarioAddDevicesAdapter extends ArrayAdapter<String> {
     private HashMap<String, Device> deviceHashMap;
     private SocketCom socketCom;
     private String changedName;
-    public scenarioAddDevicesAdapter(Context context, String[] values) {
+    //private ArrayList<String> selectedDevices = new ArrayList<String>();
+    private FragmentManager fragmentManager;
+
+    public scenarioAddDevicesAdapter(Context context, String[] values, FragmentManager fragmentManager) {
         super(context, R.layout.row_layout_room_devices_add, values);
+        this.fragmentManager = fragmentManager;
     }
 
     @Override
@@ -58,8 +66,23 @@ public class scenarioAddDevicesAdapter extends ArrayAdapter<String> {
             theImageView.setImageResource(R.drawable.ic_launcher);
         }
 
-        ImageButton deviceAddBtn = (ImageButton) theView.findViewById(R.id.roomAddDevicesBtn);
-        deviceAddBtn.setImageResource(R.drawable.checkmark);
+        final ImageButton deviceAddBtn = (ImageButton) theView.findViewById(R.id.roomAddDevicesBtn);
+        deviceAddBtn.setImageResource(R.drawable.favorites_false);
+
+        deviceAddBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ScenariosAddDevicesScreen frg = (ScenariosAddDevicesScreen) fragmentManager.findFragmentByTag("scenario_add_devices");
+                if (frg.containsDevice(item)) {
+                    frg.removeFromSelectedDevices(item);
+                    deviceAddBtn.setImageResource(R.drawable.favorites_false);
+                }
+                else {
+                    frg.removeFromSelectedDevices(item);
+                    deviceAddBtn.setImageResource(R.drawable.favorites_true);
+                }
+            }
+        });
 
         //Check if device is already in the room...
         // if true then set check mark icon
