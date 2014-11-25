@@ -25,6 +25,7 @@ import com.pdb.zhome.Fragments.ObjectDrawerItem;
 import com.pdb.zhome.Fragments.RenameScreen;
 import com.pdb.zhome.Fragments.RoomsFragment;
 import com.pdb.zhome.Fragments.ScenariosFragment;
+import com.pdb.zhome.MyApplication;
 import com.pdb.zhome.SocketCom;
 import com.pdb.zhome.Fragments.SummaryFragment;
 import com.pdb.zhome.Fragments.TestFragment;
@@ -272,11 +273,15 @@ public class MainActivity extends FragmentActivity implements Communicator {
             }
         }else if (values[0].equals("update")){
             Fragment frg = null;
-            frg = getCurrentFragment();
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.detach(frg);
-            ft.attach(frg);
-            ft.commit();
+            if (MyApplication.isActivityVisible()) {
+                frg = getCurrentFragment();
+                if (frg != null) {
+                    FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.detach(frg);
+                    ft.attach(frg);
+                    ft.commit();
+                }
+            }
         }
     }
 
@@ -322,4 +327,24 @@ public class MainActivity extends FragmentActivity implements Communicator {
     }
 
     public static JSONArray getRoomsJsonArray(){ return roomsJsonArray;}
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MyApplication.activityResumed();
+        Fragment frg = null;
+        frg = getCurrentFragment();
+        if (frg != null) {
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.detach(frg);
+            ft.attach(frg);
+            ft.commit();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MyApplication.activityPaused();
+    }
 }

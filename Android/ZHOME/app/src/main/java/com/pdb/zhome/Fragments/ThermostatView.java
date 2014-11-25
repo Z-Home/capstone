@@ -101,7 +101,7 @@ public class ThermostatView extends Fragment{
     }
 
     public String convertTemp(String stringTemp){
-        Float floatTemp = Float.parseFloat(stringTemp);
+        Float floatTemp = Float.parseFloat(stringTemp.replace("°C", ""));
         floatTemp = (9 * floatTemp)/5 + 32;
         Integer intTemp = Math.round(floatTemp);
         return intTemp.toString();

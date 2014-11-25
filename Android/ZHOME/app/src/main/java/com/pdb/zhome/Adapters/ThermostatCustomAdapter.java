@@ -35,7 +35,8 @@ public class ThermostatCustomAdapter extends ArrayAdapter<String> {
 
         TextView tempTextView = (TextView) theView.findViewById(R.id.temperatureTxt);
 
-        Float floatTemp = Float.parseFloat(HashMapHelper.getTemp(item));
+
+        Float floatTemp = Float.parseFloat(HashMapHelper.getTemp(item).replace("°C", ""));
         floatTemp = (9 * floatTemp)/5 + 32;
         Integer intTemp = Math.round(floatTemp);
 

@@ -39,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="30sp"
-                    android:text="Lights" />
+                    android:text="Switches" />
 
                 <TextView
                     android:id="@+id/lightsStatusTxt"
@@ -150,58 +150,6 @@
                     android:text="5/10" />
             </LinearLayout>
         </LinearLayout>
-
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginEnd="30dp"
-            android:background="#F1B82D"/>
-
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp">
-
-            <ImageButton
-                android:src="@drawable/outlets"
-                android:id="@+id/outletBtn"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:onClick="outletBtnClick" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="30sp"
-                    android:text="Outlets" />
-
-                <TextView
-                    android:id="@+id/outletsStatusTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:textSize="20sp"
-                    android:text="5/10" />
-            </LinearLayout>
-        </LinearLayout>
-
 
         <View
             android:layout_width="fill_parent"
