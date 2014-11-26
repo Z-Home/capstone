@@ -207,6 +207,7 @@ public class MainActivity extends FragmentActivity implements Communicator {
     private void selectItem(int position) {
     	
         // update the main content by replacing fragments
+        String tag = null;
 
         switch (position) {
         case 0:
@@ -214,24 +215,28 @@ public class MainActivity extends FragmentActivity implements Communicator {
                 favoritesFragment = new FavoritesFragment();
 
             currentFragment = favoritesFragment;
+            tag = "favoritesFragment";
             break;
         case 1:
             if (roomsFragment==null)
                 roomsFragment = new RoomsFragment();
 
             currentFragment = roomsFragment;
+            tag = "roomsFragment";
             break;
         case 2:
             if (scenariosFragment==null)
                 scenariosFragment = new ScenariosFragment();
 
             currentFragment = scenariosFragment;
+            tag = "scenariosFragment";
             break;
         case 3:
             if (summaryFragment==null)
                 summaryFragment = new SummaryFragment();
 
             currentFragment = summaryFragment;
+            tag = "summaryFragment";
             break;
         case 4:
             if (testFragment==null)
@@ -244,7 +249,7 @@ public class MainActivity extends FragmentActivity implements Communicator {
         
         if (currentFragment != null) {
             FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.content_frame, currentFragment).addToBackStack(null).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, currentFragment, tag).addToBackStack(null).commit();
  
             // update selected item and title, then close the drawer
             mDrawerList.setItemChecked(position, true);

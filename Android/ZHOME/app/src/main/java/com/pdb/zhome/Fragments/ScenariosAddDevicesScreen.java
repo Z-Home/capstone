@@ -70,7 +70,7 @@ public class ScenariosAddDevicesScreen extends Fragment {
                 args.putString("scenario_name", scenarioName);
                 args.putStringArrayList("device_list", selectedDevices);
                 scenarioSetupScreen.setArguments(args);
-                fragmentManager.beginTransaction().replace(R.id.content_frame, scenarioSetupScreen).addToBackStack(null).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, scenarioSetupScreen, "scenarioSetup").addToBackStack(null).commit();
                 getActivity().getActionBar().setTitle("Set Device Statuses in " + scenarioName);
             }
         });

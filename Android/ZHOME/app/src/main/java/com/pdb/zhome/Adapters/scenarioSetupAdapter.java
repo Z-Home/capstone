@@ -1,5 +1,6 @@
 package com.pdb.zhome.Adapters;
 
+import android.app.FragmentManager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import com.miz.pdb.R;
 import com.pdb.zhome.Activities.MainActivity;
 import com.pdb.zhome.Devices.Device;
+import com.pdb.zhome.Fragments.ScenarioSetupScreen;
 import com.pdb.zhome.HashMapHelper;
 import com.pdb.zhome.SocketCom;
 
@@ -24,14 +26,18 @@ public class scenarioSetupAdapter extends ArrayAdapter<String> {
 
     private HashMap<String, Device> deviceHashMap;
     private SocketCom socketCom;
-    public scenarioSetupAdapter(Context context, String[] values) {
+    private FragmentManager fragmentManager;
+    public scenarioSetupAdapter(Context context, String[] values, FragmentManager fragmentManager) {
         super(context, R.layout.screen_scenarios_setup, values);
+        this.fragmentManager = fragmentManager;
     }
 
     @Override
     public View getView(int position, final View convertView, ViewGroup parent) {
         deviceHashMap = MainActivity.getHashMap();
         socketCom = SocketCom.getInstance();
+        final ScenarioSetupScreen setup = (ScenarioSetupScreen) fragmentManager.findFragmentByTag("scenarioSetup");
+
         LayoutInflater theInflater = LayoutInflater.from(getContext());
 
         View theView = theInflater.inflate(R.layout.row_layout_favorites, parent, false);
@@ -64,15 +70,19 @@ public class scenarioSetupAdapter extends ArrayAdapter<String> {
                     deviceHashMap = MainActivity.getHashMap();
 
                     if (powerBtn.getTag().equals("off")){
-                        //command = deviceHashMap.get(rowItem).command("37", "1");
+                        command = deviceHashMap.get(rowItem).command("37", "1");
+                        setup.commandArray(command);
                         powerBtn.setImageResource(R.drawable.power_green);
                         powerBtn.setTag("on");
                     }
                     else {
-                        //command = deviceHashMap.get(rowItem).command("37", "0");
+                        command = deviceHashMap.get(rowItem).command("37", "0");
+                        setup.commandArray(command);
                         powerBtn.setImageResource(R.drawable.power_red);
                         powerBtn.setTag("off");
                     }
+
+
                 }
 
             });
@@ -112,9 +122,10 @@ public class scenarioSetupAdapter extends ArrayAdapter<String> {
 
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {
-                    //JSONObject command;
+                    JSONObject command;
 
-                    //command = deviceHashMap.get(rowItem).command("38", progressChanged.toString());
+                    command = deviceHashMap.get(rowItem).command("38", progressChanged.toString());
+                    setup.commandArray(command);
                 }
             });
 
