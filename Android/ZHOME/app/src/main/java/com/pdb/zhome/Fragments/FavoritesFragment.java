@@ -98,7 +98,6 @@ public class FavoritesFragment extends Fragment {
                 if(MainActivity.getHashMap().get(String.valueOf(adapterView.getItemAtPosition(i))).getValues().keySet().contains("66")) {
                     HashMap<String, Device> deviceHashMap = MainActivity.getHashMap();
                     String thermostatPicked = String.valueOf(adapterView.getItemAtPosition(i));
-                    System.out.println(thermostatPicked);
                     Fragment thermostatView = new ThermostatView();
                     FragmentManager fragmentManager = getFragmentManager();
                     Bundle args = new Bundle();

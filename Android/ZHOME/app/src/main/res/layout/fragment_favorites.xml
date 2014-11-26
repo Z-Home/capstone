@@ -11,17 +11,6 @@
         android:id="@+id/favoritesListView">
     </ListView>
 
-    <!--<ImageView-->
-        <!--android:layout_width="75dp"-->
-        <!--android:layout_height="75dp"-->
-        <!--android:baselineAlignBottom="true"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:layout_alignParentEnd="true"-->
-        <!--android:layout_margin="10dp"-->
-        <!--android:src="@drawable/gold_circle"-->
-
-        <!--/>-->
     <ImageButton
         android:src="@drawable/rename"
         android:id="@+id/addFavoritesBtn"
