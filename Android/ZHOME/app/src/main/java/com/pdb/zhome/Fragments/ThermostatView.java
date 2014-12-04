@@ -35,7 +35,7 @@ public class ThermostatView extends Fragment{
 
         TextView tempTextView = (TextView) rootView.findViewById(R.id.temperatureControlTxt);
 
-        tempTextView.setText(convertTemp(HashMapHelper.getTemp(devNum)));
+        tempTextView.setText(convertTemp(HashMapHelper.getTemp(devNum)) + "°");
 
         RadioButton heatRadioButton = (RadioButton) rootView.findViewById(R.id.heatThermostatRadioBtn);
         RadioButton coolRadioButton = (RadioButton) rootView.findViewById(R.id.coolThermostatRadioBtn);
@@ -82,15 +82,15 @@ public class ThermostatView extends Fragment{
         heatCoolSwitch.setChecked(true);
 
         final TextView setTempTextView = (TextView) rootView.findViewById(R.id.thermostatSetToText);
-        setTempTextView.setText(convertTemp(HashMapHelper.getSetTemp(devNum, "1")));
+        setTempTextView.setText(convertTemp(HashMapHelper.getSetTemp(devNum, "1")) + "°");
 
         heatCoolSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
-                    setTempTextView.setText((convertTemp(HashMapHelper.getSetTemp(devNum, "1"))));
+                    setTempTextView.setText((convertTemp(HashMapHelper.getSetTemp(devNum, "1"))) + "°");
                 } else
-                    setTempTextView.setText((convertTemp(HashMapHelper.getSetTemp(devNum, "2"))));
+                    setTempTextView.setText((convertTemp(HashMapHelper.getSetTemp(devNum, "2"))) + "°");
             }
         });
 

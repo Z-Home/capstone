@@ -45,7 +45,7 @@ public class SummaryFragment extends Fragment {
                 screen = new LightsScreen();
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.content_frame, screen).addToBackStack(null).commit();
-                getActivity().getActionBar().setTitle("Lights");
+                getActivity().getActionBar().setTitle("Switches");
                 MainActivity.setCurrentFragment(screen);
             }
         });

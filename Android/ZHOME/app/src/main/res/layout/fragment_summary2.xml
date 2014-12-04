@@ -46,8 +46,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="5dp"
-                    android:textSize="20sp"
-                    android:text="5/10" />
+                    android:textSize="0sp"
+                    android:text="5/10"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -90,14 +90,6 @@
                     android:layout_height="wrap_content"
                     android:textSize="30sp"
                     android:text="Thermostats" />
-
-                <TextView
-                    android:id="@+id/thermostatStatusTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:textSize="20sp"
-                    android:text="5/10" />
             </LinearLayout>
         </LinearLayout>
 
@@ -140,14 +132,6 @@
                     android:layout_height="wrap_content"
                     android:textSize="30sp"
                     android:text="Sensors" />
-
-                <TextView
-                    android:id="@+id/sensorsStatusTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:textSize="20sp"
-                    android:text="5/10" />
             </LinearLayout>
         </LinearLayout>
 
@@ -191,13 +175,6 @@
                     android:textSize="30sp"
                     android:text="Security" />
 
-                <TextView
-                    android:id="@+id/securityStatusTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:textSize="20sp"
-                    android:text="5/10" />
             </LinearLayout>
         </LinearLayout>
 

@@ -40,7 +40,7 @@ public class ThermostatCustomAdapter extends ArrayAdapter<String> {
         floatTemp = (9 * floatTemp)/5 + 32;
         Integer intTemp = Math.round(floatTemp);
 
-        tempTextView.setText(intTemp.toString());
+        tempTextView.setText(intTemp.toString() + "°");
 
         return theView;
     }

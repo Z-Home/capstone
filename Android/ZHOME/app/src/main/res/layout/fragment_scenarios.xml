@@ -35,15 +35,4 @@
         android:id="@+id/addScenarioBtn"
         />
 
-    <Button
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:baselineAlignBottom="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        android:src="@drawable/add"
-        android:background="@android:color/transparent"
-        android:id="@+id/testBtn"
-        android:text="Scenario Setup View"
-        />
 </RelativeLayout>
