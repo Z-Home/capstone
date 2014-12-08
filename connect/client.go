@@ -22,6 +22,9 @@ type Client struct {
 	devices         []string
 }
 
+//Read incoming info from server
+//if not authenticated send info to auth channel
+//else send to ReadCommand
 func (client *Client) Read() {
 	for {
 		line, err := client.reader.ReadString('\n')
@@ -38,6 +41,7 @@ func (client *Client) Read() {
 	client.dead <- client
 }
 
+//Send devices the user has access to
 func (client *Client) WriteDevices() {
 	for data := range client.outgoingDevices {
 		data = fmt.Sprintf("%s\n", SetDevicesAccess(data, client.devices))
@@ -48,6 +52,7 @@ func (client *Client) WriteDevices() {
 	}
 }
 
+//Set the devices the user has access to
 func SetDevicesAccess(data string, devices []string) string {
 	t, _ := gabs.ParseJSON([]byte(data))
 	rm, _ := t.S("Message", "devices").Children()
@@ -74,6 +79,7 @@ func SetDevicesAccess(data string, devices []string) string {
 	return d
 }
 
+//Send info to the client
 func (client *Client) Write() {
 	for data := range client.outgoing {
 		_, err := client.conn.Write([]byte(data))
