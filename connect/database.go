@@ -129,10 +129,6 @@ func DeleteUser(user string) {
 	}
 }
 
-func UpdateUserDevices(user, devices string) {
-
-}
-
 func DeviceName(deviceList string) string {
 	list := dev{}
 
@@ -192,7 +188,7 @@ func DeviceName(deviceList string) string {
 			fmt.Printf("Can't update document %v\n", err)
 		}
 	}
-	//fmt.Println(jsonParsed.String())
+	
 	return jsonParsed.String()
 }
 
@@ -233,6 +229,5 @@ func GetRooms() string {
 		return "nil"
 	}
 
-	//fmt.Println(list.Rooms)
 	return list.Rooms
 }
